@@ -1,0 +1,1584 @@
+2024-08-01 17:35:22,098|DEBUG|classes|	Marquise de Cat draws: Better Burrow Bank
+2024-08-01 17:35:22,098|DEBUG|classes|	Marquise de Cat draws: Investments
+2024-08-01 17:35:22,098|DEBUG|classes|	Marquise de Cat draws: Stand and Deliver!
+2024-08-01 17:35:22,098|DEBUG|classes|	Marquise de Cat draws: Favor of the Rabbits
+2024-08-01 17:35:22,098|DEBUG|classes|	Marquise de Cat draws: Smuggler's Trail
+2024-08-01 17:35:22,098|DEBUG|classes|	Eyrie Dynasties draws: Gently Used Knapsack
+2024-08-01 17:35:22,098|DEBUG|classes|	Eyrie Dynasties draws: Tax Collector
+2024-08-01 17:35:22,098|DEBUG|classes|	Eyrie Dynasties draws: Crossbow (Bird)
+2024-08-01 17:35:22,100|DEBUG|classes|	Eyrie Dynasties draws: Cobbler
+2024-08-01 17:35:22,100|DEBUG|classes|	Eyrie Dynasties draws: Travel Gear (Mouse)
+2024-08-01 17:35:22,100|DEBUG|classes|	Woodland Alliance draws: Foxfolk Steel
+2024-08-01 17:35:22,100|DEBUG|classes|	Woodland Alliance draws: Armorers
+2024-08-01 17:35:22,100|DEBUG|classes|	Woodland Alliance draws: Sword
+2024-08-01 17:35:22,100|DEBUG|classes|	Woodland Alliance draws: Ambush! (Fox)
+2024-08-01 17:35:22,100|DEBUG|classes|	Woodland Alliance draws: Brutal Tactics
+2024-08-01 17:35:22,100|DEBUG|classes|	Vagabond draws: Favor of the Mice
+2024-08-01 17:35:22,100|DEBUG|classes|	Vagabond draws: Ambush! (Mouse)
+2024-08-01 17:35:22,100|DEBUG|classes|	Vagabond draws: Sappers
+2024-08-01 17:35:22,100|DEBUG|classes|	Vagabond draws: Codebreakers
+2024-08-01 17:35:22,101|DEBUG|classes|	Vagabond draws: Codebreakers
+2024-08-01 17:35:22,101|DEBUG|classes|-- Reset Complete, Generating Random Board... --
+2024-08-01 17:35:22,101|DEBUG|classes|> Alliance Setup part 1
+2024-08-01 17:35:22,101|DEBUG|classes|		Sympathy token placed in clearing 0
+2024-08-01 17:35:22,101|DEBUG|classes|		Fox Base placed in clearing 0
+2024-08-01 17:35:22,101|DEBUG|classes|Alliance recruits 1 officer(s)
+2024-08-01 17:35:22,101|DEBUG|classes|		Placing 1 Woodland Alliance warriors in clearing 0
+2024-08-01 17:35:22,101|DEBUG|classes|		Sympathy token placed in clearing 6
+2024-08-01 17:35:22,101|DEBUG|classes|		Mouse Base placed in clearing 6
+2024-08-01 17:35:22,101|DEBUG|classes|Alliance recruits 2 officer(s)
+2024-08-01 17:35:22,101|DEBUG|classes|		Placing 1 Woodland Alliance warriors in clearing 6
+2024-08-01 17:35:22,101|DEBUG|classes|> Vagabond Setup
+2024-08-01 17:35:22,103|DEBUG|classes|Chosen Class: Thief
+2024-08-01 17:35:22,103|DEBUG|classes|	Starting Items: Boot-Torch-Tea-Sword
+2024-08-01 17:35:22,103|DEBUG|classes|Vagabond starts in Forest 6
+2024-08-01 17:35:22,103|DEBUG|classes|	* New Quest Drawn: Expel Bandits (Rabbit)
+2024-08-01 17:35:22,103|DEBUG|classes|	* New Quest Drawn: Guard Duty (Mouse)
+2024-08-01 17:35:22,103|DEBUG|classes|	* New Quest Drawn: Repair a Shed (Fox)
+2024-08-01 17:35:22,103|DEBUG|classes|	Boot placed in Ruin in clearing 3
+2024-08-01 17:35:22,103|DEBUG|classes|	Sword placed in Ruin in clearing 5
+2024-08-01 17:35:22,103|DEBUG|classes|	Bag placed in Ruin in clearing 6
+2024-08-01 17:35:22,103|DEBUG|classes|	Hammer placed in Ruin in clearing 7
+2024-08-01 17:35:22,103|DEBUG|classes|> The Vagabond Explores the Ruins in Clearing 7
+2024-08-01 17:35:22,103|DEBUG|classes|	The Vagabond found a Hammer!
+2024-08-01 17:35:22,103|DEBUG|classes|	Quest Completed: Expel Bandits (Rabbit)
+2024-08-01 17:35:22,103|DEBUG|classes|	* New Quest Drawn: Errand (Fox)
+2024-08-01 17:35:22,103|DEBUG|classes|	Quest Completed: Guard Duty (Mouse)
+2024-08-01 17:35:22,104|DEBUG|classes|	* New Quest Drawn: Fend off a Bear (Rabbit)
+2024-08-01 17:35:22,104|DEBUG|classes|Vagabond relationship with Marquise de Cat set to: 2
+2024-08-01 17:35:22,104|DEBUG|classes|Vagabond relationship with Eyrie Dynasties set to: 4
+2024-08-01 17:35:22,104|DEBUG|classes|Vagabond relationship with Woodland Alliance set to: 3
+2024-08-01 17:35:22,104|DEBUG|classes|	The Vagabond obtains: Crossbow
+2024-08-01 17:35:22,104|DEBUG|classes|	Woodland Alliance obtains: Bag
+2024-08-01 17:35:22,104|DEBUG|classes|	Eyrie Dynasties obtains: Tea
+2024-08-01 17:35:22,104|DEBUG|classes|> Marquise Setup
+2024-08-01 17:35:22,104|DEBUG|classes|Keep placed in clearing 7
+2024-08-01 17:35:22,104|DEBUG|classes|		THE KEEP token placed in clearing 7
+2024-08-01 17:35:22,104|DEBUG|classes|		Placing 6 Marquise de Cat warriors in clearing 7
+2024-08-01 17:35:22,104|DEBUG|classes|		Recruiter placed in clearing 7
+2024-08-01 17:35:22,104|DEBUG|classes|		Placing 6 Marquise de Cat warriors in clearing 5
+2024-08-01 17:35:22,104|DEBUG|classes|		Workshop placed in clearing 11
+2024-08-01 17:35:22,104|DEBUG|classes|		Placing 4 Marquise de Cat warriors in clearing 11
+2024-08-01 17:35:22,104|DEBUG|classes|		Workshop placed in clearing 4
+2024-08-01 17:35:22,104|DEBUG|classes|		Workshop placed in clearing 4
+2024-08-01 17:35:22,104|DEBUG|classes|		Placing 2 Marquise de Cat warriors in clearing 4
+2024-08-01 17:35:22,104|DEBUG|classes|		Recruiter placed in clearing 2
+2024-08-01 17:35:22,104|DEBUG|classes|		Recruiter placed in clearing 2
+2024-08-01 17:35:22,104|DEBUG|classes|		Placing 2 Marquise de Cat warriors in clearing 2
+2024-08-01 17:35:22,106|DEBUG|classes|		Workshop placed in clearing 9
+2024-08-01 17:35:22,106|DEBUG|classes|		Placing 1 Marquise de Cat warriors in clearing 9
+2024-08-01 17:35:22,106|DEBUG|classes|		Workshop placed in clearing 8
+2024-08-01 17:35:22,106|DEBUG|classes|		Placing 1 Marquise de Cat warriors in clearing 8
+2024-08-01 17:35:22,106|DEBUG|classes|> Alliance Setup part 2
+2024-08-01 17:35:22,106|DEBUG|classes|		Placing 1 Woodland Alliance warriors in clearing 8
+2024-08-01 17:35:22,106|DEBUG|classes|		Placing 1 Woodland Alliance warriors in clearing 7
+2024-08-01 17:35:22,106|DEBUG|classes|		Placing 1 Woodland Alliance warriors in clearing 11
+2024-08-01 17:35:22,106|DEBUG|classes|		Sympathy token placed in clearing 4
+2024-08-01 17:35:22,106|DEBUG|classes|		Command Warren added to supporter pile
+2024-08-01 17:35:22,106|DEBUG|classes|		Armorers added to supporter pile
+2024-08-01 17:35:22,106|DEBUG|classes|> Eyrie Setup
+2024-08-01 17:35:22,106|DEBUG|classes|	New Leader Chosen: Charismatic
+2024-08-01 17:35:22,108|DEBUG|classes|		Card Loyal Vizier added to decree at Recruit
+2024-08-01 17:35:22,108|DEBUG|classes|		Card Loyal Vizier added to decree at Battle
+2024-08-01 17:35:22,108|DEBUG|classes|		Roost placed in clearing 1
+2024-08-01 17:35:22,108|DEBUG|classes|		Placing 10 Eyrie Dynasties warriors in clearing 1
+2024-08-01 17:35:22,108|DEBUG|classes|		Roost placed in clearing 3
+2024-08-01 17:35:22,108|DEBUG|classes|		Placing 0 Eyrie Dynasties warriors in clearing 3
+2024-08-01 17:35:22,108|DEBUG|classes|		Roost placed in clearing 10
+2024-08-01 17:35:22,108|DEBUG|classes|		Placing 1 Eyrie Dynasties warriors in clearing 10
+2024-08-01 17:35:22,108|DEBUG|classes|		Roost placed in clearing 5
+2024-08-01 17:35:22,108|DEBUG|classes|		Placing 1 Eyrie Dynasties warriors in clearing 5
+2024-08-01 17:35:22,108|DEBUG|classes|		Roost placed in clearing 9
+2024-08-01 17:35:22,108|DEBUG|classes|		Placing 2 Eyrie Dynasties warriors in clearing 9
+2024-08-01 17:35:22,108|DEBUG|classes|		Card Stand and Deliver! added to decree at Recruit
+2024-08-01 17:35:22,108|DEBUG|classes|	Rabbit Dominance is now Available (Discarded)
+2024-08-01 17:35:22,109|DEBUG|classes|	Woodland Runners added to discard pile
+2024-08-01 17:35:22,109|DEBUG|classes|	Bird Dominance is now Available (Discarded)
+2024-08-01 17:35:22,109|DEBUG|classes|	Tax Collector added to discard pile
+2024-08-01 17:35:22,109|DEBUG|classes|	Ambush! (Bird) added to discard pile
+2024-08-01 17:35:22,109|DEBUG|classes|	Anvil added to discard pile
+2024-08-01 17:35:22,109|DEBUG|classes|	Tax Collector added to discard pile
+2024-08-01 17:35:22,109|DEBUG|classes|	Ambush! (Rabbit) added to discard pile
+2024-08-01 17:35:22,109|DEBUG|classes|	Bake Sale added to discard pile
+2024-08-01 17:35:22,110|DEBUG|classes|	Ambush! (Bird) added to discard pile
+2024-08-01 17:35:22,110|DEBUG|classes|Score: [19, 20, 19, 21]
+2024-08-01 17:35:22,110|DEBUG|classes|--- RANDOM SETUP COMPLETE ---
+
+
+2024-08-01 17:35:22,110|DEBUG|classes|		- Turn Order: ['Vagabond', 'Eyrie Dynasties', 'Woodland Alliance', 'Marquise de Cat']
+2024-08-01 17:35:22,110|DEBUG|classes|--- STARTING TURN 1 ---
+2024-08-01 17:35:22,110|DEBUG|classes|	Resetting for Vagabond's Turn...
+2024-08-01 17:35:22,110|DEBUG|classes|VB Tracks: 1 / 0 / 0
+2024-08-01 17:35:22,110|DEBUG|classes|VB Undamaged: [('Boot', 0), ('Torch', 0), ('Sword', 0), ('Hammer', 0), ('Crossbow', 0)]
+2024-08-01 17:35:22,110|DEBUG|classes|VB Damaged: []
+2024-08-01 17:35:22,110|DEBUG|classes|
+> Vagabond is in Forest 6
+2024-08-01 17:35:22,110|DEBUG|classes|Refreshes remaining to use: 5
+2024-08-01 17:35:22,110|DEBUG|classes|	Cannot refresh any more items...
+2024-08-01 17:35:22,110|DEBUG|classes|Choosing where to slip...
+2024-08-01 17:35:22,110|DEBUG|classes|> Action 0 - Player: Vagabond
+2024-08-01 17:35:22,110|INFO|classes|Legal Actions: [96, 223, 218, 219, 226, 229]
+2024-08-01 17:35:22,110|INFO|classes|	> Action Chosen: 229
+2024-08-01 17:35:22,110|DEBUG|classes|> Vagabond sneakily Slips from Forest 6 to Forest 5
+2024-08-01 17:35:22,110|DEBUG|classes|--- Moving on to Daylight ---
+2024-08-01 17:35:22,110|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,110|DEBUG|classes|> Action # 1 Played
+2024-08-01 17:35:22,110|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,110|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,110|DEBUG|classes|> Action 1 - Player: Vagabond
+2024-08-01 17:35:22,110|INFO|classes|Legal Actions: [603, 222, 223, 217, 218, 102, 104]
+2024-08-01 17:35:22,110|INFO|classes|	> Action Chosen: 217
+2024-08-01 17:35:22,113|DEBUG|classes|		Vagabond exhausts a Boot
+2024-08-01 17:35:22,113|DEBUG|classes|> Vagabond Moves from Forest 5 to Clearing 5
+2024-08-01 17:35:22,113|DEBUG|classes|	Crafting power: [0, 0, 1]
+2024-08-01 17:35:22,113|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,113|DEBUG|classes|> Action # 2 Played
+2024-08-01 17:35:22,113|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,113|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,113|DEBUG|classes|> Action 2 - Player: Vagabond
+2024-08-01 17:35:22,113|INFO|classes|Legal Actions: [603, 123, 111, 231, 433, 434, 400, 401, 404, 410, 260, 302, 102, 104]
+2024-08-01 17:35:22,113|INFO|classes|	> Action Chosen: 401
+2024-08-01 17:35:22,113|DEBUG|classes|> The Vagabond goes on a Quest!
+2024-08-01 17:35:22,113|DEBUG|classes|	Quest Completed: Repair a Shed (Fox)
+2024-08-01 17:35:22,113|DEBUG|classes|		Vagabond exhausts a Hammer
+2024-08-01 17:35:22,113|DEBUG|classes|		Vagabond exhausts a Torch
+2024-08-01 17:35:22,113|DEBUG|classes|	* New Quest Drawn: Expel Bandits (Mouse)
+2024-08-01 17:35:22,113|DEBUG|classes|The Vagabond chooses to draw 2 cards:
+2024-08-01 17:35:22,113|DEBUG|classes|	Vagabond draws: Command Warren
+2024-08-01 17:35:22,113|DEBUG|classes|	Vagabond draws: Protection Racket
+2024-08-01 17:35:22,113|DEBUG|classes|	Crafting power: [0, 0, 0]
+2024-08-01 17:35:22,113|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,113|DEBUG|classes|> Action # 3 Played
+2024-08-01 17:35:22,113|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,113|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,117|DEBUG|classes|> Action 3 - Player: Vagabond
+2024-08-01 17:35:22,117|INFO|classes|Legal Actions: [603, 123, 111, 404, 410, 256, 260, 298, 302, 102, 104]
+2024-08-01 17:35:22,117|INFO|classes|	> Action Chosen: 123
+2024-08-01 17:35:22,117|DEBUG|classes|		Vagabond exhausts a Sword
+2024-08-01 17:35:22,117|DEBUG|classes|	--- BATTLE STARTED: Vagabond Attacks Eyrie Dynasties in clearing 5
+2024-08-01 17:35:22,117|DEBUG|classes|Eyrie Dynasties chose not to ambush
+2024-08-01 17:35:22,117|DEBUG|classes|--- DICE ROLL: [1, 1]
+2024-08-01 17:35:22,117|DEBUG|classes|--- Dealing hits to defender...
+2024-08-01 17:35:22,117|DEBUG|classes|- Removed 1 Eyrie Dynasties warrior from clearing 5
+2024-08-01 17:35:22,117|DEBUG|classes|	>> The Eyrie Dynasties are now HOSTILE toward the Vagabond! <<
+2024-08-01 17:35:22,117|DEBUG|classes|--- Dealing hits to attacker...
+2024-08-01 17:35:22,119|DEBUG|classes|> Action # 4 Played
+2024-08-01 17:35:22,119|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,119|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,119|DEBUG|classes|> Action 4 - Player: Vagabond
+2024-08-01 17:35:22,119|INFO|classes|Legal Actions: [514, 517, 519, 520, 521, 526]
+2024-08-01 17:35:22,119|INFO|classes|	> Action Chosen: 521
+2024-08-01 17:35:22,119|DEBUG|classes|		Vagabond damages an exhausted Boot
+2024-08-01 17:35:22,120|DEBUG|classes|--- BATTLE FINISHED ---
+2024-08-01 17:35:22,120|DEBUG|classes|	Crafting power: [0, 0, 0]
+2024-08-01 17:35:22,120|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,120|DEBUG|classes|> Action # 5 Played
+2024-08-01 17:35:22,120|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,120|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,120|DEBUG|classes|> Action 5 - Player: Vagabond
+2024-08-01 17:35:22,121|INFO|classes|Legal Actions: [603, 404, 411, 256, 260, 298, 302, 102, 104]
+2024-08-01 17:35:22,121|INFO|classes|	> Action Chosen: 102
+2024-08-01 17:35:22,121|DEBUG|classes|	> Spending a card to take the available Rabbit Dominance card...
+2024-08-01 17:35:22,121|DEBUG|classes|Choosing card to spend to take Dominance...
+2024-08-01 17:35:22,121|DEBUG|classes|> Action # 6 Played
+2024-08-01 17:35:22,121|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,121|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,121|DEBUG|classes|> Action 6 - Player: Vagabond
+2024-08-01 17:35:22,121|INFO|classes|Legal Actions: [69, 55]
+2024-08-01 17:35:22,121|INFO|classes|	> Action Chosen: 69
+2024-08-01 17:35:22,121|DEBUG|classes|	Sappers removed from hand of Vagabond
+2024-08-01 17:35:22,121|DEBUG|classes|	Sappers added to discard pile
+2024-08-01 17:35:22,121|DEBUG|classes|	Crafting power: [0, 0, 0]
+2024-08-01 17:35:22,123|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,123|DEBUG|classes|> Action # 7 Played
+2024-08-01 17:35:22,123|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,123|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,123|DEBUG|classes|> Action 7 - Player: Vagabond
+2024-08-01 17:35:22,123|INFO|classes|Legal Actions: [603, 404, 411, 256, 298, 530, 532]
+2024-08-01 17:35:22,123|INFO|classes|	> Action Chosen: 404
+2024-08-01 17:35:22,123|DEBUG|classes|Vagabond strikes down Marquise Warrior in Clearing 5
+2024-08-01 17:35:22,124|DEBUG|classes|		Vagabond exhausts a Crossbow
+2024-08-01 17:35:22,124|DEBUG|classes|	>> The Marquise de Cat are now HOSTILE toward the Vagabond! <<
+2024-08-01 17:35:22,124|DEBUG|classes|> Action # 8 Played
+2024-08-01 17:35:22,124|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,124|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,124|DEBUG|classes|> Action 8 - Player: Marquise de Cat
+2024-08-01 17:35:22,124|INFO|classes|Legal Actions: [427, 459]
+2024-08-01 17:35:22,124|INFO|classes|	> Action Chosen: 459
+2024-08-01 17:35:22,125|DEBUG|classes|	Field Hospitals activated, Marquise recovered 1 warrior(s)
+2024-08-01 17:35:22,125|DEBUG|classes|		Placing 1 Marquise de Cat warriors in clearing 7
+2024-08-01 17:35:22,125|DEBUG|classes|	Stand and Deliver! removed from hand of Marquise de Cat
+2024-08-01 17:35:22,125|DEBUG|classes|	Stand and Deliver! added to discard pile
+2024-08-01 17:35:22,125|DEBUG|classes|	Crafting power: [0, 0, 0]
+2024-08-01 17:35:22,125|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,125|DEBUG|classes|> Action # 9 Played
+2024-08-01 17:35:22,125|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,125|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,125|DEBUG|classes|> Action 9 - Player: Vagabond
+2024-08-01 17:35:22,125|INFO|classes|Legal Actions: [603, 256, 298, 530, 532]
+2024-08-01 17:35:22,125|INFO|classes|	> Action Chosen: 256
+2024-08-01 17:35:22,125|DEBUG|classes|> The Vagabond Aids the Marquise de Cat
+2024-08-01 17:35:22,125|DEBUG|classes|	Protection Racket removed from hand of Vagabond
+2024-08-01 17:35:22,125|DEBUG|classes|	> Protection Racket < given (secretly)
+2024-08-01 17:35:22,125|DEBUG|classes|	The Marquise de Cat is Hostile with the VB, relationship unchanged!
+2024-08-01 17:35:22,125|DEBUG|classes|Choosing which item to exhaust from aiding
+2024-08-01 17:35:22,125|DEBUG|classes|> Action # 10 Played
+2024-08-01 17:35:22,125|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,128|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,128|DEBUG|classes|> Action 10 - Player: Vagabond
+2024-08-01 17:35:22,128|INFO|classes|Legal Actions: [361]
+2024-08-01 17:35:22,128|INFO|classes|	> Action Chosen: 361
+2024-08-01 17:35:22,128|DEBUG|classes|			Tea Track changed by -1
+2024-08-01 17:35:22,128|DEBUG|classes|		Vagabond exhausts a Tea
+2024-08-01 17:35:22,128|DEBUG|classes|Choosing what item to take for aiding
+2024-08-01 17:35:22,129|DEBUG|classes|> Action # 11 Played
+2024-08-01 17:35:22,129|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,129|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,129|DEBUG|classes|> Action 11 - Player: Vagabond
+2024-08-01 17:35:22,129|INFO|classes|Legal Actions: [373]
+2024-08-01 17:35:22,129|INFO|classes|	> Action Chosen: 373
+2024-08-01 17:35:22,129|DEBUG|classes|> The Vagabond does not take an item for Aiding
+2024-08-01 17:35:22,130|DEBUG|classes|	Crafting power: [0, 0, 0]
+2024-08-01 17:35:22,130|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,130|DEBUG|classes|> Action # 12 Played
+2024-08-01 17:35:22,130|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,130|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,130|DEBUG|classes|> Action 12 - Player: Vagabond
+2024-08-01 17:35:22,130|INFO|classes|Legal Actions: [603, 530, 532]
+2024-08-01 17:35:22,130|INFO|classes|	> Action Chosen: 530
+2024-08-01 17:35:22,131|DEBUG|classes|>>> The Vagabond activates the Rabbit Dominance Card,
+2024-08-01 17:35:22,131|DEBUG|classes|       forming a coalition with the Marquise de Cat! <<<
+2024-08-01 17:35:22,131|DEBUG|classes|	Rabbit Dominance removed from hand of Vagabond
+2024-08-01 17:35:22,131|DEBUG|classes|	> The Marquise de Cat is no longer Hostile toward the Vagabond (Now Indifferent)
+2024-08-01 17:35:22,131|DEBUG|classes|	Crafting power: [0, 0, 0]
+2024-08-01 17:35:22,131|DEBUG|classes|No possible daylight actions remaining...
+2024-08-01 17:35:22,131|DEBUG|classes|--- Moving on to Evening ---
+2024-08-01 17:35:22,131|DEBUG|classes|	Vagabond draws: Cobbler
+2024-08-01 17:35:22,131|DEBUG|classes|Vagabond must discard from hand...
+2024-08-01 17:35:22,131|DEBUG|classes|> Action # 13 Played
+2024-08-01 17:35:22,131|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,133|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,133|DEBUG|classes|> Action 13 - Player: Vagabond
+2024-08-01 17:35:22,133|INFO|classes|Legal Actions: [44, 53, 54, 55, 59]
+2024-08-01 17:35:22,133|INFO|classes|	> Action Chosen: 55
+2024-08-01 17:35:22,133|DEBUG|classes|	Command Warren removed from hand of Vagabond
+2024-08-01 17:35:22,133|DEBUG|classes|	Command Warren added to discard pile
+2024-08-01 17:35:22,133|DEBUG|classes|VB Tracks: 0 / 0 / 0
+2024-08-01 17:35:22,133|DEBUG|classes|VB Undamaged: [('Hammer', 1), ('Torch', 1), ('Sword', 1), ('Crossbow', 1), ('Tea', 1)]
+2024-08-01 17:35:22,133|DEBUG|classes|VB Damaged: [('Boot', 1)]
+2024-08-01 17:35:22,133|DEBUG|classes|> Action # 14 Played
+2024-08-01 17:35:22,133|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,134|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,134|DEBUG|classes|> Action 14 - Player: Vagabond
+2024-08-01 17:35:22,134|INFO|classes|Legal Actions: [105]
+2024-08-01 17:35:22,134|INFO|classes|	> Action Chosen: 105
+2024-08-01 17:35:22,134|DEBUG|classes|VB Tracks: 0 / 0 / 0
+2024-08-01 17:35:22,134|DEBUG|classes|VB Undamaged: [('Hammer', 1), ('Torch', 1), ('Sword', 1), ('Crossbow', 1), ('Tea', 1)]
+2024-08-01 17:35:22,134|DEBUG|classes|VB Damaged: [('Boot', 1)]
+2024-08-01 17:35:22,134|DEBUG|classes|--- End of Vagabond's Turn ---
+
+2024-08-01 17:35:22,134|DEBUG|classes|	Resetting for Eyrie's Turn...
+2024-08-01 17:35:22,135|DEBUG|classes|Choosing what suit to add to decree...
+2024-08-01 17:35:22,135|DEBUG|classes|> Action # 15 Played
+2024-08-01 17:35:22,135|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,135|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,135|DEBUG|classes|> Action 15 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,135|INFO|classes|Legal Actions: [367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382]
+2024-08-01 17:35:22,136|INFO|classes|	> Action Chosen: 368
+2024-08-01 17:35:22,136|DEBUG|classes|>> Choosing to add a Rabbit Card to Recruit
+2024-08-01 17:35:22,136|DEBUG|classes|> Action # 16 Played
+2024-08-01 17:35:22,136|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,136|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,136|DEBUG|classes|> Action 16 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,138|INFO|classes|Legal Actions: [395]
+2024-08-01 17:35:22,138|INFO|classes|	> Action Chosen: 395
+2024-08-01 17:35:22,138|DEBUG|classes|	Cobbler removed from hand of Eyrie Dynasties
+2024-08-01 17:35:22,138|DEBUG|classes|		Card Cobbler added to decree at Recruit
+2024-08-01 17:35:22,138|DEBUG|classes|Choosing whether to add 2nd card to decree...
+2024-08-01 17:35:22,138|DEBUG|classes|> Action # 17 Played
+2024-08-01 17:35:22,138|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,138|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,138|DEBUG|classes|> Action 17 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,138|INFO|classes|Legal Actions: [489, 367, 369, 370, 371, 373, 374, 375, 377, 378, 379, 381, 382]
+2024-08-01 17:35:22,138|INFO|classes|	> Action Chosen: 375
+2024-08-01 17:35:22,138|DEBUG|classes|>> Choosing to add a Mouse Card to Battle
+2024-08-01 17:35:22,138|DEBUG|classes|> Action # 18 Played
+2024-08-01 17:35:22,138|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,140|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,140|DEBUG|classes|> Action 18 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,140|INFO|classes|Legal Actions: [418]
+2024-08-01 17:35:22,140|INFO|classes|	> Action Chosen: 418
+2024-08-01 17:35:22,140|DEBUG|classes|	Travel Gear (Mouse) removed from hand of Eyrie Dynasties
+2024-08-01 17:35:22,140|DEBUG|classes|		Card Travel Gear (Mouse) added to decree at Battle
+2024-08-01 17:35:22,140|DEBUG|classes|	Tallying required decree...
+2024-08-01 17:35:22,140|DEBUG|classes|--- Moving on to Daylight ---
+2024-08-01 17:35:22,140|DEBUG|classes|	Crafting power: [1, 2, 2]
+2024-08-01 17:35:22,141|DEBUG|classes|Checking for Crafting / use of Daylight Cards...
+2024-08-01 17:35:22,141|DEBUG|classes|> Action # 19 Played
+2024-08-01 17:35:22,141|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,142|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,142|DEBUG|classes|> Action 19 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,142|INFO|classes|Legal Actions: [490, 33, 21, 104]
+2024-08-01 17:35:22,142|INFO|classes|	> Action Chosen: 490
+2024-08-01 17:35:22,142|DEBUG|classes|- Skipping Crafting...
+2024-08-01 17:35:22,143|DEBUG|classes|Choosing decree-resolving action...
+2024-08-01 17:35:22,143|DEBUG|classes|> Action # 20 Played
+2024-08-01 17:35:22,143|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,143|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,143|DEBUG|classes|> Action 20 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,143|INFO|classes|Legal Actions: [104, 304, 306, 308, 312, 313]
+2024-08-01 17:35:22,143|INFO|classes|	> Action Chosen: 312
+2024-08-01 17:35:22,144|DEBUG|classes|>> Decree: RECRUIT
+2024-08-01 17:35:22,144|DEBUG|classes|		Placing 2 Eyrie Dynasties warriors in clearing 9
+2024-08-01 17:35:22,144|DEBUG|classes|	Fulfilled Fox Recruit requirement on Decree
+2024-08-01 17:35:22,144|DEBUG|classes|Choosing decree-resolving action...
+2024-08-01 17:35:22,144|DEBUG|classes|> Action # 21 Played
+2024-08-01 17:35:22,144|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,145|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,145|DEBUG|classes|> Action 21 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,145|INFO|classes|Legal Actions: [104, 304, 306, 308, 312, 313]
+2024-08-01 17:35:22,145|INFO|classes|	> Action Chosen: 104
+2024-08-01 17:35:22,145|DEBUG|classes|	> Spending a card to take the available Bird Dominance card...
+2024-08-01 17:35:22,145|DEBUG|classes|Choosing card to spend to take Dominance...
+2024-08-01 17:35:22,145|DEBUG|classes|> Action # 22 Played
+2024-08-01 17:35:22,145|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,146|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,146|DEBUG|classes|> Action 22 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,146|INFO|classes|Legal Actions: [56]
+2024-08-01 17:35:22,146|INFO|classes|	> Action Chosen: 56
+2024-08-01 17:35:22,146|DEBUG|classes|	Crossbow (Bird) removed from hand of Eyrie Dynasties
+2024-08-01 17:35:22,146|DEBUG|classes|	Crossbow (Bird) added to discard pile
+2024-08-01 17:35:22,146|DEBUG|classes|Choosing decree-resolving action...
+2024-08-01 17:35:22,147|DEBUG|classes|> Action # 23 Played
+2024-08-01 17:35:22,147|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,147|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,147|DEBUG|classes|> Action 23 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,147|INFO|classes|Legal Actions: [100, 304, 306, 308, 312, 313]
+2024-08-01 17:35:22,148|INFO|classes|	> Action Chosen: 313
+2024-08-01 17:35:22,148|DEBUG|classes|>> Decree: RECRUIT
+2024-08-01 17:35:22,148|DEBUG|classes|		Placing 2 Eyrie Dynasties warriors in clearing 10
+2024-08-01 17:35:22,148|DEBUG|classes|	Fulfilled Bird Recruit requirement on Decree
+2024-08-01 17:35:22,148|DEBUG|classes|Choosing decree-resolving action...
+2024-08-01 17:35:22,148|DEBUG|classes|> Action # 24 Played
+2024-08-01 17:35:22,148|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,149|DEBUG|classes|	> New reward total: [0. 0. 0. 0.]
+2024-08-01 17:35:22,149|DEBUG|classes|> Action 24 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,149|INFO|classes|Legal Actions: [100, 304, 306]
+2024-08-01 17:35:22,149|INFO|classes|	> Action Chosen: 100
+2024-08-01 17:35:22,149|DEBUG|classes|>>> The Eyrie activates the Bird Dominance Card! <<<
+2024-08-01 17:35:22,149|DEBUG|classes|	Bird Dominance removed from hand of Eyrie Dynasties
+2024-08-01 17:35:22,150|DEBUG|classes|Choosing decree-resolving action...
+2024-08-01 17:35:22,150|DEBUG|classes|> Action # 25 Played
+2024-08-01 17:35:22,150|DEBUG|classes|- Reward for this action: [0.046, -0.092, 0.046, 0.046]
+2024-08-01 17:35:22,150|DEBUG|classes|	> New reward total: [ 0.046 -0.092  0.046  0.046]
+2024-08-01 17:35:22,150|DEBUG|classes|> Action 25 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,150|INFO|classes|Legal Actions: [304, 306]
+2024-08-01 17:35:22,152|INFO|classes|	> Action Chosen: 306
+2024-08-01 17:35:22,152|DEBUG|classes|>> Decree: RECRUIT
+2024-08-01 17:35:22,152|DEBUG|classes|		Placing 2 Eyrie Dynasties warriors in clearing 3
+2024-08-01 17:35:22,152|DEBUG|classes|	Fulfilled Rabbit Recruit requirement on Decree
+2024-08-01 17:35:22,152|DEBUG|classes|Choosing decree-resolving action...
+2024-08-01 17:35:22,152|DEBUG|classes|> Action # 26 Played
+2024-08-01 17:35:22,153|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,153|DEBUG|classes|	> New reward total: [ 0.046 -0.092  0.046  0.046]
+2024-08-01 17:35:22,153|DEBUG|classes|> Action 26 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,153|INFO|classes|Legal Actions: [336]
+2024-08-01 17:35:22,153|INFO|classes|	> Action Chosen: 336
+2024-08-01 17:35:22,153|DEBUG|classes|>> Decree: BATTLE
+2024-08-01 17:35:22,153|DEBUG|classes|	Fulfilled Bird Battle requirement on Decree
+2024-08-01 17:35:22,154|DEBUG|classes|	--- BATTLE STARTED: Eyrie Dynasties Attacks Marquise de Cat in clearing 9
+2024-08-01 17:35:22,154|DEBUG|classes|Marquise de Cat chose not to ambush
+2024-08-01 17:35:22,154|DEBUG|classes|--- DICE ROLL: [1, 1]
+2024-08-01 17:35:22,154|DEBUG|classes|--- Dealing hits to defender...
+2024-08-01 17:35:22,154|DEBUG|classes|- Removed 1 Marquise de Cat warrior from clearing 9
+2024-08-01 17:35:22,154|DEBUG|classes|--- Dealing hits to attacker...
+2024-08-01 17:35:22,154|DEBUG|classes|- Removed 1 Eyrie Dynasties warrior from clearing 9
+2024-08-01 17:35:22,154|DEBUG|classes|--- BATTLE FINISHED ---
+2024-08-01 17:35:22,154|DEBUG|classes|> Action # 27 Played
+2024-08-01 17:35:22,155|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,155|DEBUG|classes|	> New reward total: [ 0.046 -0.092  0.046  0.046]
+2024-08-01 17:35:22,155|DEBUG|classes|> Action 27 - Player: Marquise de Cat
+2024-08-01 17:35:22,157|INFO|classes|Legal Actions: [427, 452]
+2024-08-01 17:35:22,157|INFO|classes|	> Action Chosen: 427
+2024-08-01 17:35:22,157|DEBUG|classes|The Marquise do not use Field Hospitals on the 1 warriors in the Fox Clearing
+2024-08-01 17:35:22,157|DEBUG|classes|>> TURMOILING
+2024-08-01 17:35:22,157|DEBUG|classes|	-2 Point(s) not scored due to active dominance.
+2024-08-01 17:35:22,157|DEBUG|classes|	Stand and Deliver! added to discard pile
+2024-08-01 17:35:22,158|DEBUG|classes|	Cobbler added to discard pile
+2024-08-01 17:35:22,158|DEBUG|classes|	Travel Gear (Mouse) added to discard pile
+2024-08-01 17:35:22,158|DEBUG|classes|Choosing new leader after turmoil...
+2024-08-01 17:35:22,158|DEBUG|classes|> Action # 28 Played
+2024-08-01 17:35:22,158|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,158|DEBUG|classes|	> New reward total: [ 0.046 -0.092  0.046  0.046]
+2024-08-01 17:35:22,158|DEBUG|classes|> Action 28 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,158|INFO|classes|Legal Actions: [363, 365, 366]
+2024-08-01 17:35:22,158|INFO|classes|	> Action Chosen: 366
+2024-08-01 17:35:22,158|DEBUG|classes|	New Leader Chosen: Despot
+2024-08-01 17:35:22,158|DEBUG|classes|		Card Loyal Vizier added to decree at Move
+2024-08-01 17:35:22,158|DEBUG|classes|		Card Loyal Vizier added to decree at Build
+2024-08-01 17:35:22,158|DEBUG|classes|--- Moving on to Evening ---
+2024-08-01 17:35:22,161|DEBUG|classes|	4 Point(s) not scored due to active dominance.
+2024-08-01 17:35:22,162|DEBUG|classes|	Eyrie Dynasties draws: Crossbow (Mouse)
+2024-08-01 17:35:22,162|DEBUG|classes|	Eyrie Dynasties draws: Travel Gear (Fox)
+2024-08-01 17:35:22,162|DEBUG|classes|> Action # 29 Played
+2024-08-01 17:35:22,164|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,164|DEBUG|classes|	> New reward total: [ 0.046 -0.092  0.046  0.046]
+2024-08-01 17:35:22,165|DEBUG|classes|> Action 29 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,165|INFO|classes|Legal Actions: [105]
+2024-08-01 17:35:22,165|INFO|classes|	> Action Chosen: 105
+2024-08-01 17:35:22,165|DEBUG|classes|--- End of Eyrie's Turn ---
+
+2024-08-01 17:35:22,165|DEBUG|classes|	Resetting for Alliance's Turn...
+2024-08-01 17:35:22,167|DEBUG|classes|	Cannot start any revolts...
+2024-08-01 17:35:22,167|DEBUG|classes|- Checking for spreading sympathy...
+2024-08-01 17:35:22,167|DEBUG|classes|> Action # 30 Played
+2024-08-01 17:35:22,167|DEBUG|classes|- Reward for this action: [0.0115, -0.023, 0.0115, 0.0115]
+2024-08-01 17:35:22,168|DEBUG|classes|	> New reward total: [ 0.0575 -0.115   0.0575  0.0575]
+2024-08-01 17:35:22,168|DEBUG|classes|> Action 30 - Player: Woodland Alliance
+2024-08-01 17:35:22,168|INFO|classes|Legal Actions: [522, 420, 425]
+2024-08-01 17:35:22,170|INFO|classes|	> Action Chosen: 425
+2024-08-01 17:35:22,170|DEBUG|classes|- The Alliance spread sympathy to Clearing 8 -
+2024-08-01 17:35:22,170|DEBUG|classes|	Choosing supporter to spend (2 needed)
+2024-08-01 17:35:22,170|DEBUG|classes|> Action # 31 Played
+2024-08-01 17:35:22,170|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,171|DEBUG|classes|	> New reward total: [ 0.0575 -0.115   0.0575  0.0575]
+2024-08-01 17:35:22,171|DEBUG|classes|> Action 31 - Player: Woodland Alliance
+2024-08-01 17:35:22,171|INFO|classes|Legal Actions: [380, 389]
+2024-08-01 17:35:22,171|INFO|classes|	> Action Chosen: 389
+2024-08-01 17:35:22,171|DEBUG|classes|	Command Warren removed from Supporters of Woodland Alliance
+2024-08-01 17:35:22,171|DEBUG|classes|	Command Warren added to discard pile
+2024-08-01 17:35:22,171|DEBUG|classes|	Choosing supporter to spend (1 needed)
+2024-08-01 17:35:22,173|DEBUG|classes|> Action # 32 Played
+2024-08-01 17:35:22,173|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,173|DEBUG|classes|	> New reward total: [ 0.0575 -0.115   0.0575  0.0575]
+2024-08-01 17:35:22,173|DEBUG|classes|> Action 32 - Player: Woodland Alliance
+2024-08-01 17:35:22,173|INFO|classes|Legal Actions: [380]
+2024-08-01 17:35:22,173|INFO|classes|	> Action Chosen: 380
+2024-08-01 17:35:22,173|DEBUG|classes|	Armorers removed from Supporters of Woodland Alliance
+2024-08-01 17:35:22,173|DEBUG|classes|	Armorers added to discard pile
+2024-08-01 17:35:22,173|DEBUG|classes|		Sympathy token placed in clearing 8
+2024-08-01 17:35:22,173|DEBUG|classes|	Woodland Alliance Points changed by 1
+2024-08-01 17:35:22,173|DEBUG|classes|		New Score:
+2024-08-01 17:35:22,173|DEBUG|classes|		> Marquise de Cat: 19
+2024-08-01 17:35:22,175|DEBUG|classes|		> Eyrie Dynasties: -1
+2024-08-01 17:35:22,175|DEBUG|classes|			- Bird Dominance Active
+2024-08-01 17:35:22,175|DEBUG|classes|		> Woodland Alliance: 20
+2024-08-01 17:35:22,176|DEBUG|classes|		> Vagabond: -1
+2024-08-01 17:35:22,176|DEBUG|classes|			- Rabbit Dominance Active
+2024-08-01 17:35:22,176|DEBUG|classes|			 > Formed Coalition with the Marquise de Cat
+2024-08-01 17:35:22,176|DEBUG|classes|	Cannot spready sympathy...
+2024-08-01 17:35:22,176|DEBUG|classes|--- Moving on to Daylight ---
+2024-08-01 17:35:22,176|DEBUG|classes|	Crafting power: [2, 1, 1]
+2024-08-01 17:35:22,176|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,176|DEBUG|classes|> Action # 33 Played
+2024-08-01 17:35:22,176|DEBUG|classes|- Reward for this action: [-0.0115, -0.0115, 0.023, -0.0115]
+2024-08-01 17:35:22,176|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,177|DEBUG|classes|> Action 33 - Player: Woodland Alliance
+2024-08-01 17:35:22,177|INFO|classes|Legal Actions: [524, 5, 461, 431, 434, 440, 449, 482, 491, 503, 473, 476]
+2024-08-01 17:35:22,177|INFO|classes|	> Action Chosen: 431
+2024-08-01 17:35:22,177|DEBUG|classes|	Ambush! (Fox) removed from hand of Woodland Alliance
+2024-08-01 17:35:22,177|DEBUG|classes|	> Mobilize: Ambush! (Fox) added to supporters
+2024-08-01 17:35:22,177|DEBUG|classes|		Ambush! (Fox) added to supporter pile
+2024-08-01 17:35:22,177|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,177|DEBUG|classes|> Action # 34 Played
+2024-08-01 17:35:22,177|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,179|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,179|DEBUG|classes|> Action 34 - Player: Woodland Alliance
+2024-08-01 17:35:22,179|INFO|classes|Legal Actions: [524, 5, 461, 440, 449, 434, 482, 491, 476, 503]
+2024-08-01 17:35:22,179|INFO|classes|	> Action Chosen: 476
+2024-08-01 17:35:22,179|DEBUG|classes|	Armorers removed from hand of Woodland Alliance
+2024-08-01 17:35:22,179|DEBUG|classes|	Armorers added to discard pile
+2024-08-01 17:35:22,179|DEBUG|classes|> Train: Added an Officer to box (4 Total)
+2024-08-01 17:35:22,179|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,179|DEBUG|classes|> Action # 35 Played
+2024-08-01 17:35:22,179|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,180|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,180|DEBUG|classes|> Action 35 - Player: Woodland Alliance
+2024-08-01 17:35:22,180|INFO|classes|Legal Actions: [524, 461, 440, 449, 482, 491, 503]
+2024-08-01 17:35:22,180|INFO|classes|	> Action Chosen: 449
+2024-08-01 17:35:22,180|DEBUG|classes|	Foxfolk Steel removed from hand of Woodland Alliance
+2024-08-01 17:35:22,180|DEBUG|classes|	> Mobilize: Foxfolk Steel added to supporters
+2024-08-01 17:35:22,180|DEBUG|classes|		Foxfolk Steel added to supporter pile
+2024-08-01 17:35:22,180|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,180|DEBUG|classes|> Action # 36 Played
+2024-08-01 17:35:22,180|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,182|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,182|DEBUG|classes|> Action 36 - Player: Woodland Alliance
+2024-08-01 17:35:22,182|INFO|classes|Legal Actions: [524, 461, 440, 482, 503]
+2024-08-01 17:35:22,182|INFO|classes|	> Action Chosen: 524
+2024-08-01 17:35:22,182|DEBUG|classes|- Skipping to Evening Phase...
+2024-08-01 17:35:22,182|DEBUG|classes|--- Moving on to Evening ---
+2024-08-01 17:35:22,182|DEBUG|classes|Choosing Military Operation (4 Remaining)...
+2024-08-01 17:35:22,182|DEBUG|classes|> Action # 37 Played
+2024-08-01 17:35:22,182|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,183|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,183|DEBUG|classes|> Action 37 - Player: Woodland Alliance
+2024-08-01 17:35:22,183|INFO|classes|Legal Actions: [525, 135, 137, 138, 217, 211, 213, 224, 272, 346, 347, 350, 303, 309, 338]
+2024-08-01 17:35:22,183|INFO|classes|	> Action Chosen: 137
+2024-08-01 17:35:22,183|DEBUG|classes|Choosing to move from Clearing 0 to Clearing 3
+2024-08-01 17:35:22,183|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,183|DEBUG|classes|> Action # 38 Played
+2024-08-01 17:35:22,183|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,183|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,183|DEBUG|classes|> Action 38 - Player: Woodland Alliance
+2024-08-01 17:35:22,183|INFO|classes|Legal Actions: [278]
+2024-08-01 17:35:22,183|INFO|classes|	> Action Chosen: 278
+2024-08-01 17:35:22,183|DEBUG|classes|> Operation: Move
+2024-08-01 17:35:22,185|DEBUG|classes|> Moving 1 warriors...
+2024-08-01 17:35:22,185|DEBUG|classes|		Moving 1 warriors of Woodland Alliance from 0 to 3
+2024-08-01 17:35:22,185|DEBUG|classes|Choosing Military Operation (3 Remaining)...
+2024-08-01 17:35:22,185|DEBUG|classes|> Action # 39 Played
+2024-08-01 17:35:22,185|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,185|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,185|DEBUG|classes|> Action 39 - Player: Woodland Alliance
+2024-08-01 17:35:22,185|INFO|classes|Legal Actions: [525, 170, 217, 211, 213, 224, 272, 354, 346, 347, 350, 303, 309, 330, 338]
+2024-08-01 17:35:22,185|INFO|classes|	> Action Chosen: 217
+2024-08-01 17:35:22,185|DEBUG|classes|Choosing to move from Clearing 6 to Clearing 11
+2024-08-01 17:35:22,185|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,185|DEBUG|classes|> Action # 40 Played
+2024-08-01 17:35:22,185|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,185|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,185|DEBUG|classes|> Action 40 - Player: Woodland Alliance
+2024-08-01 17:35:22,185|INFO|classes|Legal Actions: [278]
+2024-08-01 17:35:22,185|INFO|classes|	> Action Chosen: 278
+2024-08-01 17:35:22,185|DEBUG|classes|> Operation: Move
+2024-08-01 17:35:22,187|DEBUG|classes|> Moving 1 warriors...
+2024-08-01 17:35:22,187|DEBUG|classes|		Moving 1 warriors of Woodland Alliance from 6 to 11
+2024-08-01 17:35:22,187|DEBUG|classes|Choosing Military Operation (2 Remaining)...
+2024-08-01 17:35:22,187|DEBUG|classes|> Action # 41 Played
+2024-08-01 17:35:22,187|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,187|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,187|DEBUG|classes|> Action 41 - Player: Woodland Alliance
+2024-08-01 17:35:22,187|INFO|classes|Legal Actions: [525, 170, 224, 272, 354, 346, 347, 350, 303, 309, 330, 338]
+2024-08-01 17:35:22,187|INFO|classes|	> Action Chosen: 224
+2024-08-01 17:35:22,187|DEBUG|classes|Choosing to move from Clearing 7 to Clearing 6
+2024-08-01 17:35:22,187|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,187|DEBUG|classes|> Action # 42 Played
+2024-08-01 17:35:22,187|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,189|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,189|DEBUG|classes|> Action 42 - Player: Woodland Alliance
+2024-08-01 17:35:22,189|INFO|classes|Legal Actions: [278]
+2024-08-01 17:35:22,189|INFO|classes|	> Action Chosen: 278
+2024-08-01 17:35:22,189|DEBUG|classes|> Operation: Move
+2024-08-01 17:35:22,190|DEBUG|classes|> Moving 1 warriors...
+2024-08-01 17:35:22,190|DEBUG|classes|		Moving 1 warriors of Woodland Alliance from 7 to 6
+2024-08-01 17:35:22,190|DEBUG|classes|Choosing Military Operation (1 Remaining)...
+2024-08-01 17:35:22,190|DEBUG|classes|> Action # 43 Played
+2024-08-01 17:35:22,190|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,190|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,190|DEBUG|classes|> Action 43 - Player: Woodland Alliance
+2024-08-01 17:35:22,190|INFO|classes|Legal Actions: [525, 170, 217, 211, 213, 272, 354, 347, 350, 303, 309, 330, 338]
+2024-08-01 17:35:22,190|INFO|classes|	> Action Chosen: 213
+2024-08-01 17:35:22,192|DEBUG|classes|Choosing to move from Clearing 6 to Clearing 7
+2024-08-01 17:35:22,192|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,192|DEBUG|classes|> Action # 44 Played
+2024-08-01 17:35:22,192|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,192|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,192|DEBUG|classes|> Action 44 - Player: Woodland Alliance
+2024-08-01 17:35:22,192|INFO|classes|Legal Actions: [278]
+2024-08-01 17:35:22,192|INFO|classes|	> Action Chosen: 278
+2024-08-01 17:35:22,192|DEBUG|classes|> Operation: Move
+2024-08-01 17:35:22,192|DEBUG|classes|> Moving 1 warriors...
+2024-08-01 17:35:22,192|DEBUG|classes|		Moving 1 warriors of Woodland Alliance from 6 to 7
+2024-08-01 17:35:22,192|DEBUG|classes|No military operations left to use...
+2024-08-01 17:35:22,192|DEBUG|classes|	Woodland Alliance draws: Root Tea (Fox)
+2024-08-01 17:35:22,192|DEBUG|classes|	Woodland Alliance draws: Royal Claim
+2024-08-01 17:35:22,192|DEBUG|classes|	Woodland Alliance draws: Brutal Tactics
+2024-08-01 17:35:22,192|DEBUG|classes|> Action # 45 Played
+2024-08-01 17:35:22,192|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,194|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,194|DEBUG|classes|> Action 45 - Player: Woodland Alliance
+2024-08-01 17:35:22,194|INFO|classes|Legal Actions: [105]
+2024-08-01 17:35:22,194|INFO|classes|	> Action Chosen: 105
+2024-08-01 17:35:22,194|DEBUG|classes|--- End of Alliance's Turn ---
+
+2024-08-01 17:35:22,194|DEBUG|classes|	Resetting for Marquise's Turn...
+2024-08-01 17:35:22,194|DEBUG|classes|	Producing wood at sawmills...
+2024-08-01 17:35:22,194|DEBUG|classes|	No wood to be placed / No sawmills to generate wood at
+2024-08-01 17:35:22,194|DEBUG|classes|Finished placing wood.
+2024-08-01 17:35:22,194|DEBUG|classes|--- Moving on to Daylight ---
+2024-08-01 17:35:22,194|DEBUG|classes|	Crafting power: [2, 2, 1]
+2024-08-01 17:35:22,194|DEBUG|classes|Checking for Crafting / use of Daylight Cards...
+2024-08-01 17:35:22,194|DEBUG|classes|> Action # 46 Played
+2024-08-01 17:35:22,194|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,196|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,196|DEBUG|classes|> Action 46 - Player: Marquise de Cat
+2024-08-01 17:35:22,196|INFO|classes|Legal Actions: [543, 24, 9, 22, 30]
+2024-08-01 17:35:22,196|INFO|classes|	> Action Chosen: 543
+2024-08-01 17:35:22,196|DEBUG|classes|- Skipped crafting / other cards
+2024-08-01 17:35:22,196|DEBUG|classes|Checking for next Daylight Step 2 action (3 actions left)...
+2024-08-01 17:35:22,196|DEBUG|classes|> Action # 47 Played
+2024-08-01 17:35:22,196|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,196|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,198|DEBUG|classes|> Action 47 - Player: Marquise de Cat
+2024-08-01 17:35:22,198|INFO|classes|Legal Actions: [544, 332, 343, 346, 347, 350, 159, 161, 165, 182, 190, 187, 197, 198, 200, 202, 204, 220, 229, 224, 239, 234, 235, 276, 272, 273, 409, 370]
+2024-08-01 17:35:22,198|INFO|classes|	> Action Chosen: 159
+2024-08-01 17:35:22,198|DEBUG|classes|Choosing to move from Clearing 2 to Clearing 1
+2024-08-01 17:35:22,198|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,198|DEBUG|classes|> Action # 48 Played
+2024-08-01 17:35:22,198|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,198|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,199|DEBUG|classes|> Action 48 - Player: Marquise de Cat
+2024-08-01 17:35:22,199|INFO|classes|Legal Actions: [278, 279]
+2024-08-01 17:35:22,199|INFO|classes|	> Action Chosen: 278
+2024-08-01 17:35:22,199|DEBUG|classes|> Moving 1 warriors...
+2024-08-01 17:35:22,199|DEBUG|classes|		Moving 1 warriors of Marquise de Cat from 2 to 1
+2024-08-01 17:35:22,199|DEBUG|classes|Finding 2nd move of march...
+2024-08-01 17:35:22,199|DEBUG|classes|> Action # 49 Played
+2024-08-01 17:35:22,199|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,199|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,199|DEBUG|classes|> Action 49 - Player: Marquise de Cat
+2024-08-01 17:35:22,199|INFO|classes|Legal Actions: [96, 148, 159, 161, 165, 182, 190, 187, 197, 198, 200, 202, 204, 220, 229, 224, 239, 234, 235, 276, 272, 273]
+2024-08-01 17:35:22,199|INFO|classes|	> Action Chosen: 182
+2024-08-01 17:35:22,200|DEBUG|classes|Choosing to move from Clearing 4 to Clearing 0
+2024-08-01 17:35:22,200|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,200|DEBUG|classes|> Action # 50 Played
+2024-08-01 17:35:22,200|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,200|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,200|DEBUG|classes|> Action 50 - Player: Marquise de Cat
+2024-08-01 17:35:22,200|INFO|classes|Legal Actions: [278, 279]
+2024-08-01 17:35:22,200|INFO|classes|	> Action Chosen: 278
+2024-08-01 17:35:22,200|DEBUG|classes|> Moving 1 warriors...
+2024-08-01 17:35:22,200|DEBUG|classes|		Moving 1 warriors of Marquise de Cat from 4 to 0
+2024-08-01 17:35:22,200|DEBUG|classes|Outrage Triggered! Marquise de Cat must pay the Alliance 1 Fox Card
+2024-08-01 17:35:22,200|DEBUG|classes|> Action # 51 Played
+2024-08-01 17:35:22,200|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,202|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,202|DEBUG|classes|> Action 51 - Player: Marquise de Cat
+2024-08-01 17:35:22,202|INFO|classes|Legal Actions: [494]
+2024-08-01 17:35:22,202|INFO|classes|	> Action Chosen: 494
+2024-08-01 17:35:22,202|DEBUG|classes|	Protection Racket removed from hand of Marquise de Cat
+2024-08-01 17:35:22,202|DEBUG|classes|		Protection Racket added to supporter pile
+2024-08-01 17:35:22,202|DEBUG|classes|Checking for next Daylight Step 2 action (2 actions left)...
+2024-08-01 17:35:22,203|DEBUG|classes|> Action # 52 Played
+2024-08-01 17:35:22,203|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,203|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,203|DEBUG|classes|> Action 52 - Player: Marquise de Cat
+2024-08-01 17:35:22,203|INFO|classes|Legal Actions: [544, 328, 332, 339, 343, 346, 347, 350, 138, 148, 159, 161, 165, 182, 190, 187, 197, 198, 200, 202, 204, 220, 229, 224, 239, 234, 235, 276, 272, 273, 409, 370]
+2024-08-01 17:35:22,203|INFO|classes|	> Action Chosen: 239
+2024-08-01 17:35:22,203|DEBUG|classes|Choosing to move from Clearing 8 to Clearing 9
+2024-08-01 17:35:22,203|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,203|DEBUG|classes|> Action # 53 Played
+2024-08-01 17:35:22,203|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,205|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,205|DEBUG|classes|> Action 53 - Player: Marquise de Cat
+2024-08-01 17:35:22,205|INFO|classes|Legal Actions: [278]
+2024-08-01 17:35:22,205|INFO|classes|	> Action Chosen: 278
+2024-08-01 17:35:22,205|DEBUG|classes|> Moving 1 warriors...
+2024-08-01 17:35:22,205|DEBUG|classes|		Moving 1 warriors of Marquise de Cat from 8 to 9
+2024-08-01 17:35:22,205|DEBUG|classes|Finding 2nd move of march...
+2024-08-01 17:35:22,206|DEBUG|classes|> Action # 54 Played
+2024-08-01 17:35:22,206|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,206|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,206|DEBUG|classes|> Action 54 - Player: Marquise de Cat
+2024-08-01 17:35:22,206|INFO|classes|Legal Actions: [96, 138, 148, 159, 161, 165, 182, 190, 187, 197, 198, 200, 202, 204, 220, 229, 224, 276, 272, 273]
+2024-08-01 17:35:22,206|INFO|classes|	> Action Chosen: 165
+2024-08-01 17:35:22,206|DEBUG|classes|Choosing to move from Clearing 2 to Clearing 7
+2024-08-01 17:35:22,206|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,206|DEBUG|classes|> Action # 55 Played
+2024-08-01 17:35:22,206|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,206|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,206|DEBUG|classes|> Action 55 - Player: Marquise de Cat
+2024-08-01 17:35:22,206|INFO|classes|Legal Actions: [278]
+2024-08-01 17:35:22,206|INFO|classes|	> Action Chosen: 278
+2024-08-01 17:35:22,206|DEBUG|classes|> Moving 1 warriors...
+2024-08-01 17:35:22,206|DEBUG|classes|		Moving 1 warriors of Marquise de Cat from 2 to 7
+2024-08-01 17:35:22,206|DEBUG|classes|Checking for next Daylight Step 2 action (1 actions left)...
+2024-08-01 17:35:22,206|DEBUG|classes|> Action # 56 Played
+2024-08-01 17:35:22,206|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,206|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,209|DEBUG|classes|> Action 56 - Player: Marquise de Cat
+2024-08-01 17:35:22,209|INFO|classes|Legal Actions: [544, 328, 332, 336, 339, 343, 346, 350, 138, 148, 182, 190, 187, 197, 198, 200, 202, 204, 220, 229, 224, 276, 272, 273, 409, 370]
+2024-08-01 17:35:22,209|INFO|classes|	> Action Chosen: 224
+2024-08-01 17:35:22,209|DEBUG|classes|Choosing to move from Clearing 7 to Clearing 6
+2024-08-01 17:35:22,209|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,209|DEBUG|classes|> Action # 57 Played
+2024-08-01 17:35:22,209|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,209|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,210|DEBUG|classes|> Action 57 - Player: Marquise de Cat
+2024-08-01 17:35:22,210|INFO|classes|Legal Actions: [278, 279, 280, 281, 282, 283, 284, 285]
+2024-08-01 17:35:22,210|INFO|classes|	> Action Chosen: 285
+2024-08-01 17:35:22,210|DEBUG|classes|> Moving 8 warriors...
+2024-08-01 17:35:22,210|DEBUG|classes|		Moving 8 warriors of Marquise de Cat from 7 to 6
+2024-08-01 17:35:22,210|DEBUG|classes|Outrage Triggered! Marquise de Cat must pay the Alliance 1 Mouse Card
+2024-08-01 17:35:22,210|DEBUG|classes|> Action # 58 Played
+2024-08-01 17:35:22,210|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,210|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,210|DEBUG|classes|> Action 58 - Player: Marquise de Cat
+2024-08-01 17:35:22,210|INFO|classes|Legal Actions: [492]
+2024-08-01 17:35:22,210|INFO|classes|	> Action Chosen: 492
+2024-08-01 17:35:22,210|DEBUG|classes|	Investments removed from hand of Marquise de Cat
+2024-08-01 17:35:22,210|DEBUG|classes|		Investments added to supporter pile
+2024-08-01 17:35:22,210|DEBUG|classes|Finding 2nd move of march...
+2024-08-01 17:35:22,210|DEBUG|classes|> Action # 59 Played
+2024-08-01 17:35:22,210|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,210|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,210|DEBUG|classes|> Action 59 - Player: Marquise de Cat
+2024-08-01 17:35:22,210|INFO|classes|Legal Actions: [96, 138, 148, 182, 190, 187, 197, 198, 200, 202, 204, 217, 211, 213, 276, 272, 273]
+2024-08-01 17:35:22,213|INFO|classes|	> Action Chosen: 217
+2024-08-01 17:35:22,213|DEBUG|classes|Choosing to move from Clearing 6 to Clearing 11
+2024-08-01 17:35:22,213|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,213|DEBUG|classes|> Action # 60 Played
+2024-08-01 17:35:22,213|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,213|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,213|DEBUG|classes|> Action 60 - Player: Marquise de Cat
+2024-08-01 17:35:22,213|INFO|classes|Legal Actions: [278, 279, 280, 281, 282, 283, 284, 285]
+2024-08-01 17:35:22,213|INFO|classes|	> Action Chosen: 278
+2024-08-01 17:35:22,213|DEBUG|classes|> Moving 1 warriors...
+2024-08-01 17:35:22,213|DEBUG|classes|		Moving 1 warriors of Marquise de Cat from 6 to 11
+2024-08-01 17:35:22,214|DEBUG|classes|	End of Daylight phase (no more actions)
+2024-08-01 17:35:22,214|DEBUG|classes|--- Moving on to Evening ---
+2024-08-01 17:35:22,214|DEBUG|classes|	Marquise de Cat draws: Birdy Bindle
+2024-08-01 17:35:22,214|DEBUG|classes|	Marquise de Cat draws: Mouse-in-a-Sack
+2024-08-01 17:35:22,214|DEBUG|classes|> Action # 61 Played
+2024-08-01 17:35:22,214|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,214|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,215|DEBUG|classes|> Action 61 - Player: Marquise de Cat
+2024-08-01 17:35:22,215|INFO|classes|Legal Actions: [105]
+2024-08-01 17:35:22,215|INFO|classes|	> Action Chosen: 105
+2024-08-01 17:35:22,215|DEBUG|classes|--- End of Marquise's Turn ---
+
+2024-08-01 17:35:22,215|DEBUG|classes|	Resetting for Vagabond's Turn...
+2024-08-01 17:35:22,215|DEBUG|classes|VB Tracks: 0 / 0 / 0
+2024-08-01 17:35:22,215|DEBUG|classes|VB Undamaged: [('Hammer', 1), ('Torch', 1), ('Sword', 1), ('Crossbow', 1), ('Tea', 1)]
+2024-08-01 17:35:22,215|DEBUG|classes|VB Damaged: [('Boot', 1)]
+2024-08-01 17:35:22,215|DEBUG|classes|
+> Vagabond is in Clearing 5
+2024-08-01 17:35:22,215|DEBUG|classes|Refreshes remaining to use: 3
+2024-08-01 17:35:22,215|DEBUG|classes|> Action # 62 Played
+2024-08-01 17:35:22,215|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,217|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,217|DEBUG|classes|> Action 62 - Player: Vagabond
+2024-08-01 17:35:22,217|INFO|classes|Legal Actions: [196, 197, 199, 202, 203, 206]
+2024-08-01 17:35:22,217|INFO|classes|	> Action Chosen: 199
+2024-08-01 17:35:22,217|DEBUG|classes|			Tea Track changed by 1
+2024-08-01 17:35:22,217|DEBUG|classes|		Vagabond refreshes an undamaged Tea
+2024-08-01 17:35:22,217|DEBUG|classes|Refreshes remaining to use: 2
+2024-08-01 17:35:22,217|DEBUG|classes|> Action # 63 Played
+2024-08-01 17:35:22,217|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,218|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,218|DEBUG|classes|> Action 63 - Player: Vagabond
+2024-08-01 17:35:22,218|INFO|classes|Legal Actions: [196, 197, 202, 203, 206]
+2024-08-01 17:35:22,218|INFO|classes|	> Action Chosen: 197
+2024-08-01 17:35:22,218|DEBUG|classes|		Vagabond refreshes an undamaged Sword
+2024-08-01 17:35:22,218|DEBUG|classes|Refreshes remaining to use: 1
+2024-08-01 17:35:22,218|DEBUG|classes|> Action # 64 Played
+2024-08-01 17:35:22,218|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,218|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,218|DEBUG|classes|> Action 64 - Player: Vagabond
+2024-08-01 17:35:22,218|INFO|classes|Legal Actions: [202, 203, 196, 206]
+2024-08-01 17:35:22,218|INFO|classes|	> Action Chosen: 203
+2024-08-01 17:35:22,218|DEBUG|classes|		Vagabond refreshes an undamaged Torch
+2024-08-01 17:35:22,218|DEBUG|classes|Refreshes remaining to use: 0
+2024-08-01 17:35:22,218|DEBUG|classes|	Cannot refresh any more items...
+2024-08-01 17:35:22,218|DEBUG|classes|Choosing where to slip...
+2024-08-01 17:35:22,218|DEBUG|classes|> Action # 65 Played
+2024-08-01 17:35:22,220|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,220|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,220|DEBUG|classes|> Action 65 - Player: Vagabond
+2024-08-01 17:35:22,220|INFO|classes|Legal Actions: [96, 215, 216, 218, 220, 222, 225, 226, 227, 228, 229]
+2024-08-01 17:35:22,221|INFO|classes|	> Action Chosen: 216
+2024-08-01 17:35:22,221|DEBUG|classes|> Vagabond sneakily Slips from Clearing 5 to Clearing 4
+2024-08-01 17:35:22,221|DEBUG|classes|--- Moving on to Daylight ---
+2024-08-01 17:35:22,221|DEBUG|classes|	Crafting power: [0, 0, 0]
+2024-08-01 17:35:22,221|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,221|DEBUG|classes|> Action # 66 Played
+2024-08-01 17:35:22,221|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,221|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,221|DEBUG|classes|> Action 66 - Player: Vagabond
+2024-08-01 17:35:22,221|INFO|classes|Legal Actions: [603, 134, 433, 435, 250, 235, 245, 334, 319, 329]
+2024-08-01 17:35:22,221|INFO|classes|	> Action Chosen: 250
+2024-08-01 17:35:22,221|DEBUG|classes|> The Vagabond Aids the Marquise de Cat
+2024-08-01 17:35:22,221|DEBUG|classes|	Favor of the Mice removed from hand of Vagabond
+2024-08-01 17:35:22,221|DEBUG|classes|	> Favor of the Mice < given (secretly)
+2024-08-01 17:35:22,221|DEBUG|classes|	The Vagabond has aided the Marquise de Cat 1/1 time(s) this turn
+2024-08-01 17:35:22,221|DEBUG|classes|	> Relationship improved!
+2024-08-01 17:35:22,221|DEBUG|classes|	1 Point(s) not scored due to active dominance.
+2024-08-01 17:35:22,221|DEBUG|classes|Choosing which item to exhaust from aiding
+2024-08-01 17:35:22,221|DEBUG|classes|> Action # 67 Played
+2024-08-01 17:35:22,224|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,224|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,224|DEBUG|classes|> Action 67 - Player: Vagabond
+2024-08-01 17:35:22,224|INFO|classes|Legal Actions: [359, 361, 365]
+2024-08-01 17:35:22,224|INFO|classes|	> Action Chosen: 361
+2024-08-01 17:35:22,224|DEBUG|classes|			Tea Track changed by -1
+2024-08-01 17:35:22,224|DEBUG|classes|		Vagabond exhausts a Tea
+2024-08-01 17:35:22,224|DEBUG|classes|Choosing what item to take for aiding
+2024-08-01 17:35:22,224|DEBUG|classes|> Action # 68 Played
+2024-08-01 17:35:22,224|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,226|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,226|DEBUG|classes|> Action 68 - Player: Vagabond
+2024-08-01 17:35:22,226|INFO|classes|Legal Actions: [373]
+2024-08-01 17:35:22,226|INFO|classes|	> Action Chosen: 373
+2024-08-01 17:35:22,226|DEBUG|classes|> The Vagabond does not take an item for Aiding
+2024-08-01 17:35:22,226|DEBUG|classes|	Crafting power: [0, 0, 0]
+2024-08-01 17:35:22,226|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,226|DEBUG|classes|> Action # 69 Played
+2024-08-01 17:35:22,226|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,226|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,226|DEBUG|classes|> Action 69 - Player: Vagabond
+2024-08-01 17:35:22,226|INFO|classes|Legal Actions: [603, 134, 433, 435, 235, 245, 319, 329]
+2024-08-01 17:35:22,226|INFO|classes|	> Action Chosen: 603
+2024-08-01 17:35:22,226|DEBUG|classes|- Skipping remaining Daylight actions...
+2024-08-01 17:35:22,226|DEBUG|classes|--- Moving on to Evening ---
+2024-08-01 17:35:22,226|DEBUG|classes|	Vagabond draws: Fox Dominance
+2024-08-01 17:35:22,226|DEBUG|classes|VB Tracks: 0 / 0 / 0
+2024-08-01 17:35:22,228|DEBUG|classes|VB Undamaged: [('Hammer', 1), ('Crossbow', 1), ('Sword', 0), ('Torch', 0), ('Tea', 1)]
+2024-08-01 17:35:22,228|DEBUG|classes|VB Damaged: [('Boot', 1)]
+2024-08-01 17:35:22,228|DEBUG|classes|> Action # 70 Played
+2024-08-01 17:35:22,228|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,228|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,228|DEBUG|classes|> Action 70 - Player: Vagabond
+2024-08-01 17:35:22,228|INFO|classes|Legal Actions: [105]
+2024-08-01 17:35:22,228|INFO|classes|	> Action Chosen: 105
+2024-08-01 17:35:22,228|DEBUG|classes|VB Tracks: 0 / 0 / 0
+2024-08-01 17:35:22,228|DEBUG|classes|VB Undamaged: [('Hammer', 1), ('Crossbow', 1), ('Sword', 0), ('Torch', 0), ('Tea', 1)]
+2024-08-01 17:35:22,228|DEBUG|classes|VB Damaged: [('Boot', 1)]
+2024-08-01 17:35:22,228|DEBUG|classes|--- End of Vagabond's Turn ---
+
+2024-08-01 17:35:22,228|DEBUG|classes|Checking for dominance victory...
+2024-08-01 17:35:22,228|DEBUG|classes|>>> Bird Dominance NOT fulfilled for Eyrie Dynasties...
+2024-08-01 17:35:22,228|DEBUG|classes|	Resetting for Eyrie's Turn...
+2024-08-01 17:35:22,228|DEBUG|classes|Choosing what suit to add to decree...
+2024-08-01 17:35:22,228|DEBUG|classes|> Action # 71 Played
+2024-08-01 17:35:22,230|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,230|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,230|DEBUG|classes|> Action 71 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,230|INFO|classes|Legal Actions: [367, 369, 371, 373, 375, 377, 379, 381]
+2024-08-01 17:35:22,230|INFO|classes|	> Action Chosen: 369
+2024-08-01 17:35:22,230|DEBUG|classes|>> Choosing to add a Fox Card to Recruit
+2024-08-01 17:35:22,230|DEBUG|classes|> Action # 72 Played
+2024-08-01 17:35:22,230|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,230|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,230|DEBUG|classes|> Action 72 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,230|INFO|classes|Legal Actions: [416, 417, 404]
+2024-08-01 17:35:22,230|INFO|classes|	> Action Chosen: 417
+2024-08-01 17:35:22,230|DEBUG|classes|	Travel Gear (Fox) removed from hand of Eyrie Dynasties
+2024-08-01 17:35:22,230|DEBUG|classes|		Card Travel Gear (Fox) added to decree at Recruit
+2024-08-01 17:35:22,230|DEBUG|classes|Choosing whether to add 2nd card to decree...
+2024-08-01 17:35:22,230|DEBUG|classes|> Action # 73 Played
+2024-08-01 17:35:22,230|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,230|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,230|DEBUG|classes|> Action 73 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,230|INFO|classes|Legal Actions: [489, 367, 369, 371, 373, 375, 377, 379, 381]
+2024-08-01 17:35:22,230|INFO|classes|	> Action Chosen: 381
+2024-08-01 17:35:22,230|DEBUG|classes|>> Choosing to add a Fox Card to Build
+2024-08-01 17:35:22,230|DEBUG|classes|> Action # 74 Played
+2024-08-01 17:35:22,230|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,230|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,230|DEBUG|classes|> Action 74 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,230|INFO|classes|Legal Actions: [416, 404]
+2024-08-01 17:35:22,230|INFO|classes|	> Action Chosen: 404
+2024-08-01 17:35:22,230|DEBUG|classes|	Gently Used Knapsack removed from hand of Eyrie Dynasties
+2024-08-01 17:35:22,230|DEBUG|classes|		Card Gently Used Knapsack added to decree at Build
+2024-08-01 17:35:22,234|DEBUG|classes|	Tallying required decree...
+2024-08-01 17:35:22,234|DEBUG|classes|--- Moving on to Daylight ---
+2024-08-01 17:35:22,234|DEBUG|classes|	Crafting power: [1, 2, 2]
+2024-08-01 17:35:22,234|DEBUG|classes|Checking for Crafting / use of Daylight Cards...
+2024-08-01 17:35:22,234|DEBUG|classes|> Action # 75 Played
+2024-08-01 17:35:22,234|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,234|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,234|DEBUG|classes|> Action 75 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,234|INFO|classes|Legal Actions: [490, 33]
+2024-08-01 17:35:22,234|INFO|classes|	> Action Chosen: 490
+2024-08-01 17:35:22,234|DEBUG|classes|- Skipping Crafting...
+2024-08-01 17:35:22,234|DEBUG|classes|Choosing decree-resolving action...
+2024-08-01 17:35:22,234|DEBUG|classes|> Action # 76 Played
+2024-08-01 17:35:22,236|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,236|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,236|DEBUG|classes|> Action 76 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,236|INFO|classes|Legal Actions: [308, 312]
+2024-08-01 17:35:22,236|INFO|classes|	> Action Chosen: 312
+2024-08-01 17:35:22,236|DEBUG|classes|>> Decree: RECRUIT
+2024-08-01 17:35:22,236|DEBUG|classes|		Placing 1 Eyrie Dynasties warriors in clearing 9
+2024-08-01 17:35:22,236|DEBUG|classes|	Fulfilled Fox Recruit requirement on Decree
+2024-08-01 17:35:22,236|DEBUG|classes|Choosing decree-resolving action...
+2024-08-01 17:35:22,236|DEBUG|classes|> Action # 77 Played
+2024-08-01 17:35:22,237|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,237|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,237|DEBUG|classes|> Action 77 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,237|INFO|classes|Legal Actions: [146, 148, 170, 172, 175, 250, 252, 263, 265, 259]
+2024-08-01 17:35:22,237|INFO|classes|	> Action Chosen: 175
+2024-08-01 17:35:22,237|DEBUG|classes|Choosing to move from Clearing 3 to Clearing 5
+2024-08-01 17:35:22,237|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,237|DEBUG|classes|> Action # 78 Played
+2024-08-01 17:35:22,238|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,238|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,238|DEBUG|classes|> Action 78 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,238|INFO|classes|Legal Actions: [278, 279]
+2024-08-01 17:35:22,238|INFO|classes|	> Action Chosen: 278
+2024-08-01 17:35:22,238|DEBUG|classes|>> Decree: MOVE
+2024-08-01 17:35:22,238|DEBUG|classes|		Moving 1 warriors of Eyrie Dynasties from 3 to 5
+2024-08-01 17:35:22,238|DEBUG|classes|	Fulfilled Bird Move requirement on Decree
+2024-08-01 17:35:22,238|DEBUG|classes|>> TURMOILING
+2024-08-01 17:35:22,238|DEBUG|classes|	-2 Point(s) not scored due to active dominance.
+2024-08-01 17:35:22,240|DEBUG|classes|	Travel Gear (Fox) added to discard pile
+2024-08-01 17:35:22,240|DEBUG|classes|	Gently Used Knapsack added to discard pile
+2024-08-01 17:35:22,240|DEBUG|classes|Choosing new leader after turmoil...
+2024-08-01 17:35:22,240|DEBUG|classes|> Action # 79 Played
+2024-08-01 17:35:22,240|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,240|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,240|DEBUG|classes|> Action 79 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,240|INFO|classes|Legal Actions: [363, 365]
+2024-08-01 17:35:22,240|INFO|classes|	> Action Chosen: 363
+2024-08-01 17:35:22,241|DEBUG|classes|	New Leader Chosen: Builder
+2024-08-01 17:35:22,241|DEBUG|classes|		Card Loyal Vizier added to decree at Recruit
+2024-08-01 17:35:22,241|DEBUG|classes|		Card Loyal Vizier added to decree at Move
+2024-08-01 17:35:22,241|DEBUG|classes|--- Moving on to Evening ---
+2024-08-01 17:35:22,242|DEBUG|classes|	4 Point(s) not scored due to active dominance.
+2024-08-01 17:35:22,242|DEBUG|classes|	Eyrie Dynasties draws: Better Burrow Bank
+2024-08-01 17:35:22,242|DEBUG|classes|	Eyrie Dynasties draws: Root Tea (Mouse)
+2024-08-01 17:35:22,242|DEBUG|classes|> Action # 80 Played
+2024-08-01 17:35:22,242|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,242|DEBUG|classes|	> New reward total: [ 0.046  -0.1265  0.0805  0.046 ]
+2024-08-01 17:35:22,244|DEBUG|classes|> Action 80 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,244|INFO|classes|Legal Actions: [105]
+2024-08-01 17:35:22,244|INFO|classes|	> Action Chosen: 105
+2024-08-01 17:35:22,244|DEBUG|classes|--- End of Eyrie's Turn ---
+
+2024-08-01 17:35:22,244|DEBUG|classes|	Resetting for Alliance's Turn...
+2024-08-01 17:35:22,244|DEBUG|classes|	Cannot start any revolts...
+2024-08-01 17:35:22,244|DEBUG|classes|- Checking for spreading sympathy...
+2024-08-01 17:35:22,244|DEBUG|classes|> Action # 81 Played
+2024-08-01 17:35:22,244|DEBUG|classes|- Reward for this action: [0.0115, -0.023, 0.0115, 0.0115]
+2024-08-01 17:35:22,245|DEBUG|classes|	> New reward total: [ 0.0575 -0.1495  0.092   0.0575]
+2024-08-01 17:35:22,245|DEBUG|classes|> Action 81 - Player: Woodland Alliance
+2024-08-01 17:35:22,245|INFO|classes|Legal Actions: [522, 422, 426]
+2024-08-01 17:35:22,245|INFO|classes|	> Action Chosen: 422
+2024-08-01 17:35:22,245|DEBUG|classes|- The Alliance spread sympathy to Clearing 5 -
+2024-08-01 17:35:22,245|DEBUG|classes|	Choosing supporter to spend (3 needed)
+2024-08-01 17:35:22,245|DEBUG|classes|> Action # 82 Played
+2024-08-01 17:35:22,245|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,245|DEBUG|classes|	> New reward total: [ 0.0575 -0.1495  0.092   0.0575]
+2024-08-01 17:35:22,245|DEBUG|classes|> Action 82 - Player: Woodland Alliance
+2024-08-01 17:35:22,247|INFO|classes|Legal Actions: [377, 395, 399]
+2024-08-01 17:35:22,247|INFO|classes|	> Action Chosen: 395
+2024-08-01 17:35:22,247|DEBUG|classes|	Foxfolk Steel removed from Supporters of Woodland Alliance
+2024-08-01 17:35:22,247|DEBUG|classes|	Foxfolk Steel added to discard pile
+2024-08-01 17:35:22,247|DEBUG|classes|	Choosing supporter to spend (2 needed)
+2024-08-01 17:35:22,247|DEBUG|classes|> Action # 83 Played
+2024-08-01 17:35:22,247|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,247|DEBUG|classes|	> New reward total: [ 0.0575 -0.1495  0.092   0.0575]
+2024-08-01 17:35:22,247|DEBUG|classes|> Action 83 - Player: Woodland Alliance
+2024-08-01 17:35:22,247|INFO|classes|Legal Actions: [377, 399]
+2024-08-01 17:35:22,247|INFO|classes|	> Action Chosen: 399
+2024-08-01 17:35:22,247|DEBUG|classes|	Protection Racket removed from Supporters of Woodland Alliance
+2024-08-01 17:35:22,248|DEBUG|classes|	Protection Racket added to discard pile
+2024-08-01 17:35:22,248|DEBUG|classes|	Choosing supporter to spend (1 needed)
+2024-08-01 17:35:22,248|DEBUG|classes|> Action # 84 Played
+2024-08-01 17:35:22,248|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,248|DEBUG|classes|	> New reward total: [ 0.0575 -0.1495  0.092   0.0575]
+2024-08-01 17:35:22,248|DEBUG|classes|> Action 84 - Player: Woodland Alliance
+2024-08-01 17:35:22,248|INFO|classes|Legal Actions: [377]
+2024-08-01 17:35:22,248|INFO|classes|	> Action Chosen: 377
+2024-08-01 17:35:22,248|DEBUG|classes|	Ambush! (Fox) removed from Supporters of Woodland Alliance
+2024-08-01 17:35:22,248|DEBUG|classes|	Ambush! (Fox) added to discard pile
+2024-08-01 17:35:22,248|DEBUG|classes|		Sympathy token placed in clearing 5
+2024-08-01 17:35:22,250|DEBUG|classes|	Woodland Alliance Points changed by 2
+2024-08-01 17:35:22,250|DEBUG|classes|		New Score:
+2024-08-01 17:35:22,250|DEBUG|classes|		> Marquise de Cat: 19
+2024-08-01 17:35:22,250|DEBUG|classes|		> Eyrie Dynasties: -1
+2024-08-01 17:35:22,250|DEBUG|classes|			- Bird Dominance Active
+2024-08-01 17:35:22,250|DEBUG|classes|		> Woodland Alliance: 22
+2024-08-01 17:35:22,250|DEBUG|classes|		> Vagabond: -1
+2024-08-01 17:35:22,250|DEBUG|classes|			- Rabbit Dominance Active
+2024-08-01 17:35:22,250|DEBUG|classes|			 > Formed Coalition with the Marquise de Cat
+2024-08-01 17:35:22,250|DEBUG|classes|	Cannot spready sympathy...
+2024-08-01 17:35:22,250|DEBUG|classes|--- Moving on to Daylight ---
+2024-08-01 17:35:22,250|DEBUG|classes|	Crafting power: [2, 1, 2]
+2024-08-01 17:35:22,251|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,251|DEBUG|classes|> Action # 85 Played
+2024-08-01 17:35:22,251|DEBUG|classes|- Reward for this action: [-0.023, -0.023, 0.046, -0.023]
+2024-08-01 17:35:22,251|DEBUG|classes|	> New reward total: [ 0.0345 -0.1725  0.138   0.0345]
+2024-08-01 17:35:22,251|DEBUG|classes|> Action 85 - Player: Woodland Alliance
+2024-08-01 17:35:22,251|INFO|classes|Legal Actions: [524, 32, 26, 11, 128, 130, 132, 461, 455, 440, 466, 497, 482, 508, 503]
+2024-08-01 17:35:22,251|INFO|classes|	> Action Chosen: 11
+2024-08-01 17:35:22,251|DEBUG|classes|	Woodland Alliance crafts: Brutal Tactics
+2024-08-01 17:35:22,251|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,251|DEBUG|classes|> Action # 86 Played
+2024-08-01 17:35:22,251|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,251|DEBUG|classes|	> New reward total: [ 0.0345 -0.1725  0.138   0.0345]
+2024-08-01 17:35:22,251|DEBUG|classes|> Action 86 - Player: Woodland Alliance
+2024-08-01 17:35:22,251|INFO|classes|Legal Actions: [524, 26, 461, 455, 440, 466, 497, 482, 508, 503]
+2024-08-01 17:35:22,251|INFO|classes|	> Action Chosen: 26
+2024-08-01 17:35:22,251|DEBUG|classes|	Woodland Alliance crafts: Tea
+2024-08-01 17:35:22,254|DEBUG|classes|	Woodland Alliance Points changed by 2
+2024-08-01 17:35:22,254|DEBUG|classes|		New Score:
+2024-08-01 17:35:22,254|DEBUG|classes|		> Marquise de Cat: 19
+2024-08-01 17:35:22,254|DEBUG|classes|		> Eyrie Dynasties: -1
+2024-08-01 17:35:22,254|DEBUG|classes|			- Bird Dominance Active
+2024-08-01 17:35:22,254|DEBUG|classes|		> Woodland Alliance: 24
+2024-08-01 17:35:22,254|DEBUG|classes|		> Vagabond: -1
+2024-08-01 17:35:22,254|DEBUG|classes|			- Rabbit Dominance Active
+2024-08-01 17:35:22,254|DEBUG|classes|			 > Formed Coalition with the Marquise de Cat
+2024-08-01 17:35:22,254|DEBUG|classes|	Root Tea (Fox) removed from hand of Woodland Alliance
+2024-08-01 17:35:22,254|DEBUG|classes|	Root Tea (Fox) added to discard pile
+2024-08-01 17:35:22,254|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,254|DEBUG|classes|> Action # 87 Played
+2024-08-01 17:35:22,254|DEBUG|classes|- Reward for this action: [-0.023, -0.023, 0.046, -0.023]
+2024-08-01 17:35:22,255|DEBUG|classes|	> New reward total: [ 0.0115 -0.1955  0.184   0.0115]
+2024-08-01 17:35:22,255|DEBUG|classes|> Action 87 - Player: Woodland Alliance
+2024-08-01 17:35:22,255|INFO|classes|Legal Actions: [524, 461, 440, 466, 482, 508, 503]
+2024-08-01 17:35:22,255|INFO|classes|	> Action Chosen: 440
+2024-08-01 17:35:22,255|DEBUG|classes|	Brutal Tactics removed from hand of Woodland Alliance
+2024-08-01 17:35:22,255|DEBUG|classes|	> Mobilize: Brutal Tactics added to supporters
+2024-08-01 17:35:22,255|DEBUG|classes|		Brutal Tactics added to supporter pile
+2024-08-01 17:35:22,255|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,255|DEBUG|classes|> Action # 88 Played
+2024-08-01 17:35:22,256|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,256|DEBUG|classes|	> New reward total: [ 0.0115 -0.1955  0.184   0.0115]
+2024-08-01 17:35:22,256|DEBUG|classes|> Action 88 - Player: Woodland Alliance
+2024-08-01 17:35:22,256|INFO|classes|Legal Actions: [524, 461, 466, 508, 503]
+2024-08-01 17:35:22,256|INFO|classes|	> Action Chosen: 503
+2024-08-01 17:35:22,256|DEBUG|classes|	Sword removed from hand of Woodland Alliance
+2024-08-01 17:35:22,256|DEBUG|classes|	Sword added to discard pile
+2024-08-01 17:35:22,256|DEBUG|classes|> Train: Added an Officer to box (5 Total)
+2024-08-01 17:35:22,256|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,256|DEBUG|classes|> Action # 89 Played
+2024-08-01 17:35:22,258|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,258|DEBUG|classes|	> New reward total: [ 0.0115 -0.1955  0.184   0.0115]
+2024-08-01 17:35:22,258|DEBUG|classes|> Action 89 - Player: Woodland Alliance
+2024-08-01 17:35:22,258|INFO|classes|Legal Actions: [524, 466]
+2024-08-01 17:35:22,258|INFO|classes|	> Action Chosen: 466
+2024-08-01 17:35:22,258|DEBUG|classes|	Royal Claim removed from hand of Woodland Alliance
+2024-08-01 17:35:22,258|DEBUG|classes|	> Mobilize: Royal Claim added to supporters
+2024-08-01 17:35:22,258|DEBUG|classes|		Royal Claim added to supporter pile
+2024-08-01 17:35:22,258|DEBUG|classes|No possible daylight actions remaining...
+2024-08-01 17:35:22,258|DEBUG|classes|--- Moving on to Evening ---
+2024-08-01 17:35:22,258|DEBUG|classes|Choosing Military Operation (5 Remaining)...
+2024-08-01 17:35:22,258|DEBUG|classes|> Action # 90 Played
+2024-08-01 17:35:22,258|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,260|DEBUG|classes|	> New reward total: [ 0.0115 -0.1955  0.184   0.0115]
+2024-08-01 17:35:22,260|DEBUG|classes|> Action 90 - Player: Woodland Alliance
+2024-08-01 17:35:22,261|INFO|classes|Legal Actions: [525, 354, 346, 347, 350, 330, 338]
+2024-08-01 17:35:22,261|INFO|classes|	> Action Chosen: 346
+2024-08-01 17:35:22,261|DEBUG|classes|> Operation: Battle
+2024-08-01 17:35:22,261|DEBUG|classes|	--- BATTLE STARTED: Woodland Alliance Attacks Marquise de Cat in clearing 7
+2024-08-01 17:35:22,261|DEBUG|classes|Marquise de Cat chose not to ambush
+2024-08-01 17:35:22,261|DEBUG|classes|--- DICE ROLL: [2, 1]
+2024-08-01 17:35:22,261|DEBUG|classes|Marquise de Cat is defenseless (+1 hit taken)
+2024-08-01 17:35:22,261|DEBUG|classes|> Action # 91 Played
+2024-08-01 17:35:22,261|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,262|DEBUG|classes|	> New reward total: [ 0.0115 -0.1955  0.184   0.0115]
+2024-08-01 17:35:22,262|DEBUG|classes|> Action 91 - Player: Woodland Alliance
+2024-08-01 17:35:22,262|INFO|classes|Legal Actions: [88, 90]
+2024-08-01 17:35:22,262|INFO|classes|	> Action Chosen: 88
+2024-08-01 17:35:22,262|DEBUG|classes|--- Dealing hits to defender...
+2024-08-01 17:35:22,262|DEBUG|classes|> Action # 92 Played
+2024-08-01 17:35:22,262|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,262|DEBUG|classes|	> New reward total: [ 0.0115 -0.1955  0.184   0.0115]
+2024-08-01 17:35:22,262|DEBUG|classes|> Action 92 - Player: Marquise de Cat
+2024-08-01 17:35:22,262|INFO|classes|Legal Actions: [414, 410]
+2024-08-01 17:35:22,264|INFO|classes|	> Action Chosen: 414
+2024-08-01 17:35:22,264|DEBUG|classes|Marquise de Cat chose to destroy Recruiter
+2024-08-01 17:35:22,264|DEBUG|classes|	Woodland Alliance Points changed by 1
+2024-08-01 17:35:22,264|DEBUG|classes|		New Score:
+2024-08-01 17:35:22,264|DEBUG|classes|		> Marquise de Cat: 19
+2024-08-01 17:35:22,264|DEBUG|classes|		> Eyrie Dynasties: -1
+2024-08-01 17:35:22,264|DEBUG|classes|			- Bird Dominance Active
+2024-08-01 17:35:22,264|DEBUG|classes|		> Woodland Alliance: 25
+2024-08-01 17:35:22,264|DEBUG|classes|		> Vagabond: -1
+2024-08-01 17:35:22,264|DEBUG|classes|			- Rabbit Dominance Active
+2024-08-01 17:35:22,265|DEBUG|classes|			 > Formed Coalition with the Marquise de Cat
+2024-08-01 17:35:22,265|DEBUG|classes|-- THE KEEP destroyed in clearing 7
+2024-08-01 17:35:22,265|DEBUG|classes|	Woodland Alliance Points changed by 1
+2024-08-01 17:35:22,265|DEBUG|classes|		New Score:
+2024-08-01 17:35:22,265|DEBUG|classes|		> Marquise de Cat: 19
+2024-08-01 17:35:22,267|DEBUG|classes|		> Eyrie Dynasties: -1
+2024-08-01 17:35:22,267|DEBUG|classes|			- Bird Dominance Active
+2024-08-01 17:35:22,267|DEBUG|classes|		> Woodland Alliance: 26
+2024-08-01 17:35:22,267|DEBUG|classes|		> Vagabond: -1
+2024-08-01 17:35:22,267|DEBUG|classes|			- Rabbit Dominance Active
+2024-08-01 17:35:22,267|DEBUG|classes|			 > Formed Coalition with the Marquise de Cat
+2024-08-01 17:35:22,267|DEBUG|classes|--- Dealing hits to attacker...
+2024-08-01 17:35:22,267|DEBUG|classes|--- BATTLE FINISHED ---
+2024-08-01 17:35:22,267|DEBUG|classes|Choosing Military Operation (4 Remaining)...
+2024-08-01 17:35:22,267|DEBUG|classes|> Action # 93 Played
+2024-08-01 17:35:22,267|DEBUG|classes|- Reward for this action: [-0.023, -0.023, 0.046, -0.023]
+2024-08-01 17:35:22,268|DEBUG|classes|	> New reward total: [-0.0115 -0.2185  0.23   -0.0115]
+2024-08-01 17:35:22,268|DEBUG|classes|> Action 93 - Player: Woodland Alliance
+2024-08-01 17:35:22,268|INFO|classes|Legal Actions: [525, 220, 229, 224, 273, 354, 347, 350, 330, 334, 338]
+2024-08-01 17:35:22,268|INFO|classes|	> Action Chosen: 330
+2024-08-01 17:35:22,268|DEBUG|classes|> Operation: Organize
+2024-08-01 17:35:22,268|DEBUG|classes|		Placing -1 Woodland Alliance warriors in clearing 3
+2024-08-01 17:35:22,269|DEBUG|classes|		Sympathy token placed in clearing 3
+2024-08-01 17:35:22,269|DEBUG|classes|	Woodland Alliance Points changed by 2
+2024-08-01 17:35:22,269|DEBUG|classes|		New Score:
+2024-08-01 17:35:22,269|DEBUG|classes|		> Marquise de Cat: 19
+2024-08-01 17:35:22,269|DEBUG|classes|		> Eyrie Dynasties: -1
+2024-08-01 17:35:22,269|DEBUG|classes|			- Bird Dominance Active
+2024-08-01 17:35:22,269|DEBUG|classes|		> Woodland Alliance: 28
+2024-08-01 17:35:22,269|DEBUG|classes|		> Vagabond: -1
+2024-08-01 17:35:22,269|DEBUG|classes|			- Rabbit Dominance Active
+2024-08-01 17:35:22,269|DEBUG|classes|			 > Formed Coalition with the Marquise de Cat
+2024-08-01 17:35:22,269|DEBUG|classes|Choosing Military Operation (3 Remaining)...
+2024-08-01 17:35:22,269|DEBUG|classes|> Action # 94 Played
+2024-08-01 17:35:22,269|DEBUG|classes|- Reward for this action: [-0.023, -0.023, 0.046, -0.023]
+2024-08-01 17:35:22,271|DEBUG|classes|	> New reward total: [-0.0345 -0.2415  0.276  -0.0345]
+2024-08-01 17:35:22,271|DEBUG|classes|> Action 94 - Player: Woodland Alliance
+2024-08-01 17:35:22,271|INFO|classes|Legal Actions: [525, 220, 229, 224, 273, 347, 350, 303, 309, 334, 338]
+2024-08-01 17:35:22,271|INFO|classes|	> Action Chosen: 273
+2024-08-01 17:35:22,271|DEBUG|classes|Choosing to move from Clearing 11 to Clearing 7
+2024-08-01 17:35:22,271|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,271|DEBUG|classes|> Action # 95 Played
+2024-08-01 17:35:22,271|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,272|DEBUG|classes|	> New reward total: [-0.0345 -0.2415  0.276  -0.0345]
+2024-08-01 17:35:22,272|DEBUG|classes|> Action 95 - Player: Woodland Alliance
+2024-08-01 17:35:22,272|INFO|classes|Legal Actions: [278, 279]
+2024-08-01 17:35:22,272|INFO|classes|	> Action Chosen: 278
+2024-08-01 17:35:22,272|DEBUG|classes|> Operation: Move
+2024-08-01 17:35:22,272|DEBUG|classes|> Moving 1 warriors...
+2024-08-01 17:35:22,273|DEBUG|classes|		Moving 1 warriors of Woodland Alliance from 11 to 7
+2024-08-01 17:35:22,273|DEBUG|classes|Choosing Military Operation (2 Remaining)...
+2024-08-01 17:35:22,273|DEBUG|classes|> Action # 96 Played
+2024-08-01 17:35:22,273|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,273|DEBUG|classes|	> New reward total: [-0.0345 -0.2415  0.276  -0.0345]
+2024-08-01 17:35:22,273|DEBUG|classes|> Action 96 - Player: Woodland Alliance
+2024-08-01 17:35:22,273|INFO|classes|Legal Actions: [525, 220, 229, 224, 273, 347, 350, 303, 309, 334, 338]
+2024-08-01 17:35:22,273|INFO|classes|	> Action Chosen: 229
+2024-08-01 17:35:22,273|DEBUG|classes|Choosing to move from Clearing 7 to Clearing 11
+2024-08-01 17:35:22,273|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,273|DEBUG|classes|> Action # 97 Played
+2024-08-01 17:35:22,273|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,273|DEBUG|classes|	> New reward total: [-0.0345 -0.2415  0.276  -0.0345]
+2024-08-01 17:35:22,273|DEBUG|classes|> Action 97 - Player: Woodland Alliance
+2024-08-01 17:35:22,273|INFO|classes|Legal Actions: [278, 279]
+2024-08-01 17:35:22,273|INFO|classes|	> Action Chosen: 279
+2024-08-01 17:35:22,276|DEBUG|classes|> Operation: Move
+2024-08-01 17:35:22,276|DEBUG|classes|> Moving 2 warriors...
+2024-08-01 17:35:22,276|DEBUG|classes|		Moving 2 warriors of Woodland Alliance from 7 to 11
+2024-08-01 17:35:22,276|DEBUG|classes|Choosing Military Operation (1 Remaining)...
+2024-08-01 17:35:22,276|DEBUG|classes|> Action # 98 Played
+2024-08-01 17:35:22,276|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,276|DEBUG|classes|	> New reward total: [-0.0345 -0.2415  0.276  -0.0345]
+2024-08-01 17:35:22,278|DEBUG|classes|> Action 98 - Player: Woodland Alliance
+2024-08-01 17:35:22,278|INFO|classes|Legal Actions: [525, 347, 350, 303, 309, 338]
+2024-08-01 17:35:22,278|INFO|classes|	> Action Chosen: 309
+2024-08-01 17:35:22,278|DEBUG|classes|> Operation: Recruit
+2024-08-01 17:35:22,278|DEBUG|classes|		Placing 1 Woodland Alliance warriors in clearing 6
+2024-08-01 17:35:22,278|DEBUG|classes|No military operations left to use...
+2024-08-01 17:35:22,278|DEBUG|classes|	Woodland Alliance draws: Scouting Party
+2024-08-01 17:35:22,278|DEBUG|classes|	Woodland Alliance draws: Scouting Party
+2024-08-01 17:35:22,278|DEBUG|classes|	Woodland Alliance draws: Mouse Dominance
+2024-08-01 17:35:22,278|DEBUG|classes|> Action # 99 Played
+2024-08-01 17:35:22,280|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,281|DEBUG|classes|	> New reward total: [-0.0345 -0.2415  0.276  -0.0345]
+2024-08-01 17:35:22,281|DEBUG|classes|> Action 99 - Player: Woodland Alliance
+2024-08-01 17:35:22,281|INFO|classes|Legal Actions: [105]
+2024-08-01 17:35:22,281|INFO|classes|	> Action Chosen: 105
+2024-08-01 17:35:22,281|DEBUG|classes|--- End of Alliance's Turn ---
+
+2024-08-01 17:35:22,281|DEBUG|classes|	Resetting for Marquise's Turn...
+2024-08-01 17:35:22,281|DEBUG|classes|	Producing wood at sawmills...
+2024-08-01 17:35:22,281|DEBUG|classes|	No wood to be placed / No sawmills to generate wood at
+2024-08-01 17:35:22,281|DEBUG|classes|Finished placing wood.
+2024-08-01 17:35:22,281|DEBUG|classes|--- Moving on to Daylight ---
+2024-08-01 17:35:22,285|DEBUG|classes|	Crafting power: [2, 2, 1]
+2024-08-01 17:35:22,285|DEBUG|classes|Checking for Crafting / use of Daylight Cards...
+2024-08-01 17:35:22,285|DEBUG|classes|> Action # 100 Played
+2024-08-01 17:35:22,285|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,285|DEBUG|classes|	> New reward total: [-0.0345 -0.2415  0.276  -0.0345]
+2024-08-01 17:35:22,285|DEBUG|classes|> Action 100 - Player: Marquise de Cat
+2024-08-01 17:35:22,285|INFO|classes|Legal Actions: [543, 9, 10, 30, 23]
+2024-08-01 17:35:22,285|INFO|classes|	> Action Chosen: 10
+2024-08-01 17:35:22,285|DEBUG|classes|	Marquise de Cat crafts: Bag
+2024-08-01 17:35:22,285|DEBUG|classes|	Marquise de Cat Points changed by 1
+2024-08-01 17:35:22,285|DEBUG|classes|		New Score:
+2024-08-01 17:35:22,285|DEBUG|classes|		> Marquise de Cat: 20
+2024-08-01 17:35:22,285|DEBUG|classes|		> Eyrie Dynasties: -1
+2024-08-01 17:35:22,285|DEBUG|classes|			- Bird Dominance Active
+2024-08-01 17:35:22,285|DEBUG|classes|		> Woodland Alliance: 28
+2024-08-01 17:35:22,285|DEBUG|classes|		> Vagabond: -1
+2024-08-01 17:35:22,289|DEBUG|classes|			- Rabbit Dominance Active
+2024-08-01 17:35:22,289|DEBUG|classes|			 > Formed Coalition with the Marquise de Cat
+2024-08-01 17:35:22,289|DEBUG|classes|	Birdy Bindle removed from hand of Marquise de Cat
+2024-08-01 17:35:22,289|DEBUG|classes|	Birdy Bindle added to discard pile
+2024-08-01 17:35:22,289|DEBUG|classes|Checking for Crafting / use of Daylight Cards...
+2024-08-01 17:35:22,289|DEBUG|classes|> Action # 101 Played
+2024-08-01 17:35:22,290|DEBUG|classes|- Reward for this action: [0.023, -0.0115, -0.0115, 0.023]
+2024-08-01 17:35:22,290|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,290|DEBUG|classes|> Action 101 - Player: Marquise de Cat
+2024-08-01 17:35:22,290|INFO|classes|Legal Actions: [543, 9]
+2024-08-01 17:35:22,290|INFO|classes|	> Action Chosen: 543
+2024-08-01 17:35:22,290|DEBUG|classes|- Skipped crafting / other cards
+2024-08-01 17:35:22,291|DEBUG|classes|Checking for next Daylight Step 2 action (3 actions left)...
+2024-08-01 17:35:22,291|DEBUG|classes|> Action # 102 Played
+2024-08-01 17:35:22,291|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,291|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,291|DEBUG|classes|> Action 102 - Player: Marquise de Cat
+2024-08-01 17:35:22,291|INFO|classes|Legal Actions: [544, 328, 332, 336, 339, 343, 344, 345, 350, 138, 148, 182, 190, 187, 197, 198, 200, 202, 204, 217, 211, 213, 276, 272, 273, 409, 369]
+2024-08-01 17:35:22,291|INFO|classes|	> Action Chosen: 198
+2024-08-01 17:35:22,291|DEBUG|classes|Choosing to move from Clearing 5 to Clearing 4
+2024-08-01 17:35:22,291|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,291|DEBUG|classes|> Action # 103 Played
+2024-08-01 17:35:22,291|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,293|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,293|DEBUG|classes|> Action 103 - Player: Marquise de Cat
+2024-08-01 17:35:22,293|INFO|classes|Legal Actions: [278, 279, 280, 281, 282]
+2024-08-01 17:35:22,293|INFO|classes|	> Action Chosen: 279
+2024-08-01 17:35:22,293|DEBUG|classes|> Moving 2 warriors...
+2024-08-01 17:35:22,293|DEBUG|classes|		Moving 2 warriors of Marquise de Cat from 5 to 4
+2024-08-01 17:35:22,293|DEBUG|classes|Outrage Triggered! Marquise de Cat must pay the Alliance 1 Mouse Card
+2024-08-01 17:35:22,293|DEBUG|classes|> Action # 104 Played
+2024-08-01 17:35:22,293|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,293|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,295|DEBUG|classes|> Action 104 - Player: Marquise de Cat
+2024-08-01 17:35:22,295|INFO|classes|Legal Actions: [488, 493]
+2024-08-01 17:35:22,295|INFO|classes|	> Action Chosen: 493
+2024-08-01 17:35:22,295|DEBUG|classes|	Mouse-in-a-Sack removed from hand of Marquise de Cat
+2024-08-01 17:35:22,295|DEBUG|classes|		Mouse-in-a-Sack added to supporter pile
+2024-08-01 17:35:22,295|DEBUG|classes|Finding 2nd move of march...
+2024-08-01 17:35:22,295|DEBUG|classes|> Action # 105 Played
+2024-08-01 17:35:22,295|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,298|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,298|DEBUG|classes|> Action 105 - Player: Marquise de Cat
+2024-08-01 17:35:22,298|INFO|classes|Legal Actions: [96, 138, 148, 182, 190, 187, 197, 198, 200, 202, 204, 217, 211, 213, 276, 272, 273]
+2024-08-01 17:35:22,298|INFO|classes|	> Action Chosen: 148
+2024-08-01 17:35:22,298|DEBUG|classes|Choosing to move from Clearing 1 to Clearing 2
+2024-08-01 17:35:22,298|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,298|DEBUG|classes|> Action # 106 Played
+2024-08-01 17:35:22,298|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,298|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,298|DEBUG|classes|> Action 106 - Player: Marquise de Cat
+2024-08-01 17:35:22,298|INFO|classes|Legal Actions: [278]
+2024-08-01 17:35:22,298|INFO|classes|	> Action Chosen: 278
+2024-08-01 17:35:22,298|DEBUG|classes|> Moving 1 warriors...
+2024-08-01 17:35:22,298|DEBUG|classes|		Moving 1 warriors of Marquise de Cat from 1 to 2
+2024-08-01 17:35:22,300|DEBUG|classes|Checking for next Daylight Step 2 action (2 actions left)...
+2024-08-01 17:35:22,300|DEBUG|classes|> Action # 107 Played
+2024-08-01 17:35:22,300|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,300|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,300|DEBUG|classes|> Action 107 - Player: Marquise de Cat
+2024-08-01 17:35:22,300|INFO|classes|Legal Actions: [544, 332, 336, 339, 343, 344, 345, 350, 138, 159, 161, 165, 182, 190, 187, 197, 198, 200, 202, 204, 217, 211, 213, 276, 272, 273, 409, 369]
+2024-08-01 17:35:22,300|INFO|classes|	> Action Chosen: 165
+2024-08-01 17:35:22,300|DEBUG|classes|Choosing to move from Clearing 2 to Clearing 7
+2024-08-01 17:35:22,300|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,300|DEBUG|classes|> Action # 108 Played
+2024-08-01 17:35:22,300|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,300|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,302|DEBUG|classes|> Action 108 - Player: Marquise de Cat
+2024-08-01 17:35:22,302|INFO|classes|Legal Actions: [278]
+2024-08-01 17:35:22,302|INFO|classes|	> Action Chosen: 278
+2024-08-01 17:35:22,302|DEBUG|classes|> Moving 1 warriors...
+2024-08-01 17:35:22,302|DEBUG|classes|		Moving 1 warriors of Marquise de Cat from 2 to 7
+2024-08-01 17:35:22,302|DEBUG|classes|Finding 2nd move of march...
+2024-08-01 17:35:22,302|DEBUG|classes|> Action # 109 Played
+2024-08-01 17:35:22,302|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,302|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,302|DEBUG|classes|> Action 109 - Player: Marquise de Cat
+2024-08-01 17:35:22,302|INFO|classes|Legal Actions: [96, 138, 182, 190, 187, 197, 198, 200, 202, 204, 217, 211, 213, 220, 229, 224, 276, 272, 273]
+2024-08-01 17:35:22,302|INFO|classes|	> Action Chosen: 276
+2024-08-01 17:35:22,302|DEBUG|classes|Choosing to move from Clearing 11 to Clearing 10
+2024-08-01 17:35:22,302|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,302|DEBUG|classes|> Action # 110 Played
+2024-08-01 17:35:22,304|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,304|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,304|DEBUG|classes|> Action 110 - Player: Marquise de Cat
+2024-08-01 17:35:22,304|INFO|classes|Legal Actions: [278, 279, 280, 281, 282]
+2024-08-01 17:35:22,304|INFO|classes|	> Action Chosen: 279
+2024-08-01 17:35:22,304|DEBUG|classes|> Moving 2 warriors...
+2024-08-01 17:35:22,304|DEBUG|classes|		Moving 2 warriors of Marquise de Cat from 11 to 10
+2024-08-01 17:35:22,304|DEBUG|classes|Checking for next Daylight Step 2 action (1 actions left)...
+2024-08-01 17:35:22,304|DEBUG|classes|> Action # 111 Played
+2024-08-01 17:35:22,305|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,305|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,305|DEBUG|classes|> Action 111 - Player: Marquise de Cat
+2024-08-01 17:35:22,305|INFO|classes|Legal Actions: [544, 332, 336, 337, 339, 343, 344, 345, 350, 138, 182, 190, 187, 197, 198, 200, 202, 204, 217, 211, 213, 220, 229, 224, 265, 259, 276, 272, 273, 409, 369, 370]
+2024-08-01 17:35:22,305|INFO|classes|	> Action Chosen: 369
+2024-08-01 17:35:22,305|DEBUG|classes|Building a Sawmill in clearing 6
+2024-08-01 17:35:22,306|DEBUG|classes|	Wood Cost: 0
+2024-08-01 17:35:22,306|DEBUG|classes|		Sawmill placed in clearing 6
+2024-08-01 17:35:22,306|DEBUG|classes|	End of Daylight phase (no more actions)
+2024-08-01 17:35:22,306|DEBUG|classes|--- Moving on to Evening ---
+2024-08-01 17:35:22,306|DEBUG|classes|	Marquise de Cat draws: Favor of the Foxes
+2024-08-01 17:35:22,306|DEBUG|classes|> Action # 112 Played
+2024-08-01 17:35:22,306|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,308|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,308|DEBUG|classes|> Action 112 - Player: Marquise de Cat
+2024-08-01 17:35:22,308|INFO|classes|Legal Actions: [105]
+2024-08-01 17:35:22,308|INFO|classes|	> Action Chosen: 105
+2024-08-01 17:35:22,308|DEBUG|classes|--- End of Marquise's Turn ---
+
+2024-08-01 17:35:22,308|DEBUG|classes|	Resetting for Vagabond's Turn...
+2024-08-01 17:35:22,308|DEBUG|classes|VB Tracks: 0 / 0 / 0
+2024-08-01 17:35:22,308|DEBUG|classes|VB Undamaged: [('Hammer', 1), ('Crossbow', 1), ('Sword', 0), ('Torch', 0), ('Tea', 1)]
+2024-08-01 17:35:22,308|DEBUG|classes|VB Damaged: [('Boot', 1)]
+2024-08-01 17:35:22,308|DEBUG|classes|
+> Vagabond is in Clearing 4
+2024-08-01 17:35:22,308|DEBUG|classes|Refreshes remaining to use: 3
+2024-08-01 17:35:22,309|DEBUG|classes|> Action # 113 Played
+2024-08-01 17:35:22,309|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,309|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,309|DEBUG|classes|> Action 113 - Player: Vagabond
+2024-08-01 17:35:22,309|INFO|classes|Legal Actions: [202, 196, 206, 199]
+2024-08-01 17:35:22,309|INFO|classes|	> Action Chosen: 196
+2024-08-01 17:35:22,309|DEBUG|classes|		Vagabond refreshes an undamaged Hammer
+2024-08-01 17:35:22,309|DEBUG|classes|Refreshes remaining to use: 2
+2024-08-01 17:35:22,309|DEBUG|classes|> Action # 114 Played
+2024-08-01 17:35:22,309|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,310|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,310|DEBUG|classes|> Action 114 - Player: Vagabond
+2024-08-01 17:35:22,310|INFO|classes|Legal Actions: [202, 206, 199]
+2024-08-01 17:35:22,310|INFO|classes|	> Action Chosen: 199
+2024-08-01 17:35:22,310|DEBUG|classes|			Tea Track changed by 1
+2024-08-01 17:35:22,310|DEBUG|classes|		Vagabond refreshes an undamaged Tea
+2024-08-01 17:35:22,310|DEBUG|classes|Refreshes remaining to use: 1
+2024-08-01 17:35:22,310|DEBUG|classes|> Action # 115 Played
+2024-08-01 17:35:22,310|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,310|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,310|DEBUG|classes|> Action 115 - Player: Vagabond
+2024-08-01 17:35:22,310|INFO|classes|Legal Actions: [202, 206]
+2024-08-01 17:35:22,310|INFO|classes|	> Action Chosen: 206
+2024-08-01 17:35:22,313|DEBUG|classes|		Vagabond refreshes a damaged Boot
+2024-08-01 17:35:22,313|DEBUG|classes|Refreshes remaining to use: 0
+2024-08-01 17:35:22,313|DEBUG|classes|	Cannot refresh any more items...
+2024-08-01 17:35:22,313|DEBUG|classes|Choosing where to slip...
+2024-08-01 17:35:22,313|DEBUG|classes|> Action # 116 Played
+2024-08-01 17:35:22,313|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,314|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,314|DEBUG|classes|> Action 116 - Player: Vagabond
+2024-08-01 17:35:22,314|INFO|classes|Legal Actions: [96, 212, 220, 217, 225, 227]
+2024-08-01 17:35:22,314|INFO|classes|	> Action Chosen: 225
+2024-08-01 17:35:22,314|DEBUG|classes|> Vagabond sneakily Slips from Clearing 4 to Forest 1
+2024-08-01 17:35:22,314|DEBUG|classes|--- Moving on to Daylight ---
+2024-08-01 17:35:22,314|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,316|DEBUG|classes|> Action # 117 Played
+2024-08-01 17:35:22,316|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,316|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,316|DEBUG|classes|> Action 117 - Player: Vagabond
+2024-08-01 17:35:22,316|INFO|classes|Legal Actions: [603, 419]
+2024-08-01 17:35:22,316|INFO|classes|	> Action Chosen: 419
+2024-08-01 17:35:22,316|DEBUG|classes|		Vagabond exhausts a Hammer
+2024-08-01 17:35:22,316|DEBUG|classes|		Vagabond repairs an unexhausted Boot
+2024-08-01 17:35:22,317|DEBUG|classes|Choosing next Daylight action...
+2024-08-01 17:35:22,317|DEBUG|classes|> Action # 118 Played
+2024-08-01 17:35:22,317|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,317|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,317|DEBUG|classes|> Action 118 - Player: Vagabond
+2024-08-01 17:35:22,317|INFO|classes|Legal Actions: [603, 212, 216]
+2024-08-01 17:35:22,317|INFO|classes|	> Action Chosen: 603
+2024-08-01 17:35:22,318|DEBUG|classes|- Skipping remaining Daylight actions...
+2024-08-01 17:35:22,318|DEBUG|classes|--- Moving on to Evening ---
+2024-08-01 17:35:22,318|DEBUG|classes|> The Vagabond rests for the night...
+2024-08-01 17:35:22,318|DEBUG|classes|	Vagabond draws: A Visit to Friends
+2024-08-01 17:35:22,318|DEBUG|classes|Vagabond must discard from hand...
+2024-08-01 17:35:22,318|DEBUG|classes|> Action # 119 Played
+2024-08-01 17:35:22,318|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,318|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,318|DEBUG|classes|> Action 119 - Player: Vagabond
+2024-08-01 17:35:22,318|INFO|classes|Legal Actions: [44, 48, 81, 53, 54]
+2024-08-01 17:35:22,318|INFO|classes|	> Action Chosen: 53
+2024-08-01 17:35:22,318|DEBUG|classes|	Cobbler removed from hand of Vagabond
+2024-08-01 17:35:22,318|DEBUG|classes|	Cobbler added to discard pile
+2024-08-01 17:35:22,318|DEBUG|classes|VB Tracks: 1 / 0 / 0
+2024-08-01 17:35:22,318|DEBUG|classes|VB Undamaged: [('Crossbow', 1), ('Sword', 0), ('Torch', 0), ('Hammer', 1), ('Boot', 0)]
+2024-08-01 17:35:22,318|DEBUG|classes|VB Damaged: []
+2024-08-01 17:35:22,318|DEBUG|classes|> Action # 120 Played
+2024-08-01 17:35:22,318|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,318|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,318|DEBUG|classes|> Action 120 - Player: Vagabond
+2024-08-01 17:35:22,318|INFO|classes|Legal Actions: [105]
+2024-08-01 17:35:22,318|INFO|classes|	> Action Chosen: 105
+2024-08-01 17:35:22,318|DEBUG|classes|VB Tracks: 1 / 0 / 0
+2024-08-01 17:35:22,321|DEBUG|classes|VB Undamaged: [('Crossbow', 1), ('Sword', 0), ('Torch', 0), ('Hammer', 1), ('Boot', 0)]
+2024-08-01 17:35:22,321|DEBUG|classes|VB Damaged: []
+2024-08-01 17:35:22,321|DEBUG|classes|--- End of Vagabond's Turn ---
+
+2024-08-01 17:35:22,321|DEBUG|classes|Checking for dominance victory...
+2024-08-01 17:35:22,321|DEBUG|classes|>>> Bird Dominance NOT fulfilled for Eyrie Dynasties...
+2024-08-01 17:35:22,321|DEBUG|classes|	Resetting for Eyrie's Turn...
+2024-08-01 17:35:22,321|DEBUG|classes|Choosing what suit to add to decree...
+2024-08-01 17:35:22,321|DEBUG|classes|> Action # 121 Played
+2024-08-01 17:35:22,321|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,322|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,322|DEBUG|classes|> Action 121 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,322|INFO|classes|Legal Actions: [367, 368, 369, 371, 372, 373, 375, 376, 377, 379, 380, 381]
+2024-08-01 17:35:22,322|INFO|classes|	> Action Chosen: 376
+2024-08-01 17:35:22,322|DEBUG|classes|>> Choosing to add a Rabbit Card to Battle
+2024-08-01 17:35:22,322|DEBUG|classes|> Action # 122 Played
+2024-08-01 17:35:22,322|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,322|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,322|DEBUG|classes|> Action 122 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,322|INFO|classes|Legal Actions: [392]
+2024-08-01 17:35:22,322|INFO|classes|	> Action Chosen: 392
+2024-08-01 17:35:22,322|DEBUG|classes|	Better Burrow Bank removed from hand of Eyrie Dynasties
+2024-08-01 17:35:22,324|DEBUG|classes|		Card Better Burrow Bank added to decree at Battle
+2024-08-01 17:35:22,324|DEBUG|classes|Choosing whether to add 2nd card to decree...
+2024-08-01 17:35:22,324|DEBUG|classes|> Action # 123 Played
+2024-08-01 17:35:22,324|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,324|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,324|DEBUG|classes|> Action 123 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,324|INFO|classes|Legal Actions: [489, 367, 369, 371, 373, 375, 377, 379, 381]
+2024-08-01 17:35:22,324|INFO|classes|	> Action Chosen: 371
+2024-08-01 17:35:22,324|DEBUG|classes|>> Choosing to add a Mouse Card to Move
+2024-08-01 17:35:22,324|DEBUG|classes|> Action # 124 Played
+2024-08-01 17:35:22,324|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,326|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,326|DEBUG|classes|> Action 124 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,326|INFO|classes|Legal Actions: [410, 399]
+2024-08-01 17:35:22,326|INFO|classes|	> Action Chosen: 399
+2024-08-01 17:35:22,326|DEBUG|classes|	Crossbow (Mouse) removed from hand of Eyrie Dynasties
+2024-08-01 17:35:22,326|DEBUG|classes|		Card Crossbow (Mouse) added to decree at Move
+2024-08-01 17:35:22,326|DEBUG|classes|	Tallying required decree...
+2024-08-01 17:35:22,326|DEBUG|classes|--- Moving on to Daylight ---
+2024-08-01 17:35:22,327|DEBUG|classes|	Crafting power: [1, 2, 2]
+2024-08-01 17:35:22,327|DEBUG|classes|Checking for Crafting / use of Daylight Cards...
+2024-08-01 17:35:22,327|DEBUG|classes|> Action # 125 Played
+2024-08-01 17:35:22,327|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,327|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,327|DEBUG|classes|> Action 125 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,327|INFO|classes|Legal Actions: [490, 33]
+2024-08-01 17:35:22,327|INFO|classes|	> Action Chosen: 490
+2024-08-01 17:35:22,328|DEBUG|classes|- Skipping Crafting...
+2024-08-01 17:35:22,328|DEBUG|classes|Choosing decree-resolving action...
+2024-08-01 17:35:22,328|DEBUG|classes|> Action # 126 Played
+2024-08-01 17:35:22,328|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,328|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,328|DEBUG|classes|> Action 126 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,328|INFO|classes|Legal Actions: [304, 306, 308, 312, 313]
+2024-08-01 17:35:22,328|INFO|classes|	> Action Chosen: 308
+2024-08-01 17:35:22,328|DEBUG|classes|>> Decree: RECRUIT
+2024-08-01 17:35:22,328|DEBUG|classes|		Placing 1 Eyrie Dynasties warriors in clearing 5
+2024-08-01 17:35:22,328|DEBUG|classes|	Fulfilled Bird Recruit requirement on Decree
+2024-08-01 17:35:22,328|DEBUG|classes|Choosing decree-resolving action...
+2024-08-01 17:35:22,328|DEBUG|classes|> Action # 127 Played
+2024-08-01 17:35:22,328|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,330|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,330|DEBUG|classes|> Action 127 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,330|INFO|classes|Legal Actions: [146, 148, 170, 172, 175, 197, 198, 200, 202, 204, 250, 252, 263, 265, 259]
+2024-08-01 17:35:22,330|INFO|classes|	> Action Chosen: 146
+2024-08-01 17:35:22,330|DEBUG|classes|Choosing to move from Clearing 1 to Clearing 0
+2024-08-01 17:35:22,330|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,330|DEBUG|classes|> Action # 128 Played
+2024-08-01 17:35:22,330|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,331|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,331|DEBUG|classes|> Action 128 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,331|INFO|classes|Legal Actions: [278, 279, 280, 281, 282, 283, 284, 285, 286, 287]
+2024-08-01 17:35:22,331|INFO|classes|	> Action Chosen: 283
+2024-08-01 17:35:22,331|DEBUG|classes|>> Decree: MOVE
+2024-08-01 17:35:22,331|DEBUG|classes|		Moving 6 warriors of Eyrie Dynasties from 1 to 0
+2024-08-01 17:35:22,331|DEBUG|classes|	Fulfilled Bird Move requirement on Decree
+2024-08-01 17:35:22,331|DEBUG|classes|Outrage Triggered! Eyrie Dynasties must pay the Alliance 1 Fox Card
+2024-08-01 17:35:22,331|DEBUG|classes|> Action # 129 Played
+2024-08-01 17:35:22,331|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,331|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,331|DEBUG|classes|> Action 129 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,333|INFO|classes|Legal Actions: [470]
+2024-08-01 17:35:22,333|INFO|classes|	> Action Chosen: 470
+2024-08-01 17:35:22,333|DEBUG|classes|	Tax Collector removed from hand of Eyrie Dynasties
+2024-08-01 17:35:22,333|DEBUG|classes|		Tax Collector added to supporter pile
+2024-08-01 17:35:22,333|DEBUG|classes|Choosing decree-resolving action...
+2024-08-01 17:35:22,333|DEBUG|classes|> Action # 130 Played
+2024-08-01 17:35:22,333|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,333|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,333|DEBUG|classes|> Action 130 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,334|INFO|classes|Legal Actions: [263, 265, 259]
+2024-08-01 17:35:22,334|INFO|classes|	> Action Chosen: 259
+2024-08-01 17:35:22,334|DEBUG|classes|Choosing to move from Clearing 10 to Clearing 5
+2024-08-01 17:35:22,334|DEBUG|classes|Choosing number of warriors to move...
+2024-08-01 17:35:22,334|DEBUG|classes|> Action # 131 Played
+2024-08-01 17:35:22,335|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,335|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,335|DEBUG|classes|> Action 131 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,335|INFO|classes|Legal Actions: [278, 279, 280]
+2024-08-01 17:35:22,335|INFO|classes|	> Action Chosen: 279
+2024-08-01 17:35:22,335|DEBUG|classes|>> Decree: MOVE
+2024-08-01 17:35:22,335|DEBUG|classes|		Moving 2 warriors of Eyrie Dynasties from 10 to 5
+2024-08-01 17:35:22,335|DEBUG|classes|	Fulfilled Mouse Move requirement on Decree
+2024-08-01 17:35:22,335|DEBUG|classes|Outrage Triggered! Eyrie Dynasties must pay the Alliance 1 Fox Card
+2024-08-01 17:35:22,335|DEBUG|classes|	Offender has no cards to give, so they show their hand to the Alliance...
+2024-08-01 17:35:22,336|DEBUG|classes|	Alliance draws: Sappers (added to supporters)
+2024-08-01 17:35:22,336|DEBUG|classes|		Sappers added to supporter pile
+2024-08-01 17:35:22,336|DEBUG|classes|Choosing decree-resolving action...
+2024-08-01 17:35:22,336|DEBUG|classes|> Action # 132 Played
+2024-08-01 17:35:22,336|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,336|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,336|DEBUG|classes|> Action 132 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,336|INFO|classes|Legal Actions: [342]
+2024-08-01 17:35:22,336|INFO|classes|	> Action Chosen: 342
+2024-08-01 17:35:22,336|DEBUG|classes|>> Decree: BATTLE
+2024-08-01 17:35:22,336|DEBUG|classes|	Fulfilled Rabbit Battle requirement on Decree
+2024-08-01 17:35:22,336|DEBUG|classes|	--- BATTLE STARTED: Eyrie Dynasties Attacks Woodland Alliance in clearing 3
+2024-08-01 17:35:22,336|DEBUG|classes|Woodland Alliance chose not to ambush
+2024-08-01 17:35:22,336|DEBUG|classes|--- DICE ROLL: [0, 3]
+2024-08-01 17:35:22,338|DEBUG|classes|Woodland Alliance is defenseless (+1 hit taken)
+2024-08-01 17:35:22,338|DEBUG|classes|--- Dealing hits to defender...
+2024-08-01 17:35:22,338|DEBUG|classes|-- Sympathy destroyed in clearing 3
+2024-08-01 17:35:22,338|DEBUG|classes|	1 Point(s) not scored due to active dominance.
+2024-08-01 17:35:22,338|DEBUG|classes|--- Dealing hits to attacker...
+2024-08-01 17:35:22,338|DEBUG|classes|--- BATTLE FINISHED ---
+2024-08-01 17:35:22,338|DEBUG|classes|Outrage Triggered! Eyrie Dynasties must pay the Alliance 1 Rabbit Card
+2024-08-01 17:35:22,338|DEBUG|classes|	Offender has no cards to give, so they show their hand to the Alliance...
+2024-08-01 17:35:22,338|DEBUG|classes|	Alliance draws: Root Tea (Rabbit) (added to supporters)
+2024-08-01 17:35:22,338|DEBUG|classes|		Root Tea (Rabbit) added to supporter pile
+2024-08-01 17:35:22,338|DEBUG|classes|>>> DECREE COMPLETED
+2024-08-01 17:35:22,338|DEBUG|classes|--- Moving on to Evening ---
+2024-08-01 17:35:22,339|DEBUG|classes|	4 Point(s) not scored due to active dominance.
+2024-08-01 17:35:22,339|DEBUG|classes|	Eyrie Dynasties draws: Arms Trader
+2024-08-01 17:35:22,339|DEBUG|classes|	Eyrie Dynasties draws: Command Warren
+2024-08-01 17:35:22,339|DEBUG|classes|> Action # 133 Played
+2024-08-01 17:35:22,339|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,339|DEBUG|classes|	> New reward total: [-0.0115 -0.253   0.2645 -0.0115]
+2024-08-01 17:35:22,339|DEBUG|classes|> Action 133 - Player: Eyrie Dynasties
+2024-08-01 17:35:22,339|INFO|classes|Legal Actions: [105]
+2024-08-01 17:35:22,341|INFO|classes|	> Action Chosen: 105
+2024-08-01 17:35:22,341|DEBUG|classes|--- End of Eyrie's Turn ---
+
+2024-08-01 17:35:22,341|DEBUG|classes|	Resetting for Alliance's Turn...
+2024-08-01 17:35:22,341|DEBUG|classes|- Choosing whether or not to revolt...
+2024-08-01 17:35:22,341|DEBUG|classes|> Action # 134 Played
+2024-08-01 17:35:22,341|DEBUG|classes|- Reward for this action: [0.00575, -0.0115, 0.00575, 0.00575]
+2024-08-01 17:35:22,341|DEBUG|classes|	> New reward total: [-0.00575 -0.2645   0.27025 -0.00575]
+2024-08-01 17:35:22,341|DEBUG|classes|> Action 134 - Player: Woodland Alliance
+2024-08-01 17:35:22,341|INFO|classes|Legal Actions: [523, 323]
+2024-08-01 17:35:22,341|INFO|classes|	> Action Chosen: 523
+2024-08-01 17:35:22,341|DEBUG|classes|- Chose to skip revolting
+2024-08-01 17:35:22,341|DEBUG|classes|- Checking for spreading sympathy...
+2024-08-01 17:35:22,341|DEBUG|classes|> Action # 135 Played
+2024-08-01 17:35:22,341|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,341|DEBUG|classes|	> New reward total: [-0.00575 -0.2645   0.27025 -0.00575]
+2024-08-01 17:35:22,343|DEBUG|classes|> Action 135 - Player: Woodland Alliance
+2024-08-01 17:35:22,343|INFO|classes|Legal Actions: [522, 418, 420, 424, 426, 427, 428]
+2024-08-01 17:35:22,343|INFO|classes|	> Action Chosen: 428
+2024-08-01 17:35:22,343|DEBUG|classes|- The Alliance spread sympathy to Clearing 11 -
+2024-08-01 17:35:22,343|DEBUG|classes|	Choosing supporter to spend (3 needed)
+2024-08-01 17:35:22,343|DEBUG|classes|> Action # 136 Played
+2024-08-01 17:35:22,343|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,343|DEBUG|classes|	> New reward total: [-0.00575 -0.2645   0.27025 -0.00575]
+2024-08-01 17:35:22,344|DEBUG|classes|> Action 136 - Player: Woodland Alliance
+2024-08-01 17:35:22,344|INFO|classes|Legal Actions: [400, 386, 403, 412]
+2024-08-01 17:35:22,344|INFO|classes|	> Action Chosen: 403
+2024-08-01 17:35:22,344|DEBUG|classes|	Sappers removed from Supporters of Woodland Alliance
+2024-08-01 17:35:22,344|DEBUG|classes|	Sappers added to discard pile
+2024-08-01 17:35:22,344|DEBUG|classes|	Choosing supporter to spend (2 needed)
+2024-08-01 17:35:22,344|DEBUG|classes|> Action # 137 Played
+2024-08-01 17:35:22,344|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,344|DEBUG|classes|	> New reward total: [-0.00575 -0.2645   0.27025 -0.00575]
+2024-08-01 17:35:22,344|DEBUG|classes|> Action 137 - Player: Woodland Alliance
+2024-08-01 17:35:22,344|INFO|classes|Legal Actions: [400, 386, 412]
+2024-08-01 17:35:22,344|INFO|classes|	> Action Chosen: 412
+2024-08-01 17:35:22,344|DEBUG|classes|	Royal Claim removed from Supporters of Woodland Alliance
+2024-08-01 17:35:22,344|DEBUG|classes|	Royal Claim added to discard pile
+2024-08-01 17:35:22,344|DEBUG|classes|	Choosing supporter to spend (1 needed)
+2024-08-01 17:35:22,346|DEBUG|classes|> Action # 138 Played
+2024-08-01 17:35:22,346|DEBUG|classes|- Reward for this action: [0, 0, 0, 0]
+2024-08-01 17:35:22,346|DEBUG|classes|	> New reward total: [-0.00575 -0.2645   0.27025 -0.00575]
+2024-08-01 17:35:22,346|DEBUG|classes|> Action 138 - Player: Woodland Alliance
+2024-08-01 17:35:22,346|INFO|classes|Legal Actions: [400, 386]
+2024-08-01 17:35:22,346|INFO|classes|	> Action Chosen: 400
+2024-08-01 17:35:22,346|DEBUG|classes|	Root Tea (Rabbit) removed from Supporters of Woodland Alliance
+2024-08-01 17:35:22,346|DEBUG|classes|	Root Tea (Rabbit) added to discard pile
+2024-08-01 17:35:22,346|DEBUG|classes|		Sympathy token placed in clearing 11
+2024-08-01 17:35:22,346|DEBUG|classes|	Woodland Alliance Points changed by 2
+2024-08-01 17:35:22,346|DEBUG|classes|		New Score:
+2024-08-01 17:35:22,346|DEBUG|classes|		> Marquise de Cat: 20
+2024-08-01 17:35:22,348|DEBUG|classes|		> Eyrie Dynasties: -1
+2024-08-01 17:35:22,348|DEBUG|classes|			- Bird Dominance Active
+2024-08-01 17:35:22,348|DEBUG|classes|		> Woodland Alliance: 30
+2024-08-01 17:35:22,348|DEBUG|classes|		> Vagabond: -1
+2024-08-01 17:35:22,348|DEBUG|classes|			- Rabbit Dominance Active
+2024-08-01 17:35:22,348|DEBUG|classes|			 > Formed Coalition with the Marquise de Cat
+2024-08-01 17:35:22,348|DEBUG|classes|- Checking for spreading sympathy...
+2024-08-01 17:35:22,348|DEBUG|classes|> Action # 139 Played
+2024-08-01 17:35:22,348|DEBUG|classes|- Reward for this action: [-0.13799999999999998, -0.13799999999999998, 0.27599999999999997, -0.13799999999999998]
+2024-08-01 17:35:22,349|DEBUG|classes|	> New reward total: [-0.14375 -0.4025   0.54625 -0.14375]
