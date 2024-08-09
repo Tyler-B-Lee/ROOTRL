@@ -1,7 +1,8 @@
 import gymnasium as gym
 import numpy as np
+import config
 
-from rootGameClasses.rootMechanics import *
+from .rootGameClasses.rootMechanics import *
 
 # Game Obs length: 1487 (down from 4474 i think)
 # docker-compose exec app tensorboard --logdir ./logs
@@ -18,25 +19,24 @@ EYRIE_ID = 1
 ALLIANCE_ID = 2
 VAGABOND_ID = 3
 
-MAIN_PLAYER_ID = MARQUISE_ID
-
 # marquise - 1538 obs / 548 actions
 # eyrie - 1522 / 492
 # alliance - 1571 / 530
 # vagabond - 1547 / 604
 
-class rootEnv(gym.Env):
+class MarquiseMainBaseEnv(gym.Env):
     metadata = {'render.modes': ['human']}
 
     def __init__(self, verbose = False, manual = False):
-        super(rootEnv, self).__init__()
-        self.name = 'root4pbasemarquise'
-        self.n_players = 1
+        super(MarquiseMainBaseEnv, self).__init__()
+        self.name = 'MarquiseMainBase'
+        self.n_players = 4
         self.manual = manual
+        self.main_player_id = MARQUISE_ID
 
-        self.action_space = gym.spaces.Discrete(548)
+        self.action_space = gym.spaces.Discrete(config.ACTION_SPACE_SIZES[MARQUISE_ID])
         self.observation_space = gym.spaces.Box(-1, 1, (
-            1538
+            config.NUM_OBS_MARQUISE
             + self.action_space.n
             , )
         )  
@@ -51,86 +51,94 @@ class rootEnv(gym.Env):
     def opposing_player(self) -> Player:
         i = (self.current_player_num + 1) % 2
         return self.players[i]
+    
+    def get_main_observation(self):
+        la = np.zeros(self.action_space.n)
+        la.put(self.env.legal_actions(), 1.0)
+
+        ret = np.append(self.env.get_marquise_observation(), la)
+        return ret.astype(np.float32)
         
     @property
     def observation(self):
-        ret = np.append(self.env.get_marquise_observation(),self.legal_actions)
-        return ret
+        # since the opponents are always rules based, don't calculate their obs/legal actions
+        if (self.env.to_play() - self.main_player_id) != 0:
+            return [0]
+        return self.get_main_observation()
 
     @property
     def legal_actions(self):
-        ret = np.zeros(self.action_space.n)
+        if (self.env.to_play() - self.main_player_id) != 0:
+            ret = np.zeros(604)
+        else:
+            ret = np.zeros(self.action_space.n)
         ret.put(self.env.legal_actions(), 1.0)
         return ret
     
     def run_opponent_turn(self):
         opponent_id = self.env.to_play()
-        logger.debug(f'\n{opp.name} model choices')
         # action_chosen = random.choice(self.get_legal_action_numbers())
+        la = self.env.legal_actions()
+        la_set = set(la)
 
-        if opponent_id == PIND_EYRIE:
-            la = np.zeros(492)
-            la.put(self.env.legal_actions(),1)
-            opponent_obs = np.append(self.env.get_eyrie_observation(), la)
-        elif opponent_id == PIND_ALLIANCE:
-            la = np.zeros(530)
-            la.put(self.env.legal_actions(),1)
-            opponent_obs = np.append(self.env.get_alliance_observation(), la)
-        else:
-            la = np.zeros(604)
-            la.put(self.env.legal_actions(),1)
-            opponent_obs = np.append(self.env.get_vagabond_observation(), la)
+        # players always ambush if they can
+        ans_set = la_set.intersection(AMBUSH_ACTIONS_SET)
 
-        action_probs = opp.model.action_probability(opponent_obs)
-        value = opp.model.policy_pi.value(np.array([opponent_obs]))[0]
-        logger.debug(f"Value {value:.3f}")
-
-        opp.print_top_actions(action_probs)
-
-        action_probs = utils.agents.mask_actions(la, action_probs)
-        logger.debug('Masked ->')
-        opp.print_top_actions(action_probs)
-
-        action_chosen = utils.agents.sample_action(action_probs)
-        logger.debug(f'Sampled action {action_chosen} chosen')
+        # Vagabond explores if they can, otherwise moves/slips at random
+        if len(ans_set) == 0 and opponent_id == PIND_VAGABOND:
+            ans_set = la_set.intersection({VB_EXPLORE})
+        if len(ans_set) == 0 and opponent_id == PIND_VAGABOND:
+            ans_set = la_set.intersection(SLIP_ACTIONS_SET)
         
-        reward, done = self.env.step(action_chosen)
+        # Alliance always spreads sympathy if they can at random
+        if len(ans_set) == 0 and opponent_id == PIND_ALLIANCE:
+            ans_set = la_set.intersection(SPREAD_SYM_ACTIONS_SET)
 
-        return reward,done
+        # otherwise, players try skipping optional actions
+        if len(ans_set) == 0:
+            ans_set = la_set.intersection(SKIP_ACTIONS_SET)
+        
+        # otherwise, players play a random action possible in this position
+        if len(ans_set) == 0:
+            action_chosen = random.choice(la)
+            logger.debug(f'Sampled action {action_chosen} chosen from all actions')
+        else:
+            action_chosen = random.choice( list(ans_set) )
+            logger.debug(f'Sampled action {action_chosen} chosen from subset')
+        
+        reward, terminated, truncated = self.env.step(action_chosen)
+
+        return reward, terminated, truncated
 
     def step(self, action):
-        reward, self.done = self.env.step(action)
-        self.current_player_num = (self.env.to_play() - MAIN_PLAYER_ID)
+        reward, self.terminated, self.truncated = self.env.step(action)
+        self.current_player_num = (self.env.to_play() - self.main_player_id)
 
         # play the game until it comes back to the main player's turn or the game ends
-        while self.current_player_num != 0 and (not self.done):
-            r, self.done = self.run_opponent_turn()
+        # while self.current_player_num != 0 and not (self.terminated or self.truncated):
+        #     r, self.terminated, self.truncated = self.run_opponent_turn()
 
-            reward = [reward[i] + r[i] for i in range(4)]
-            self.current_player_num = (self.env.to_play() - MAIN_PLAYER_ID)
+        #     reward = [reward[i] + r[i] for i in range(4)]
+        #     self.current_player_num = (self.env.to_play() - self.main_player_id)
 
-        return self.observation, reward[MAIN_PLAYER_ID], terminated, truncated, {}
+        # return self.observation, reward[self.main_player_id], self.terminated, self.truncated, {}
+        return self.observation, reward, self.terminated, self.truncated, {}
 
-    def reset(self):
-        self.done = False
-        self.env.reset()
-        self.current_player_num = (self.env.to_play() - MAIN_PLAYER_ID)
-
-        self.opponent_models = [None] * 4
-        for i,name in OPPONENT_INFO:
-            if random.random() < BEST_MODEL_CHANCE:
-                self.opponent_models[i] = self.best_opponent_models[i]
-            else:
-                self.opponent_models[i] = random.choice(self.opp_model_pool[i])
-            logger.debug(f"> Chosen {ID_TO_PLAYER[i]} Model: {self.opponent_models[i].name}")
+    def reset(self, seed:int=None):
+        super().reset(seed=seed)
+        self.terminated = self.truncated = False
+        self.env.randomize()
+        self.current_player_num = (self.env.to_play() - self.main_player_id)
 
         # play the game until it comes back to the main player's turn or the game ends
-        while self.current_player_num != 0 and (not self.done):
-            r, self.done = self.run_opponent_turn()
+        # while self.current_player_num != 0 and not (self.terminated or self.truncated):
+        #     r, self.terminated, self.truncated = self.run_opponent_turn()
             
-            self.current_player_num = (self.env.to_play() - MAIN_PLAYER_ID)
+        #     self.current_player_num = (self.env.to_play() - self.main_player_id)
 
-        return self.observation, {}
+        # return self.observation, {}
+        # real observation returned on the model manager wrapper env class
+        return [], {}
 
     def render(self, mode='human', close=False):
         if close:
@@ -141,17 +149,67 @@ class rootEnv(gym.Env):
         if self.verbose:
             logger.debug(f'\nObservation: \n{[i if o == 1 else (i,o) for i,o in enumerate(self.observation) if o != 0]}')
         
-        if not self.done:
+        if not (self.terminated or self.truncated):
             logger.debug(f'\nLegal actions: {[i for i,o in enumerate(self.legal_actions) if o != 0]}')
 
 
-    def rules_move(self):
-        raise Exception('Rules based agent is not yet implemented for Geschenkt!')
+    def rules_move(self, action_space_size:int):
+        opponent_id = self.env.to_play()
+        assert (opponent_id != self.main_player_id)
 
-# if __name__ == "__main__":
-#     env = rootEnv()
-#     env.reset()
-#     done = False
-#     total_rewards = np.zeros(1)
-#     while not done:
-#         legal_actions = env.legal_actions
+        ret = np.zeros(action_space_size)
+        # action_chosen = random.choice(self.get_legal_action_numbers())
+        la = self.env.legal_actions()
+        la_set = set(la)
+
+        # players always ambush if they can
+        ans_set = la_set.intersection(AMBUSH_ACTIONS_SET)
+
+        # Vagabond explores if they can, otherwise moves/slips at random
+        if len(ans_set) == 0 and opponent_id == PIND_VAGABOND:
+            ans_set = la_set.intersection({VB_EXPLORE})
+        if len(ans_set) == 0 and opponent_id == PIND_VAGABOND:
+            ans_set = la_set.intersection(SLIP_ACTIONS_SET)
+        
+        # Alliance always spreads sympathy if they can at random
+        if len(ans_set) == 0 and opponent_id == PIND_ALLIANCE:
+            ans_set = la_set.intersection(SPREAD_SYM_ACTIONS_SET)
+
+        # otherwise, players try skipping optional actions
+        if len(ans_set) == 0:
+            ans_set = la_set.intersection(SKIP_ACTIONS_SET)
+        
+        # otherwise, players play a random action possible in this position
+        if len(ans_set) == 0:
+            ret.put(la, 1/len(la))
+        else:
+            ans_list = list(ans_set)
+            ret.put(ans_list, 1/len(ans_list) )
+        
+        return ret
+        
+        
+
+if __name__ == "__main__":
+    env = MarquiseMainBaseEnv()
+    env.reset()
+    terminated = truncated = False
+    total_rewards = np.zeros(N_PLAYERS)
+    while not (terminated or truncated):
+        legal_actions = env.env.legal_actions()
+        logger.debug(f"> Action {env.env.num_actions_played} - Player: {ID_TO_PLAYER[env.env.current_player]}")
+        logger.info(f"Legal Actions: {legal_actions}")
+        # print(f"Player: {ID_TO_PLAYER[env.current_player]}")
+        # print(f"> Action {action_count} - Legal Actions: {legal_actions}")
+
+        # action = -1
+        # while action not in legal_actions:
+        #     action = int(input("Choose a valid action: "))
+        action = random.choice(legal_actions)
+        # print(f"\tAction Chosen: {action}")
+        logger.info(f"\t> Action Chosen: {action}")
+        obs,reward,terminated,truncated,info = env.step(action)
+
+        logger.debug(f"- Reward for this action: {reward}")
+        total_rewards += reward
+        logger.debug(f"\t> New reward total: {total_rewards}")

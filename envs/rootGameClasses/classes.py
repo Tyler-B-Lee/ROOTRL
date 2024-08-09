@@ -2,16 +2,21 @@ import copy
 import random
 import numpy as np
 from typing import Tuple
-# from stable_baselines import logger
-# from .actionConstants import *
-from actionConstants import *
+from .actionConstants import *
+# from actionConstants import *
 
 Recipe = Tuple[int]
 
 import logging
-logging.basicConfig(filename='file.log',format="%(asctime)s|%(levelname)s|%(name)s|%(message)s",filemode='w')
-logger = logging.getLogger("classes")
-logger.setLevel(logging.DEBUG)
+
+# logging.basicConfig(
+#     filename='file.log',
+#     format="%(asctime)s|%(levelname)s|%(name)s|%(message)s",
+#     filemode='w',
+#     level=logging.DEBUG
+# )
+logger = logging.getLogger(__name__)
+
 
 ### Named Constants
 SUIT_MOUSE = 0
@@ -78,13 +83,13 @@ AID_CRAFT_RC_MAPPING = {
 
 N_PLAYERS = 4
 TURN_MEMORY = 2
-WIN_SCALAR = 0.023
-POINT_WIN_REWARD = 10
-DOM_WIN_REWARD = 20
+WIN_SCALAR = 1
+POINT_WIN_REWARD = 1
+DOM_WIN_REWARD = 1
 # WIN_SCALAR = 0.011
 # POINT_WIN_REWARD = 50
 # DOM_WIN_REWARD = 60
-GAME_SCALAR = WIN_SCALAR
+GAME_SCALAR = 0.025
 MAX_ACTIONS = 1250
 
 PIND_MARQUISE = 0

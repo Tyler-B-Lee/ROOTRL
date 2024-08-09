@@ -1,9 +1,11 @@
 import random
 import numpy as np
-# from .classes import *
-from classes import *
+from .classes import *
+# from classes import *
 
 # python -m tensorboard.main --logdir="C:\Users\tyler\Desktop\Desktop Work\SIMPLE\app\logs"
+
+logger = logging.getLogger(__name__)
 
 class RootGame:
     PHASE_SETUP_MARQUISE = 0
@@ -27,7 +29,7 @@ class RootGame:
         self.board = Board(board_composition)
         self.deck = Deck(deck_composition)
         self.quest_deck = Deck(QUEST_DECK_COMP)
-        self.num_actions_played = starting_action_num
+        self.starting_action_num = starting_action_num
         self.max_actions = max_actions
 
         # self.reset_general_items()
@@ -50,6 +52,7 @@ class RootGame:
         self.phase = self.PHASE_SETUP_MARQUISE
         self.phase_steps = 0
         self.most_cards_seen = 0
+        self.num_actions_played = self.starting_action_num
 
         self.acting_player = 0
         self.outside_turn_this_action = 0
@@ -487,8 +490,9 @@ class RootGame:
         reward = self.points_scored_this_action
         # at this point, if a player has won by dominance, this flag
         # will be set to true in a step of the advance_game function
+        truncated = False
         if self.dominance_win:
-            done = True
+            terminated = True
             self.legal_actions_to_get = [0]
             # print(f"> Dominance Victory by {ID_TO_PLAYER[self.current_player]} - {ID_TO_SUIT[self.active_dominances[self.current_player].suit]}")
             # print(f"\tScore: {self.victory_points} - Actions: {self.num_actions_played}")
@@ -507,25 +511,25 @@ class RootGame:
                         if i == self.current_player or i == PIND_VAGABOND:
                             reward[i] += DOM_WIN_REWARD * WIN_SCALAR
                         else:
-                            reward[i] -= (DOM_WIN_REWARD / (N_PLAYERS - 2)) * WIN_SCALAR
+                            reward[i] -= DOM_WIN_REWARD * WIN_SCALAR
                 else:
                     # the coalition does not win
                     for i in range(N_PLAYERS):
                         if i == self.current_player:
                             reward[i] += DOM_WIN_REWARD * WIN_SCALAR
                         else:
-                            reward[i] -= (DOM_WIN_REWARD / (N_PLAYERS - 2)) * WIN_SCALAR
+                            reward[i] -= DOM_WIN_REWARD * WIN_SCALAR
             else:
                 # no coalition
                 for i in range(N_PLAYERS):
                     if i == self.current_player:
                         reward[i] += DOM_WIN_REWARD * WIN_SCALAR
                     else:
-                        reward[i] -= (DOM_WIN_REWARD / (N_PLAYERS - 1)) * WIN_SCALAR
+                        reward[i] -= DOM_WIN_REWARD * WIN_SCALAR
         else:
             # check for standard 30 point win
-            done = (max(self.victory_points) >= 30) and (self.battle.stage == Battle.STAGE_DONE)
-            if done:
+            terminated = (max(self.victory_points) >= 30) and (self.battle.stage == Battle.STAGE_DONE)
+            if terminated:
                 self.legal_actions_to_get = [0]
                 winlist = self.get_winner_points()
 
@@ -553,33 +557,33 @@ class RootGame:
                             if val == 1 or i == PIND_VAGABOND:
                                 reward[i] += POINT_WIN_REWARD * WIN_SCALAR
                             else:
-                                reward[i] -= (POINT_WIN_REWARD / (N_PLAYERS - 2)) * WIN_SCALAR
+                                reward[i] -= POINT_WIN_REWARD * WIN_SCALAR
                     else:
                         # the coalition does not win
                         for i,val in enumerate(winlist):
                             if val == 1:
                                 reward[i] += POINT_WIN_REWARD * WIN_SCALAR
                             else:
-                                reward[i] -= (POINT_WIN_REWARD / (N_PLAYERS - 2)) * WIN_SCALAR
+                                reward[i] -= POINT_WIN_REWARD * WIN_SCALAR
                 else:
                     # no coalition
                     for i,val in enumerate(winlist):
                         if val == 1:
                             reward[i] += POINT_WIN_REWARD * WIN_SCALAR
                         else:
-                            reward[i] -= (POINT_WIN_REWARD / (N_PLAYERS - 1)) * WIN_SCALAR
+                            reward[i] -= POINT_WIN_REWARD * WIN_SCALAR
         
         self.num_actions_played += 1
         logger.debug(f"> Action # {self.num_actions_played} Played")
-        if (not done) and (self.num_actions_played >= self.max_actions):
-            done = True
+        if (not terminated) and (self.num_actions_played >= self.max_actions):
+            truncated = True
             self.legal_actions_to_get = [0]
             # for i in range(N_PLAYERS):
             #     reward[i] -= 15 * WIN_SCALAR
         # elif done:
         #     print(f"Longest Hand Seen: {self.most_cards_seen}")
 
-        return reward, done
+        return reward, terminated, truncated
 
     def field_hospitals_check(self):
         """
@@ -2249,8 +2253,6 @@ class RootGame:
             self.score_battle_points(self.battle.attacker_id,self.battle.defender_id,1)
             # see if there is a choice anymore
             self.battle.att_hits_to_deal,warriors_killed,cardboard_removed = self.deal_hits(self.battle.defender_id, self.battle.att_hits_to_deal - 1, self.battle.clearing_id)
-            if cardboard_removed:
-                self.score_battle_points(self.battle.attacker_id,self.battle.defender_id,cardboard_removed)
             if warriors_killed:
                 if self.battle.defender_id == PIND_MARQUISE and defender.has_suit_in_hand(clearing.suit) and self.keep_is_up():
                     self.field_hospitals.append((warriors_killed,clearing.suit))
@@ -2265,6 +2267,8 @@ class RootGame:
                     else:
                         logger.debug("> The Vagabond scores bonus points from infamy")
                         self.change_score(PIND_VAGABOND,warriors_killed)
+            if cardboard_removed:
+                self.score_battle_points(self.battle.attacker_id,self.battle.defender_id,cardboard_removed)
             
         elif self.battle.stage == Battle.STAGE_ATT_ORDER:
             # action is what attacker building/token to hit with the next hit
@@ -2318,8 +2322,6 @@ class RootGame:
             self.score_battle_points(self.battle.defender_id,self.battle.attacker_id,1)
             # see if there is a choice in the attacker taking hits
             self.battle.def_hits_to_deal,warriors_killed,cardboard_removed = self.deal_hits(self.battle.attacker_id, self.battle.def_hits_to_deal - 1, self.battle.clearing_id)
-            if cardboard_removed:
-                self.score_battle_points(self.battle.defender_id,self.battle.attacker_id,cardboard_removed)
             # Vagabond does not score infamy here,
             # assuming they cannot attack when it's not their turn
             if warriors_killed:
@@ -2329,6 +2331,8 @@ class RootGame:
                         defender.relationships[attacker.id] = 0
                 if self.battle.attacker_id == PIND_MARQUISE and attacker.has_suit_in_hand(clearing.suit) and self.keep_is_up():
                     self.field_hospitals.append((warriors_killed,clearing.suit))
+            if cardboard_removed:
+                self.score_battle_points(self.battle.defender_id,self.battle.attacker_id,cardboard_removed)
         
         elif self.battle.stage == Battle.STAGE_DEF_AMBUSH:
             # action is the defender's choice to ambush or not
@@ -2366,8 +2370,6 @@ class RootGame:
                 
                 # deal_hits returns the number of remaining hits there are; if >0, it means a choice is possible for the one getting hit
                 self.battle.def_hits_to_deal,warriors_killed,cardboard_removed = self.deal_hits(self.battle.attacker_id, 2, self.battle.clearing_id)
-                if cardboard_removed:
-                    self.score_battle_points(self.battle.defender_id,self.battle.attacker_id,cardboard_removed)
                 # no VB infamy scoring not on their turn
                 if warriors_killed:
                     if self.battle.defender_id == PIND_VAGABOND:
@@ -2376,6 +2378,8 @@ class RootGame:
                             defender.relationships[attacker.id] = 0
                     if self.battle.attacker_id == PIND_MARQUISE and attacker.has_suit_in_hand(clearing.suit) and self.keep_is_up():
                         self.field_hospitals.append((warriors_killed,clearing.suit))
+                if cardboard_removed:
+                    self.score_battle_points(self.battle.defender_id,self.battle.attacker_id,cardboard_removed)
             else:
                 # save which ambush card is played
                 logger.debug(f"{ID_TO_PLAYER[self.battle.attacker_id]} chooses to COUNTER-AMBUSH!")
@@ -2554,8 +2558,6 @@ class RootGame:
                             self.battle.def_hits_to_deal = 0
                     else:
                         self.battle.def_hits_to_deal,warriors_killed,cardboard_removed = self.deal_hits(self.battle.attacker_id, 2, self.battle.clearing_id)
-                        if cardboard_removed:
-                            self.score_battle_points(self.battle.defender_id,self.battle.attacker_id,cardboard_removed)
                         if warriors_killed:
                             if self.battle.defender_id == PIND_VAGABOND:
                                 if not defender.is_hostile(attacker.id):
@@ -2563,6 +2565,8 @@ class RootGame:
                                     defender.relationships[attacker.id] = 0
                             if self.battle.attacker_id == PIND_MARQUISE and attacker.has_suit_in_hand(clearing.suit) and self.keep_is_up():
                                 self.field_hospitals.append((warriors_killed,clearing.suit))
+                        if cardboard_removed:
+                            self.score_battle_points(self.battle.defender_id,self.battle.attacker_id,cardboard_removed)
             
             # Checking for STAGE_ATT_AMBUSH is unnecessary because we will move onto another
             # battle stage after any choice by the attacker:
@@ -2596,8 +2600,6 @@ class RootGame:
                         self.battle.att_hits_to_deal = 0
                 else:
                     self.battle.att_hits_to_deal,warriors_killed,cardboard_removed = self.deal_hits(self.battle.defender_id,self.battle.att_extra_hits+self.battle.att_rolled_hits,self.battle.clearing_id)
-                    if cardboard_removed:
-                        self.score_battle_points(self.battle.attacker_id,self.battle.defender_id,cardboard_removed)
                     if warriors_killed:
                         if self.battle.defender_id == PIND_MARQUISE and defender.has_suit_in_hand(clearing.suit) and self.keep_is_up():
                             self.field_hospitals.append((warriors_killed,clearing.suit))
@@ -2612,6 +2614,8 @@ class RootGame:
                             else:
                                 logger.debug("> The Vagabond scores bonus points from infamy")
                                 self.change_score(PIND_VAGABOND,warriors_killed)
+                    if cardboard_removed:
+                        self.score_battle_points(self.battle.attacker_id,self.battle.defender_id,cardboard_removed)
                 
                 self.battle.stage = Battle.STAGE_DEF_ORDER
 
@@ -2642,8 +2646,6 @@ class RootGame:
                 else:
                     # NOTE - We already did self.battle.def_hits_to_deal = self.battle.def_rolled_hits + self.battle.def_extra_hits above!!! 
                     self.battle.def_hits_to_deal,warriors_killed,cardboard_removed = self.deal_hits(self.battle.attacker_id,self.battle.def_hits_to_deal,self.battle.clearing_id)
-                    if cardboard_removed:
-                        self.score_battle_points(self.battle.defender_id,self.battle.attacker_id,cardboard_removed)
                     if warriors_killed:
                         if self.battle.defender_id == PIND_VAGABOND:
                             if not defender.is_hostile(attacker.id):
@@ -2651,6 +2653,8 @@ class RootGame:
                                 defender.relationships[attacker.id] = 0
                         if self.battle.attacker_id == PIND_MARQUISE and attacker.has_suit_in_hand(clearing.suit) and self.keep_is_up():
                             self.field_hospitals.append((warriors_killed,clearing.suit))
+                    if cardboard_removed:
+                        self.score_battle_points(self.battle.defender_id,self.battle.attacker_id,cardboard_removed)
                 
                 self.battle.stage = Battle.STAGE_ATT_ORDER
                 
@@ -3189,10 +3193,10 @@ class RootGame:
             elif sum(owned_corners) == 4:
                 change = 6
             elif sum(owned_corners) == 3:
-                change = 4
+                change = 5
             # owns two corners, find if they're opposite
             elif (owned_corners[0] and owned_corners[3]) or (owned_corners[1] and owned_corners[2]):
-                change = 2
+                change = 3
             else: # own two corners, but not opposite
                 change = -1
         else:
@@ -3204,11 +3208,11 @@ class RootGame:
             elif num_clearings_owned == 3:
                 change = 4
             elif num_clearings_owned == 2:
-                change = 1
-            elif num_clearings_owned == 1:
                 change = -1
+            elif num_clearings_owned == 1:
+                change = -2
             else: # none of that type owned, yikes
-                change = -3
+                change = -4
         
         for i in range(N_PLAYERS):
             if self.vagabond_coalition_partner != None:
@@ -6027,7 +6031,7 @@ class RootGame:
         # first randomize alliance setup
         logger.debug("> Alliance Setup part 1")
         for _ in range(2):
-            if random.random() < 0.5:
+            if random.random() < 0.55:
                 starting_clearing = random.choice(list(available_clearings))
                 c = self.board.clearings[starting_clearing]
                 if c.suit in abases:
@@ -6221,31 +6225,21 @@ class RootGame:
         
         # random score
         for pid in range(4):
-            self.victory_points[pid] = random.randint(17,22)
+            self.victory_points[pid] = random.randint(15,20)
         logger.debug(f"Score: {self.victory_points}")
         
         logger.debug("--- RANDOM SETUP COMPLETE ---\n\n")
         
         logger.debug(f"\t\t- Turn Order: {[ID_TO_PLAYER[i] for i in self.turn_order]}")
-        logger.debug(f"--- STARTING TURN 1 ---")
-        self.phase_steps = 0
-        first_player = self.turn_order[0]
-        self.current_player = first_player
-        if first_player == PIND_MARQUISE: # Marquise start
-            self.phase = self.PHASE_BIRDSONG_MARQUISE
-        elif first_player == PIND_EYRIE: # Eyrie start
-            self.phase = self.PHASE_BIRDSONG_EYRIE
-        elif first_player == PIND_ALLIANCE: # Alliance start
-            self.phase = self.PHASE_BIRDSONG_ALLIANCE
-        elif first_player == PIND_VAGABOND:
-            self.phase = self.PHASE_BIRDSONG_VAGABOND
+        self.phase = self.PHASE_SETUP_VAGABOND
+        self.phase_steps = 2
 
 
 #obs_sparse = [i if o == 1 else (i,o) for i,o in enumerate(self.observation) if o != 0]
 if __name__ == "__main__":
-    env = RootGame(CHOSEN_MAP,STANDARD_DECK_COMP)
+    env = RootGame(CHOSEN_MAP,STANDARD_DECK_COMP, 1000, 1500)
 
-    done = False
+    terminated = truncated = False
     action_count = 0
     np.set_printoptions(threshold=np.inf)
     # env.reset()
@@ -6253,7 +6247,7 @@ if __name__ == "__main__":
 
     total_rewards = np.zeros(N_PLAYERS)
     # while action_count < 200:
-    while not done:
+    while not (terminated or truncated):
         legal_actions = env.legal_actions()
         logger.debug(f"> Action {action_count} - Player: {ID_TO_PLAYER[env.current_player]}")
         logger.info(f"Legal Actions: {legal_actions}")
@@ -6266,7 +6260,7 @@ if __name__ == "__main__":
         action = random.choice(legal_actions)
         # print(f"\tAction Chosen: {action}")
         logger.info(f"\t> Action Chosen: {action}")
-        reward,done = env.step(action)
+        reward,terminated,truncated = env.step(action)
 
         logger.debug(f"- Reward for this action: {reward}")
         total_rewards += reward

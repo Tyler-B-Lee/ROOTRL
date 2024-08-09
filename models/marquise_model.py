@@ -11,15 +11,18 @@ from gymnasium import Space
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from torch.distributions.utils import logits_to_probs
 
 from stable_baselines3.common.policies import ActorCriticPolicy
 from stable_baselines3.common.distributions import CategoricalDistribution
 from stable_baselines3.common.torch_layers import BaseFeaturesExtractor
 from stable_baselines3.common.type_aliases import PyTorchObs
 
+import config
 
-ACTIONS = 548
-OBS_LENGTH = 1538
+
+ACTIONS = config.NUM_ACTIONS_MARQUISE
+OBS_LENGTH = config.NUM_OBS_MARQUISE
 
 RESNET_FEATURE_SIZE = 256
 # final layer sizes before output layer
@@ -249,3 +252,9 @@ class CustomPolicy(ActorCriticPolicy):
         features, legal_actions = self.features_extractor(obs)
         latent_vf = self.mlp_extractor.forward_critic(features)
         return latent_vf
+    
+    def action_probability(self, obs: PyTorchObs):
+        "Return the action probabilities for each action according to the current policy given the observations."
+        features, legal_actions = self.features_extractor(obs)
+        policy_logits = self.mlp_extractor.forward_actor(features, legal_actions)
+        return logits_to_probs(policy_logits).numpy()
