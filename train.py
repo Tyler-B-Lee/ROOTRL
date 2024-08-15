@@ -13,14 +13,14 @@ def main(args):
     log_level = logging.INFO
 
   logging.basicConfig(
-      filename='file.log',
+      filename='logs/log.txt',
       format="%(asctime)s|%(levelname)s|%(name)s|%(message)s",
       filemode='w',
       level=log_level
   )
   logger = logging.getLogger(__name__)
 
-  logger.debug("Logging level set at DEBUG or higher!")
+  logger.debug("Logging level set at DEBUG or lower!")
   logger.info("Beginning Imports...")
 
   from stable_baselines3 import PPO
@@ -47,12 +47,11 @@ def main(args):
   if args.reset:
     reset_models(model_dir)
 
-  workerseed = args.seed
-  set_random_seed(workerseed)
+  set_random_seed(args.seed)
 
   logger.info('\nSetting up the selfplay training environment opponents...')
   base_env = get_environment(args.env_name)
-  env = model_manager_wrapper(base_env)(opponent_type = args.opponent_type, verbose = args.verbose)
+  env = model_manager_wrapper(base_env)(name = args.env_name, opponent_type = args.opponent_type, verbose = args.verbose)
 
   params = {'gamma':args.gamma
     , 'timesteps_per_actorbatch':args.timesteps_per_actorbatch
@@ -80,7 +79,7 @@ def main(args):
   #Callbacks
   logger.info('\nSetting up the selfplay evaluation environment opponents...')
   callback_args = {
-    'eval_env': model_manager_wrapper(base_env)(opponent_type = args.opponent_type, verbose = args.verbose),
+    'eval_env': model_manager_wrapper(base_env)(name = args.env_name, opponent_type = args.opponent_type, verbose = args.verbose),
     'best_model_save_path' : config.TMPMODELDIR,
     'log_path' : config.LOGDIR,
     'eval_freq' : args.eval_freq,
@@ -94,7 +93,7 @@ def main(args):
     logger.info('\nSetting up the evaluation environment against the rules-based agent...')
     # Evaluate against a 'rules' agent as well
     eval_actual_callback = EvalCallback(
-      eval_env = model_manager_wrapper(base_env)(opponent_type = 'rules', verbose = args.verbose),
+      eval_env = model_manager_wrapper(base_env)(name = args.env_name, opponent_type = 'rules', verbose = args.verbose),
       eval_freq=1,
       n_eval_episodes=args.n_eval_episodes,
       deterministic = args.best,
@@ -103,7 +102,7 @@ def main(args):
     )
     callback_args['callback_on_new_best'] = eval_actual_callback
     
-  # Evaluate the agent against previous versions
+  # Evaluate the agent, saving new best versions
   eval_callback = CheckpointSavingCallback(args.opponent_type, args.threshold, args.env_name, **callback_args)
 
   logger.info('\nSetup complete - commencing learning...\n')
@@ -113,7 +112,7 @@ def main(args):
   env.close()
   del env
 
-# py train.py -o rules -e MarquiseMainBase -ne 20
+# py train.py -o rules -e MarquiseMainBase -ne 50
 
 def cli() -> None:
   """Handles argument extraction from CLI and passing to main().

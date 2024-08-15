@@ -4,9 +4,6 @@
 # vagabond 604
 
 from gymnasium import Space
-# import tensorflow as tf
-# tf.get_logger().setLevel('INFO')
-# tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
 import torch
 import torch.nn as nn
@@ -257,4 +254,4 @@ class CustomPolicy(ActorCriticPolicy):
         "Return the action probabilities for each action according to the current policy given the observations."
         features, legal_actions = self.features_extractor(obs)
         policy_logits = self.mlp_extractor.forward_actor(features, legal_actions)
-        return logits_to_probs(policy_logits).numpy()
+        return logits_to_probs(policy_logits)

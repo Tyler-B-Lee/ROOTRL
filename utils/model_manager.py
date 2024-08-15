@@ -19,8 +19,8 @@ logger = logging.getLogger(__name__)
 def model_manager_wrapper(env: gym.Env):
     class ModelManagerEnv(env):
         # wrapper over the normal single player env, but loads the correct opponent models
-        def __init__(self, opponent_type, verbose):
-            super(ModelManagerEnv, self).__init__(verbose)
+        def __init__(self, name, opponent_type, verbose):
+            super(ModelManagerEnv, self).__init__(name, verbose)
             self.opponent_type = opponent_type
             self.opponent_models = load_all_models(self)
             self.best_model_name = get_best_model_name(self.name)
@@ -61,7 +61,8 @@ def model_manager_wrapper(env: gym.Env):
 
                     elif self.opponent_type == 'base':
                         self.agents[pid] = Agent(name='base', action_space_size=config.ACTION_SPACE_SIZES[pid], model=self.opponent_models[0])
-
+            
+            logger.debug(f"Agents loaded: {self.agents}")
             try:
                 #if self.players is defined on the base environment
                 logger.debug(f'Agent plays as Player {self.main_player_id}')
@@ -71,9 +72,11 @@ def model_manager_wrapper(env: gym.Env):
 
         def reset(self, seed:int=None):
             super(ModelManagerEnv, self).reset(seed)
+            logger.debug(f"Post super-setup main player: {self.main_player_id} | Current player num: {self.current_player_num}")
             self.setup_opponents()
 
             if self.current_player_num != self.main_player_id:   
+                logger.debug(f"Pre continue_game main player: {self.main_player_id} | Current player num: {self.current_player_num}")
                 self.continue_game()
 
             return self.observation, {}

@@ -493,6 +493,7 @@ class RootGame:
         truncated = False
         if self.dominance_win:
             terminated = True
+            logger.debug(f"--- GAME OVER: DOMINANCE VICTORY BY {ID_TO_PLAYER[self.current_player]} ---")
             self.legal_actions_to_get = [0]
             # print(f"> Dominance Victory by {ID_TO_PLAYER[self.current_player]} - {ID_TO_SUIT[self.active_dominances[self.current_player].suit]}")
             # print(f"\tScore: {self.victory_points} - Actions: {self.num_actions_played}")
@@ -532,6 +533,7 @@ class RootGame:
             if terminated:
                 self.legal_actions_to_get = [0]
                 winlist = self.get_winner_points()
+                logger.debug(f"--- GAME OVER: POINT VICTORY BY: {[ID_TO_PLAYER[i] for i,result in enumerate(winlist) if result==1]} ---")
 
                 # if winlist[PIND_EYRIE] == 1:
                 #     eplayer = self.players[PIND_EYRIE]
@@ -577,6 +579,7 @@ class RootGame:
         logger.debug(f"> Action # {self.num_actions_played} Played")
         if (not terminated) and (self.num_actions_played >= self.max_actions):
             truncated = True
+            logger.debug(f"--- GAME TRUNCATED: {self.max_actions} ACTIONS REACHED ---")
             self.legal_actions_to_get = [0]
             # for i in range(N_PLAYERS):
             #     reward[i] -= 15 * WIN_SCALAR

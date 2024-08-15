@@ -2,9 +2,9 @@
 
 def get_environment(env_name):
     try:
-        if env_name in ('MarquiseMainBase'):
-            from envs.marquise_base_training import MarquiseMainBaseEnv
-            return MarquiseMainBaseEnv
+        if "MainBase" in env_name:
+            from envs.base_training import MainBaseEnv
+            return MainBaseEnv
         else:
             raise Exception(f'No environment found for {env_name}')
     except SyntaxError as e:
@@ -17,6 +17,15 @@ def get_environment(env_name):
 def get_network_arch(env_name):
     if env_name in ('MarquiseMainBase'):
         from models.marquise_model import CustomPolicy
+        return CustomPolicy
+    if env_name in ('EyrieMainBase'):
+        from models.eyrie_model import CustomPolicy
+        return CustomPolicy
+    if env_name in ('AllianceMainBase'):
+        from models.alliance_model import CustomPolicy
+        return CustomPolicy
+    if env_name in ('VagabondMainBase'):
+        from models.vagabond_model import CustomPolicy
         return CustomPolicy
     else:
         raise Exception(f'No model architectures found for {env_name}')

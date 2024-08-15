@@ -3,6 +3,7 @@ import numpy as np
 np.set_printoptions(threshold=sys.maxsize)
 import random
 import string
+import torch
 
 import logging
 # logging.basicConfig(
@@ -42,16 +43,19 @@ class Agent():
         action_probs = np.array(env.rules_move(self.action_space_size))
         value = None
       else:
-        action_probs = self.model.action_probability(env.observation)
-        value = self.model.predict_values(np.array([env.observation]))[0]
-        logger.debug(f'Value {value:.2f}')
+        with torch.no_grad():
+          obs_input = torch.tensor(np.array([env.observation]))
+          action_probs = self.model.policy.action_probability(obs_input)[0].numpy()
+          value = self.model.policy.predict_values(obs_input)[0].item()
+        wr = (value + 1) * 50
+        logger.debug(f'Value: {value:.2f} (~{wr:.2f}% Predicted Win Chance)')
 
       self.print_top_actions(action_probs)
       
-      if mask_invalid_actions:
-        action_probs = mask_actions(env.legal_actions, action_probs)
-        logger.debug('Masked ->')
-        self.print_top_actions(action_probs)
+      # if mask_invalid_actions:
+      #   action_probs = mask_actions(env.legal_actions, action_probs)
+      #   logger.debug('Masked ->')
+      #   self.print_top_actions(action_probs)
         
       action = np.argmax(action_probs)
       logger.debug(f'Best action {action}')

@@ -61,7 +61,7 @@ def load_model(env, name):
         while cont:
             try:
                 ppo_model = PPO(get_network_arch(env.name), env=env)
-                logger.info(f'Saving base.zip PPO model...')
+                logger.info(f'Saving new base.zip PPO model...')
                 ppo_model.save(os.path.join(config.MODELDIR, env.name, 'base.zip'))
 
                 cont = False
@@ -87,11 +87,12 @@ def load_all_models(env):
     
     The type of opponents that need to be loaded could be based on the environment passed in.
     """
-    models = [None] * 4
-    if 'Marquise' in env.name:
-        filename = os.path.join(config.MODELDIR, env.name, "base.zip")
-        if not os.path.exists(filename):
-            load_model(env, "base.zip")
+    models = [{} for _ in range(4)]
+
+    filename = os.path.join(config.MODELDIR, env.name, "base.zip")
+    if not os.path.exists(filename):
+        load_model(env, "base.zip")
+
     if 'MainBase' in env.name:
         return models
     
