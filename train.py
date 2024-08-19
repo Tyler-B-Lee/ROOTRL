@@ -30,7 +30,7 @@ def main(args):
   # from utils.callbacks import SelfPlayCallback
   from register import get_environment
   from utils.files import reset_logs, reset_models
-  from utils.model_manager import model_manager_wrapper
+  from utils.model_manager import training_model_manager_wrapper
   from utils.callbacks import CheckpointSavingCallback
 
   import config
@@ -51,7 +51,17 @@ def main(args):
 
   logger.info('\nSetting up the selfplay training environment opponents...')
   base_env = get_environment(args.env_name)
-  env = model_manager_wrapper(base_env)(name = args.env_name, opponent_type = args.opponent_type, verbose = args.verbose)
+  if "Marquise" in args.env_name:
+    model_players = [0]
+  elif "Eyrie" in args.env_name:
+    model_players = [1]
+  elif "Alliance" in args.env_name:
+    model_players = [2]
+  elif "Vagabond" in args.env_name:
+    model_players = [3]
+  else:
+    raise Exception(f"No valid faction found in '{args.env_name}'")
+  env = training_model_manager_wrapper(base_env)(env_name = args.env_name, model_players = model_players, opponent_type = args.opponent_type, verbose = args.verbose)
 
   params = {'gamma':args.gamma
     , 'timesteps_per_actorbatch':args.timesteps_per_actorbatch
@@ -79,7 +89,7 @@ def main(args):
   #Callbacks
   logger.info('\nSetting up the selfplay evaluation environment opponents...')
   callback_args = {
-    'eval_env': model_manager_wrapper(base_env)(name = args.env_name, opponent_type = args.opponent_type, verbose = args.verbose),
+    'eval_env': training_model_manager_wrapper(base_env)(env_name = args.env_name, model_players = model_players, opponent_type = args.opponent_type, verbose = args.verbose),
     'best_model_save_path' : config.TMPMODELDIR,
     'log_path' : config.LOGDIR,
     'eval_freq' : args.eval_freq,
@@ -93,7 +103,7 @@ def main(args):
     logger.info('\nSetting up the evaluation environment against the rules-based agent...')
     # Evaluate against a 'rules' agent as well
     eval_actual_callback = EvalCallback(
-      eval_env = model_manager_wrapper(base_env)(name = args.env_name, opponent_type = 'rules', verbose = args.verbose),
+      eval_env = training_model_manager_wrapper(base_env)(env_name = args.env_name, model_players = model_players, opponent_type = 'rules', verbose = args.verbose),
       eval_freq=1,
       n_eval_episodes=args.n_eval_episodes,
       deterministic = args.best,

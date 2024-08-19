@@ -16,11 +16,11 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def model_manager_wrapper(env: gym.Env):
-    class ModelManagerEnv(env):
+def training_model_manager_wrapper(env: gym.Env):
+    class TrainingModelManagerEnv(env):
         # wrapper over the normal single player env, but loads the correct opponent models
-        def __init__(self, name, opponent_type, verbose):
-            super(ModelManagerEnv, self).__init__(name, verbose)
+        def __init__(self, env_name, model_players, opponent_type, verbose):
+            super(TrainingModelManagerEnv, self).__init__(env_name, model_players, verbose)
             self.opponent_type = opponent_type
             self.opponent_models = load_all_models(self)
             self.best_model_name = get_best_model_name(self.name)
@@ -37,7 +37,7 @@ def model_manager_wrapper(env: gym.Env):
                     # incremental load of new model
                     best_model_name = get_best_model_name(self.name)
                     if self.best_model_name != best_model_name:
-                        self.opponent_models.append(load_model(self, best_model_name ))
+                        self.opponent_models.append(load_model(self.name, best_model_name, self))
                         self.best_model_name = best_model_name
 
                     if self.opponent_type == 'random':
@@ -71,7 +71,7 @@ def model_manager_wrapper(env: gym.Env):
 
 
         def reset(self, seed:int=None):
-            super(ModelManagerEnv, self).reset(seed)
+            super(TrainingModelManagerEnv, self).reset(seed)
             logger.debug(f"Post super-setup main player: {self.main_player_id} | Current player num: {self.current_player_num}")
             self.setup_opponents()
 
@@ -87,42 +87,44 @@ def model_manager_wrapper(env: gym.Env):
 
         def continue_game(self):
             observation = None
-            reward = None
+            reward_list = None
             terminated = None
             truncated = None
 
             while self.current_player_num != self.main_player_id:
                 self.render()
                 action = self.current_agent.choose_action(self, choose_best_action = False, mask_invalid_actions = False)
-                observation, reward, terminated, truncated, _ = super(ModelManagerEnv, self).step(action)
-                logger.debug(f'Rewards: {reward}')
+                observation, reward_list, terminated, truncated, _ = super(TrainingModelManagerEnv, self).step(action)
+                logger.debug(f'Rewards: {reward_list}')
                 logger.debug(f'Terminated: {terminated} | Truncated: {truncated}')
                 if (terminated or truncated):
                     break
 
-            return observation, reward, terminated, truncated, None
+            return observation, reward_list, terminated, truncated, None
 
 
         def step(self, action):
             self.render()
-            observation, reward, terminated, truncated, _ = super(ModelManagerEnv, self).step(action)
+            observation, reward_list, terminated, truncated, _ = super(TrainingModelManagerEnv, self).step(action)
             logger.debug(f'Action played by agent: {action}')
-            logger.debug(f'Rewards: {reward}')
+            logger.debug(f'Rewards: {reward_list}')
             logger.debug(f'Terminated: {terminated} | Truncated: {truncated}')
 
             if not (terminated or truncated):
                 package = self.continue_game()
                 if package[0] is not None:
-                    observation, reward, terminated, truncated, _ = package
+                    observation, reward_list, terminated, truncated, _ = package
 
 
-            agent_reward = reward[self.main_player_id]
+            agent_reward = reward_list[self.main_player_id]
             logger.debug(f'\nReward To Agent: {agent_reward}')
 
             if (terminated or truncated):
                 self.render()
-                observation = self.get_main_observation()
+                observation = self.get_main_observation(self.main_player_id)
+            
+            logger.debug(f"Agent reward for their step: {agent_reward}")
 
             return observation, agent_reward, terminated, truncated, {} 
 
-    return ModelManagerEnv
+    return TrainingModelManagerEnv

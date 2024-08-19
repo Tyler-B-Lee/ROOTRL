@@ -5,7 +5,7 @@ import time
 import numpy as np
 
 
-from shutil import rmtree
+from shutil import rmtree, copyfile
 from stable_baselines3 import PPO
 
 from register import get_network_arch
@@ -42,34 +42,56 @@ def write_results(players, game, games, episode_length):
         writer.writerow(out)
 
 
-def load_model(env, name):
+def load_model(env_name:str, model_name:str, env_obj=None):
 
-    filename = os.path.join(config.MODELDIR, env.name, name)
+    filename = os.path.join(config.MODELDIR, env_name, model_name)
     if os.path.exists(filename):
-        logger.info(f'Loading {name}')
+        logger.info(f'Loading model: {model_name} for environment {env_name}, object {env_obj}')
         cont = True
         while cont:
             try:
-                ppo_model = PPO.load(filename, env=env)
+                ppo_model = PPO.load(filename, env=env_obj)
                 cont = False
             except Exception as e:
                 time.sleep(5)
                 print(e)
-    
-    elif name == 'base.zip':
-        cont = True
-        while cont:
-            try:
-                ppo_model = PPO(get_network_arch(env.name), env=env)
-                logger.info(f'Saving new base.zip PPO model...')
-                ppo_model.save(os.path.join(config.MODELDIR, env.name, 'base.zip'))
 
-                cont = False
-            except IOError as e:
-                sys.exit(f'Check zoo/{env.name}/ exists and read/write permission granted to user')
-            except Exception as e:
-                logger.error(e)
-                time.sleep(2)
+    # no base model found
+    elif model_name == 'base.zip':
+        logger.info(f"\tNo 'base' model found for environment {env_name}")
+        if 'MainAlgo' in env_name:
+            # The base model for the algo environment will actually be
+            # the previous best model in the base environment
+            if 'Marquise' in env_name:
+                prev_env_name = "MarquiseMainBase"
+            elif 'Eyrie' in env_name:
+                prev_env_name = "EyrieMainBase"
+            elif 'Alliance' in env_name:
+                prev_env_name = "AllianceMainBase"
+            elif 'Vagabond' in env_name:
+                prev_env_name = "VagabondMainBase"
+            else:
+                raise Exception(f"Unknown MainAlgo Environment name: '{env_name}'")
+            
+            logger.info(f"\tAttempting to copy 'best_model' from environment {prev_env_name}...")
+            best_file_to_start_from = os.path.join(config.MODELDIR, prev_env_name, "best_model.zip")
+            copyfile(best_file_to_start_from, filename)
+            logger.info(f"\tNew 'base' model created for environment {env_name}")
+            ppo_model = PPO.load(filename, env=env_obj)
+        else:
+            cont = True
+            while cont:
+                try:
+                    ppo_model = PPO(get_network_arch(env_name), env=env_obj)
+                    logger.info(f'Saving new base.zip PPO model...')
+                    ppo_model.save(os.path.join(config.MODELDIR, env_name, 'base.zip'))
+
+                    cont = False
+                except IOError as e:
+                    sys.exit(f'Check zoo/{env_name}/ exists and read/write permission granted to user')
+                except Exception as e:
+                    logger.error(e)
+                    time.sleep(2)
                 
     else:
         raise Exception(f'\n{filename} not found')
@@ -89,11 +111,13 @@ def load_all_models(env):
     """
     models = [{} for _ in range(4)]
 
-    filename = os.path.join(config.MODELDIR, env.name, "base.zip")
-    if not os.path.exists(filename):
-        load_model(env, "base.zip")
+    # first ensure that the factions we want to load models of
+    # for this environment atleast have a "base" model
+    base_filename = os.path.join(config.MODELDIR, env.name, "base.zip")
+    if not os.path.exists(base_filename):
+        load_model(env.name, "base.zip", env)
 
-    if 'MainBase' in env.name:
+    if 'MainBase' in env.name or 'MainAlgo' in env.name:
         return models
     
     modellist = [f for f in os.listdir(os.path.join(config.MODELDIR, env.name)) if f.startswith("_model")]

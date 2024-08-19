@@ -6135,7 +6135,7 @@ class RootGame:
                 mplayer.update_from_building_placed(bind)
                 self.board.place_building(PIND_MARQUISE,bind,starting_keep_clearing)
                 if bind == BIND_SAWMILL:
-                    n_wood = random.randint(0,3)
+                    n_wood = random.randint(1,4)
                     while n_wood > 0:
                         mplayer.change_num_tokens(TIND_WOOD, -1)
                         self.board.place_token(PIND_MARQUISE, TIND_WOOD, starting_keep_clearing)
@@ -6143,12 +6143,12 @@ class RootGame:
         # now randomly place a few buildings / warriors
         clrs = list(available_clearings)
         random.shuffle(clrs)
-        marq_clrs_to_populate = clrs[:random.randint(1,7)]
+        marq_clrs_to_populate = clrs[:random.randint(2,7)]
         for cid in marq_clrs_to_populate:
             c = self.board.clearings[cid]
             # add buildings first
             for _ in range(c.num_building_slots):
-                if random.random() < 0.6: # place building in this clearing
+                if random.random() < 0.7: # place building in this clearing
                     bind = random.randint(0,2)
                     if mplayer.buildings[bind] > 0:
                         mplayer.update_from_building_placed(bind)
@@ -6173,13 +6173,13 @@ class RootGame:
         random.shuffle(clrs)
         alliance_clrs_to_check = clrs[:random.randint(2,6)]
         for cid in alliance_clrs_to_check:
-            if random.random() < 0.5:
+            if random.random() < 0.4:
                 # place sympathy
                 c = self.board.clearings[cid]
                 if (not c.is_sympathetic()) and c.can_place(PIND_ALLIANCE):
                     self.board.place_token(PIND_ALLIANCE, TIND_SYMPATHY, cid)
                     aplayer.spread_sympathy_helper()
-            if random.random() < 0.5:
+            if random.random() < 0.4:
                 # place warrior
                 if aplayer.warrior_storage > 0:
                     aplayer.change_num_warriors(-1)
@@ -6208,7 +6208,7 @@ class RootGame:
         for cid in eyrie_clrs_to_populate:
             c = self.board.clearings[cid]
             # add roost first
-            if random.random() < 0.8: # place roost in this clearing
+            if random.random() < 0.7: # place roost in this clearing
                 eplayer.place_roost()
                 self.board.place_building(PIND_EYRIE,BIND_ROOST,cid)
                 if c.get_num_empty_slots() == 0:
@@ -6228,7 +6228,7 @@ class RootGame:
         
         # random score
         for pid in range(4):
-            self.victory_points[pid] = random.randint(15,20)
+            self.victory_points[pid] = random.randint(5,15)
         logger.debug(f"Score: {self.victory_points}")
         
         logger.debug("--- RANDOM SETUP COMPLETE ---\n\n")

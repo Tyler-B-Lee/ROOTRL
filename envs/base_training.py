@@ -27,41 +27,28 @@ VAGABOND_ID = 3
 class MainBaseEnv(gym.Env):
     metadata = {'render.modes': ['human']}
 
-    def __init__(self, env_name:str, verbose = False, manual = False):
+    def __init__(self, env_name:str, model_players:list, verbose = False, manual = False):
         super(MainBaseEnv, self).__init__()
 
         self.game = RootGame(CHOSEN_MAP, STANDARD_DECK_COMP, 1000, 1500)
         self.name = env_name
+        self.model_players = model_players
+        self.main_player_id = self.model_players[0]
         
-        if self.name == 'MarquiseMainBase':
-            self.main_player_id = MARQUISE_ID
-            obs_size = config.NUM_OBS_MARQUISE
-            self.obs_method = self.game.get_marquise_observation
-        elif self.name == 'EyrieMainBase':
-            self.main_player_id = EYRIE_ID
-            obs_size = config.NUM_OBS_EYRIE
-            self.obs_method = self.game.get_eyrie_observation
-        elif self.name == 'AllianceMainBase':
-            self.main_player_id = ALLIANCE_ID
-            obs_size = config.NUM_OBS_ALLIANCE
-            self.obs_method = self.game.get_alliance_observation
-        elif self.name == 'VagabondMainBase':
-            self.main_player_id = VAGABOND_ID
-            obs_size = config.NUM_OBS_VAGABOND
-            self.obs_method = self.game.get_vagabond_observation
-        else:
-            raise Exception(f"Unknown main faction setting: {env_name}")
+        logger.info(f"Loading env with name '{env_name}'")
 
         self.n_players = 4
+        self.verbose = verbose
         self.manual = manual
 
         self.action_space = gym.spaces.Discrete(config.ACTION_SPACE_SIZES[self.main_player_id])
         self.observation_space = gym.spaces.Box(-1, 1, (
-            obs_size
+            config.OBS_SPACE_SIZES[self.main_player_id]
             + self.action_space.n
             , )
         )  
-        self.verbose = verbose
+
+        self.obs_methods = [self.game.get_marquise_observation,self.game.get_eyrie_observation,self.game.get_alliance_observation,self.game.get_vagabond_observation]
 
     @property
     def current_player(self) -> Player:
@@ -72,26 +59,28 @@ class MainBaseEnv(gym.Env):
     #     i = (self.current_player_num + 1) % 2
     #     return self.players[i]
     
-    def get_main_observation(self):
-        la = np.zeros(self.action_space.n)
+    def get_main_observation(self, pid:int):
+        la = np.zeros(config.ACTION_SPACE_SIZES[pid])
         la.put(self.game.legal_actions(), 1.0)
 
-        ret = np.append(self.obs_method(), la)
+        obs_method = self.obs_methods[pid]
+
+        ret = np.append(obs_method(), la)
         return ret.astype(np.float32)
         
     @property
     def observation(self):
         # since the opponents are always rules based, don't calculate their obs/legal actions
-        if (self.game.to_play() - self.main_player_id) != 0:
+        if self.game.to_play() not in self.model_players:
             return [0]
-        return self.get_main_observation()
+        return self.get_main_observation(self.game.to_play())
 
     @property
     def legal_actions(self):
-        if (self.game.to_play() - self.main_player_id) != 0:
+        if self.game.to_play() not in self.model_players:
             ret = np.zeros(604)
         else:
-            ret = np.zeros(self.action_space.n)
+            ret = np.zeros(config.ACTION_SPACE_SIZES[self.game.to_play()])
         ret.put(self.game.legal_actions(), 1.0)
         return ret
 
@@ -139,9 +128,16 @@ class MainBaseEnv(gym.Env):
 
 
     def rules_move(self, action_space_size:int):
-        "Returns action probabilities for the current rules-based faction."
+        """
+        Returns action probabilities for the current rules-based faction.
+        
+        This is the base-level rules bot, making basic choices for each
+        faction to barely stay in the game and keep things progressing
+        very slowly. Supposed to not be challenging to defeat at all, 
+        mainly serving as a warm-up for training against.
+        """
         opponent_id = self.game.to_play()
-        assert (opponent_id != self.main_player_id)
+        assert (opponent_id not in self.model_players)
 
         ret = np.zeros(action_space_size)
         # action_chosen = random.choice(self.get_legal_action_numbers())
@@ -188,7 +184,7 @@ class MainBaseEnv(gym.Env):
         
 
 if __name__ == "__main__":
-    env = MainBaseEnv(MARQUISE_ID)
+    env = MainBaseEnv("MarquiseMainBase", [MARQUISE_ID])
     env.reset()
     terminated = truncated = False
     total_rewards = np.zeros(N_PLAYERS)

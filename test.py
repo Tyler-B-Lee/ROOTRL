@@ -29,7 +29,8 @@ def main(args):
   import config
     
   #make environment
-  env = get_environment(args.env_name)(env_name = args.env_name, verbose = args.verbose, manual = args.manual)
+  model_players = [i for i,a in enumerate(args.agents) if (a != "rules")]
+  env = get_environment(args.env_name)(env_name = args.env_name, model_players = model_players, verbose = args.verbose, manual = args.manual)
   set_random_seed(args.seed)
 
   total_rewards = {}
@@ -39,7 +40,7 @@ def main(args):
   #   ppo_agent = Agent('best_model', ppo_model)
   # else:
   #   ppo_agent = None
-
+  ENV_NAMES = ["MarquiseMainBase", "EyrieMainBase", "AllianceMainBase", "VagabondMainBase"]
 
   agents = []
 
@@ -47,16 +48,16 @@ def main(args):
   if len(args.agents) != env.n_players:
     raise Exception(f'{len(args.agents)} players specified but this is a {env.n_players} player game!')
 
-  for agent, aspace_size in zip(args.agents, config.ACTION_SPACE_SIZES):
+  for agent, aspace_size, env_name in zip(args.agents, config.ACTION_SPACE_SIZES, ENV_NAMES):
     if agent == 'human':
       agent_obj = Agent('human', aspace_size)
     elif agent == 'rules':
       agent_obj = Agent('rules', aspace_size)
     elif agent == 'base':
-      base_model = load_model(env, 'base.zip')
+      base_model = load_model(env_name, 'base.zip', None)
       agent_obj = Agent('base', aspace_size, base_model)   
     else:
-      ppo_model = load_model(env, f'{agent}.zip')
+      ppo_model = load_model(env_name, f'{agent}.zip', None)
       agent_obj = Agent(agent, aspace_size, ppo_model)
 
     agents.append(agent_obj)
@@ -100,9 +101,9 @@ def main(args):
         logger.debug(f'\n{current_player.name} model choices')
         action = current_player.choose_action(env, choose_best_action = args.best, mask_invalid_actions = True)
 
-      obs, reward, terminated, truncated, _ = env.step(action)
+      obs, step_reward_list, terminated, truncated, _ = env.step(action)
 
-      for r, player in zip(reward, players):
+      for r, player in zip(step_reward_list, players):
         total_rewards[player.id] += r
         player.points += r
 

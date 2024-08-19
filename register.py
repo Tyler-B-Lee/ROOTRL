@@ -5,6 +5,9 @@ def get_environment(env_name):
         if "MainBase" in env_name:
             from envs.base_training import MainBaseEnv
             return MainBaseEnv
+        elif "MainAlgo" in env_name:
+            from envs.algo_training import MainAlgoEnv
+            return MainAlgoEnv
         else:
             raise Exception(f'No environment found for {env_name}')
     except SyntaxError as e:
@@ -15,16 +18,16 @@ def get_environment(env_name):
     
 
 def get_network_arch(env_name):
-    if env_name in ('MarquiseMainBase'):
+    if "Marquise" in env_name:
         from models.marquise_model import CustomPolicy
         return CustomPolicy
-    if env_name in ('EyrieMainBase'):
+    if "Eyrie" in env_name:
         from models.eyrie_model import CustomPolicy
         return CustomPolicy
-    if env_name in ('AllianceMainBase'):
+    if "Alliance" in env_name:
         from models.alliance_model import CustomPolicy
         return CustomPolicy
-    if env_name in ('VagabondMainBase'):
+    if "Vagabond" in env_name:
         from models.vagabond_model import CustomPolicy
         return CustomPolicy
     else:
