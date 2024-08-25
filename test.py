@@ -30,7 +30,7 @@ def main(args):
     
   #make environment
   model_players = [i for i,a in enumerate(args.agents) if (a != "rules")]
-  env = get_environment(args.env_name)(env_name = args.env_name, model_players = model_players, verbose = args.verbose, manual = args.manual)
+  env = get_environment(args.env_name)(rules_type = args.env_name, model_players = model_players, verbose = args.verbose, manual = args.manual)
   set_random_seed(args.seed)
 
   total_rewards = {}
@@ -40,7 +40,6 @@ def main(args):
   #   ppo_agent = Agent('best_model', ppo_model)
   # else:
   #   ppo_agent = None
-  ENV_NAMES = ["MarquiseMainBase", "EyrieMainBase", "AllianceMainBase", "VagabondMainBase"]
 
   agents = []
 
@@ -48,17 +47,17 @@ def main(args):
   if len(args.agents) != env.n_players:
     raise Exception(f'{len(args.agents)} players specified but this is a {env.n_players} player game!')
 
-  for agent, aspace_size, env_name in zip(args.agents, config.ACTION_SPACE_SIZES, ENV_NAMES):
+  for agent, aspace_size, model_type in zip(args.agents, config.ACTION_SPACE_SIZES, args.model_types):
     if agent == 'human':
       agent_obj = Agent('human', aspace_size)
     elif agent == 'rules':
-      agent_obj = Agent('rules', aspace_size)
+      agent_obj = Agent(f'{args.env_name} rules', aspace_size)
     elif agent == 'base':
-      base_model = load_model(env_name, 'base.zip', None)
-      agent_obj = Agent('base', aspace_size, base_model)   
+      base_model = load_model((model_type + "_" + args.env_name), 'base.zip', None)
+      agent_obj = Agent((model_type + "_" + args.env_name + ' base'), aspace_size, base_model)
     else:
-      ppo_model = load_model(env_name, f'{agent}.zip', None)
-      agent_obj = Agent(agent, aspace_size, ppo_model)
+      ppo_model = load_model((model_type + "_" + args.env_name), f'{agent}.zip', None)
+      agent_obj = Agent((model_type + "_" + args.env_name + " " + agent), aspace_size, ppo_model)
 
     agents.append(agent_obj)
     total_rewards[agent_obj.id] = 0
@@ -135,7 +134,7 @@ def cli() -> None:
   parser = argparse.ArgumentParser(formatter_class=formatter_class)
 
   parser.add_argument("--agents","-a", nargs = '+', type=str, default = ['human', 'human']
-                , help="Player Agents (human, ppo version)")
+                , help="Player Agents (human, rules, ppo model file name)")
   parser.add_argument("--best", "-b", action = 'store_true', default = False
                 , help="Make AI agents choose the best move (rather than sampling)")
   parser.add_argument("--games", "-g", type = int, default = 1
@@ -152,10 +151,12 @@ def cli() -> None:
   #           , help="Randomise the player order")
   # parser.add_argument("--recommend", "-re",  action = 'store_true', default = False
   #           , help="Make recommendations on humans turns")
+  parser.add_argument("--model_types", "-mt", nargs='+', type = str, default = ['None','None','None','None']
+            , help="Which agent models to load for each faction? 'None' for no model")
   parser.add_argument("--cont", "-c",  action = 'store_true', default = False
             , help="Pause after each turn to wait for user to continue")
-  parser.add_argument("--env_name", "-e",  type = str, default = 'TicTacToe'
-            , help="Which game to play?")
+  parser.add_argument("--env_name", "-e",  type = str, default = 'Base'
+            , help="Which env to play in?")
   parser.add_argument("--write_results", "-w",  action = 'store_true', default = False
             , help="Write results to a file?")
   parser.add_argument("--seed", "-s",  type = int, default = 17

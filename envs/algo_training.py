@@ -24,19 +24,26 @@ VAGABOND_ID = 3
 # alliance - 1571 / 530
 # vagabond - 1547 / 604
 
-class MainAlgoEnv(gym.Env):
+class RootEnv(gym.Env):
     metadata = {'render.modes': ['human']}
 
-    def __init__(self, env_name:str, model_players:list, verbose = False, manual = False):
-        super(MainAlgoEnv, self).__init__()
+    def __init__(self, rules_type:str, model_players:list, verbose = False, manual = False):
+        super(RootEnv, self).__init__()
 
-        self.game = RootGame(CHOSEN_MAP, STANDARD_DECK_COMP, 600, 1500)
-        self.name = env_name
+        if rules_type == 'Base':
+            self.rules_move = self.starter_rules_move
+            self.game = RootGame(CHOSEN_MAP, STANDARD_DECK_COMP, 900, 1500)
+        elif rules_type == 'Algo':
+            self.rules_move = self.algo_rules_move
+            self.game = RootGame(CHOSEN_MAP, STANDARD_DECK_COMP, 500, 1500)
+        else:
+            raise Exception(f"Unknown rules_type '{rules_type}'")
+
         self.model_players = model_players
         # when training, the first model ID given will be the ID of the player model being trained
         self.main_player_id = self.model_players[0]
         
-        logger.info(f"Loading env with name '{env_name}'")
+        # logger.info(f"Loading Algo env for model type '{model_type}'")
 
         self.n_players = 4
         self.verbose = verbose
@@ -102,7 +109,7 @@ class MainAlgoEnv(gym.Env):
     def reset(self, seed:int=None):
         super().reset(seed=seed)
         self.terminated = self.truncated = False
-        self.game.randomize()
+        self.game.randomize(min_points=5)
         self.current_player_num = self.game.to_play()
 
         # play the game until it comes back to the main player's turn or the game ends
@@ -127,8 +134,62 @@ class MainAlgoEnv(gym.Env):
         if not (self.terminated or self.truncated):
             logger.debug(f'Legal actions: {[i for i,o in enumerate(self.legal_actions) if o != 0]}')
 
+    def starter_rules_move(self, action_space_size:int):
+        """
+        Returns action probabilities for the current rules-based faction.
+        
+        This is the base-level rules bot, making basic choices for each
+        faction to barely stay in the game and keep things progressing
+        very slowly. Supposed to not be challenging to defeat at all, 
+        mainly serving as a warm-up for training against.
+        """
+        opponent_id = self.game.to_play()
+        assert (opponent_id not in self.model_players)
 
-    def rules_move(self, action_space_size:int):
+        ret = np.zeros(action_space_size)
+        # action_chosen = random.choice(self.get_legal_action_numbers())
+        la = self.game.legal_actions()
+        la_set = set(la)
+
+        # players always ambush if they can
+        ans_set = la_set.intersection(AMBUSH_ACTIONS_SET)
+
+        # Marquise recruits and uses field hospitals if possible
+        if len(ans_set) == 0 and opponent_id == PIND_MARQUISE:
+            ans_set = la_set.intersection({MC_RECRUIT} | FIELD_HOSPITALS_ACTIONS_SET)
+
+        # Vagabond explores if they can, otherwise moves/slips at random
+        if len(ans_set) == 0 and opponent_id == PIND_VAGABOND:
+            ans_set = la_set.intersection({VB_EXPLORE})
+        if len(ans_set) == 0 and opponent_id == PIND_VAGABOND:
+            ans_set = la_set.intersection(SLIP_ACTIONS_SET)
+        
+        # Alliance always spreads sympathy if they can at random
+        if len(ans_set) == 0 and opponent_id == PIND_ALLIANCE:
+            ans_set = la_set.intersection(SPREAD_SYM_ACTIONS_SET)
+
+        # otherwise, players try skipping optional actions
+        if len(ans_set) == 0:
+            if opponent_id == PIND_MARQUISE:
+                ans_set = la_set.intersection(MARQUISE_SKIP_ACTIONS_SET)
+            elif opponent_id == PIND_EYRIE:
+                ans_set = la_set.intersection(EYRIE_SKIP_ACTIONS_SET)
+            elif opponent_id == PIND_ALLIANCE:
+                ans_set = la_set.intersection(ALLIANCE_SKIP_ACTIONS_SET)
+            elif opponent_id == PIND_VAGABOND:
+                ans_set = la_set.intersection(VAGABOND_SKIP_ACTIONS_SET)
+        
+        # otherwise, players play a random action possible in this position
+        if len(ans_set) == 0:
+            ret.put(la, 1/len(la))
+        else:
+            ans_list = list(ans_set)
+            ret.put(ans_list, 1/len(ans_list) )
+        
+        return ret
+
+
+    def algo_rules_move(self, action_space_size:int):
         """
         Returns action probabilities for the current rules-based faction.
         
@@ -193,7 +254,7 @@ class MainAlgoEnv(gym.Env):
         
 
 if __name__ == "__main__":
-    env = MainAlgoEnv("MarquiseMainBase", [MARQUISE_ID])
+    env = RootEnv("MarquiseMainBase", [MARQUISE_ID])
     env.reset()
     terminated = truncated = False
     total_rewards = np.zeros(N_PLAYERS)

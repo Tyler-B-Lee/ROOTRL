@@ -37,7 +37,7 @@ def main(args):
   logger.info("\tFinished importing!")
 
   # begin now
-  model_dir = os.path.join(config.MODELDIR, args.env_name)
+  model_dir = os.path.join(config.MODELDIR, (args.model_type + "_" + args.env_name) )
 
   try:
     os.makedirs(model_dir)
@@ -49,19 +49,19 @@ def main(args):
 
   set_random_seed(args.seed)
 
-  logger.info('\nSetting up the selfplay training environment opponents...')
+  logger.info('\t > Setting up the selfplay training environment opponents...')
   base_env = get_environment(args.env_name)
-  if "Marquise" in args.env_name:
+  if "Marquise" in args.model_type:
     model_players = [0]
-  elif "Eyrie" in args.env_name:
+  elif "Eyrie" in args.model_type:
     model_players = [1]
-  elif "Alliance" in args.env_name:
+  elif "Alliance" in args.model_type:
     model_players = [2]
-  elif "Vagabond" in args.env_name:
+  elif "Vagabond" in args.model_type:
     model_players = [3]
   else:
-    raise Exception(f"No valid faction found in '{args.env_name}'")
-  env = training_model_manager_wrapper(base_env)(env_name = args.env_name, model_players = model_players, opponent_type = args.opponent_type, verbose = args.verbose)
+    raise Exception(f"No valid faction found in '{args.model_type}'")
+  env = training_model_manager_wrapper(base_env)(rules_type = args.env_name, model_type = (args.model_type + "_" + args.env_name), model_players = model_players, opponent_type = args.opponent_type, verbose = args.verbose)
 
   params = {'gamma':args.gamma
     , 'timesteps_per_actorbatch':args.timesteps_per_actorbatch
@@ -89,7 +89,7 @@ def main(args):
   #Callbacks
   logger.info('\nSetting up the selfplay evaluation environment opponents...')
   callback_args = {
-    'eval_env': training_model_manager_wrapper(base_env)(env_name = args.env_name, model_players = model_players, opponent_type = args.opponent_type, verbose = args.verbose),
+    'eval_env': training_model_manager_wrapper(base_env)(rules_type = args.env_name, model_type = (args.model_type + "_" + args.env_name), model_players = model_players, opponent_type = args.opponent_type, verbose = args.verbose),
     'best_model_save_path' : config.TMPMODELDIR,
     'log_path' : config.LOGDIR,
     'eval_freq' : args.eval_freq,
@@ -103,7 +103,7 @@ def main(args):
     logger.info('\nSetting up the evaluation environment against the rules-based agent...')
     # Evaluate against a 'rules' agent as well
     eval_actual_callback = EvalCallback(
-      eval_env = training_model_manager_wrapper(base_env)(env_name = args.env_name, model_players = model_players, opponent_type = 'rules', verbose = args.verbose),
+      eval_env = training_model_manager_wrapper(base_env)(rules_type = args.env_name, model_type = (args.model_type + "_" + args.env_name), model_players = model_players, opponent_type = 'rules', verbose = args.verbose),
       eval_freq=1,
       n_eval_episodes=args.n_eval_episodes,
       deterministic = args.best,
@@ -113,7 +113,7 @@ def main(args):
     callback_args['callback_on_new_best'] = eval_actual_callback
     
   # Evaluate the agent, saving new best versions
-  eval_callback = CheckpointSavingCallback(args.opponent_type, args.threshold, args.env_name, **callback_args)
+  eval_callback = CheckpointSavingCallback(args.opponent_type, args.threshold, (args.model_type + "_" + args.env_name), **callback_args)
 
   logger.info('\nSetup complete - commencing learning...\n')
 
@@ -122,7 +122,7 @@ def main(args):
   env.close()
   del env
 
-# py train.py -o rules -e MarquiseMainBase -ne 50
+# py train.py -o rules -e Algo -mt MarquiseHatesWA
 
 def cli() -> None:
   """Handles argument extraction from CLI and passing to main().
@@ -147,7 +147,9 @@ def cli() -> None:
   parser.add_argument("--best", "-b", action = 'store_true', default = False
               , help="Uses best moves when evaluating agent against rules-based agent")
   parser.add_argument("--env_name", "-e", type = str, default = 'tictactoe'
-              , help="Which gym environment to train in: tictactoe, connect4, sushigo, butterfly, geschenkt, frouge")
+              , help="Which gym environment to train in: Base or Algo")
+  parser.add_argument("--model_type", "-mt", type = str, default = 'tictactoe'
+              , help="Which model you want to be training: 'FactionGoal' like 'MarquiseMain'")
   parser.add_argument("--seed", "-s",  type = int, default = 17
             , help="Random seed")
 

@@ -2,12 +2,14 @@
 
 def get_environment(env_name):
     try:
-        if "MainBase" in env_name:
-            from envs.base_training import MainBaseEnv
-            return MainBaseEnv
-        elif "MainAlgo" in env_name:
-            from envs.algo_training import MainAlgoEnv
-            return MainAlgoEnv
+        from envs.algo_training import RootEnv
+        return RootEnv
+        if "Base" in env_name:
+            from envs.base_training import BaseEnv
+            return BaseEnv
+        elif "Algo" in env_name:
+            from envs.algo_training import RootEnv
+            return RootEnv
         else:
             raise Exception(f'No environment found for {env_name}')
     except SyntaxError as e:

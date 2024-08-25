@@ -19,11 +19,11 @@ import logging
 logger = logging.getLogger(__name__)
 
 class CheckpointSavingCallback(EvalCallback):
-  def __init__(self, opponent_type, threshold, env_name, *args, **kwargs):
+  def __init__(self, opponent_type, threshold, model_type, *args, **kwargs):
     super(CheckpointSavingCallback, self).__init__(*args, **kwargs)
     self.opponent_type = opponent_type
-    self.model_dir = os.path.join(config.MODELDIR, env_name)
-    self.generation, self.base_timesteps, pbmr, bmr = get_model_stats(get_best_model_name(env_name))
+    self.model_dir = os.path.join(config.MODELDIR, model_type)
+    self.generation, self.base_timesteps, pbmr, bmr = get_model_stats(get_best_model_name(model_type))
 
     #reset best_mean_reward because this is what we use to extract the rewards from the latest evaluation by each agent
     self.best_mean_reward = -np.inf
@@ -34,7 +34,6 @@ class CheckpointSavingCallback(EvalCallback):
       self.threshold = bmr # the threshold is the overall best evaluation by the agent against a rules-based agent
     else:
       self.threshold = threshold # the threshold is a constant
-
 
   def _on_step(self) -> bool:
 

@@ -24,18 +24,18 @@ VAGABOND_ID = 3
 # alliance - 1571 / 530
 # vagabond - 1547 / 604
 
-class MainBaseEnv(gym.Env):
+class BaseEnv(gym.Env):
     metadata = {'render.modes': ['human']}
 
-    def __init__(self, env_name:str, model_players:list, verbose = False, manual = False):
-        super(MainBaseEnv, self).__init__()
+    def __init__(self, model_type:str, model_players:list, verbose = False, manual = False):
+        super(BaseEnv, self).__init__()
 
-        self.game = RootGame(CHOSEN_MAP, STANDARD_DECK_COMP, 1000, 1500)
-        self.name = env_name
+        self.game = RootGame(CHOSEN_MAP, STANDARD_DECK_COMP, 800, 1500)
+        self.model_type = model_type
         self.model_players = model_players
         self.main_player_id = self.model_players[0]
         
-        logger.info(f"Loading env with name '{env_name}'")
+        logger.info(f"Loading Base env for model type '{model_type}'")
 
         self.n_players = 4
         self.verbose = verbose
@@ -101,7 +101,7 @@ class MainBaseEnv(gym.Env):
     def reset(self, seed:int=None):
         super().reset(seed=seed)
         self.terminated = self.truncated = False
-        self.game.randomize()
+        self.game.randomize(min_points=15)
         self.current_player_num = self.game.to_play()
 
         # play the game until it comes back to the main player's turn or the game ends
@@ -184,7 +184,7 @@ class MainBaseEnv(gym.Env):
         
 
 if __name__ == "__main__":
-    env = MainBaseEnv("MarquiseMainBase", [MARQUISE_ID])
+    env = BaseEnv("MarquiseMainBase", [MARQUISE_ID])
     env.reset()
     terminated = truncated = False
     total_rewards = np.zeros(N_PLAYERS)

@@ -6015,7 +6015,7 @@ class RootGame:
             print(self.deck)
 
 
-    def randomize(self):
+    def randomize(self, min_points:int):
         """
         Used to help setup a RootGame object in a specific or random way.
         Helps create a variety of scenarios for training AI models in.
@@ -6228,7 +6228,7 @@ class RootGame:
         
         # random score
         for pid in range(4):
-            self.victory_points[pid] = random.randint(5,15)
+            self.victory_points[pid] = random.randint(min_points, min_points + 10)
         logger.debug(f"Score: {self.victory_points}")
         
         logger.debug("--- RANDOM SETUP COMPLETE ---\n\n")
