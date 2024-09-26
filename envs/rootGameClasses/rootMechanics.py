@@ -3194,12 +3194,12 @@ class RootGame:
             elif sum(owned_corners) == 1:
                 change = -2
             elif sum(owned_corners) == 4:
-                change = 6
+                change = 8
             elif sum(owned_corners) == 3:
-                change = 5
+                change = 6
             # owns two corners, find if they're opposite
             elif (owned_corners[0] and owned_corners[3]) or (owned_corners[1] and owned_corners[2]):
-                change = 3
+                change = 4
             else: # own two corners, but not opposite
                 change = -1
         else:
@@ -3207,7 +3207,7 @@ class RootGame:
             dom_suit_clearings = CLEARING_SUITS[dom_suit]
             num_clearings_owned = sum([(clearing_rulers[i] == player_index) for i in dom_suit_clearings])
             if num_clearings_owned == 4:
-                change = 6
+                change = 8
             elif num_clearings_owned == 3:
                 change = 4
             elif num_clearings_owned == 2:
@@ -3262,12 +3262,12 @@ class RootGame:
             elif sum(owned_corners) == 1:
                 change = -0.5
             elif sum(owned_corners) == 4:
-                change = 6
+                change = 8
             elif sum(owned_corners) == 3:
-                change = 4
+                change = 6
             # owns two corners, find if they're opposite
             elif (owned_corners[0] and owned_corners[3]) or (owned_corners[1] and owned_corners[2]):
-                change = 3
+                change = 5
             else: # own two corners, but not opposite
                 change = 0
         else:
@@ -3275,9 +3275,9 @@ class RootGame:
             dom_suit_clearings = CLEARING_SUITS[dom_suit]
             num_clearings_owned = sum([(clearing_rulers[i] == player_index) for i in dom_suit_clearings])
             if num_clearings_owned == 4:
-                change = 6
+                change = 8
             elif num_clearings_owned == 3:
-                change = 4
+                change = 5
             elif num_clearings_owned == 2:
                 change = 0
             elif num_clearings_owned == 1:
@@ -3293,19 +3293,19 @@ class RootGame:
                     if i == player_index or i == PIND_VAGABOND:
                         self.points_scored_this_action[i] += change * GAME_SCALAR
                     else:
-                        self.points_scored_this_action[i] -= (change / (N_PLAYERS - 2)) * GAME_SCALAR
+                        self.points_scored_this_action[i] -= max(0, (change / (N_PLAYERS - 2)) * GAME_SCALAR)
                 else:
                     # coalition loses points the same
                     if i == player_index:
                         self.points_scored_this_action[i] += change * GAME_SCALAR
                     else:
-                        self.points_scored_this_action[i] -= (change / (N_PLAYERS - 2)) * GAME_SCALAR
+                        self.points_scored_this_action[i] -= max(0, (change / (N_PLAYERS - 2)) * GAME_SCALAR)
             else:
                 # no coalition
                 if i == player_index:
                     self.points_scored_this_action[i] += change * GAME_SCALAR
                 else:
-                    self.points_scored_this_action[i] -= (change / (N_PLAYERS - 1)) * GAME_SCALAR
+                    self.points_scored_this_action[i] -= max(0, (change / (N_PLAYERS - 1)) * GAME_SCALAR)
     
     def revolt_helper(self,aplayer:Alliance,clearing_index:int):
         """

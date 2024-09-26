@@ -1,0 +1,242 @@
+{
+  "Marquise": {
+    "Marquise_Rules": {
+      "mu": 24.96007661924058,
+      "sigma": 1.043383357396893
+    },
+    "MarquiseHatesWA_Algo_base.zip": {
+      "mu": 25.702251835738192,
+      "sigma": 0.9303950541799308
+    },
+    "MarquiseHatesWA_Algo__model_00001_0_-0.163_81920_.zip": {
+      "mu": 24.93621754977906,
+      "sigma": 0.9155322491207804
+    },
+    "MarquiseHatesWA_Algo__model_00002_0_-0.102_133120_.zip": {
+      "mu": 25.475382017424593,
+      "sigma": 0.9595885744227851
+    },
+    "MarquiseMain_Algo_base.zip": {
+      "mu": 24.745674010671955,
+      "sigma": 0.8585479226468983
+    },
+    "MarquiseMain_Algo__model_00001_0_-0.557_81920_.zip": {
+      "mu": 24.595279721491057,
+      "sigma": 0.9526032847469545
+    },
+    "MarquiseMain_Algo__model_00002_0_-0.375_122880_.zip": {
+      "mu": 24.781867487284902,
+      "sigma": 0.9372973635041592
+    },
+    "MarquiseMain_Algo__model_00003_0_-0.373_143360_.zip": {
+      "mu": 24.609143796337634,
+      "sigma": 0.9344272733789131
+    },
+    "MarquiseMain_Base_base.zip": {
+      "mu": 24.499562419831705,
+      "sigma": 0.9204510673737233
+    },
+    "MarquiseMain_Base__model_00001_0_-0.619_10240_.zip": {
+      "mu": 24.529251782332242,
+      "sigma": 0.8336675294081707
+    },
+    "MarquiseMain_Base__model_00002_0_-0.315_30720_.zip": {
+      "mu": 24.46870318915814,
+      "sigma": 0.9055920855985414
+    },
+    "MarquiseMain_Base__model_00003_0_-0.249_51200_.zip": {
+      "mu": 24.716868973994174,
+      "sigma": 0.9685292273744869
+    },
+    "MarquiseMain_Base__model_00004_0_-0.237_61440_.zip": {
+      "mu": 24.386314864798496,
+      "sigma": 0.908175765526712
+    },
+    "MarquiseMain_Base__model_00005_0_-0.184_81920_.zip": {
+      "mu": 24.606594039825573,
+      "sigma": 1.0349260416705888
+    }
+  },
+  "Eyrie": {
+    "Eyrie_Rules": {
+      "mu": 24.344612634948785,
+      "sigma": 0.9764861992058212
+    },
+    "EyrieHatesVB_Algo_base.zip": {
+      "mu": 27.70287870214623,
+      "sigma": 1.136626497029843
+    },
+    "EyrieHatesVB_Algo__model_00001_0_0.625_30720_.zip": {
+      "mu": 27.143287501605123,
+      "sigma": 1.3202046580804256
+    },
+    "EyrieHatesVB_Algo__model_00002_0_0.629_61440_.zip": {
+      "mu": 27.85987630175723,
+      "sigma": 1.1180007125029199
+    },
+    "EyrieHatesWA_Algo_base.zip": {
+      "mu": 25.641857103068396,
+      "sigma": 0.9772179302291104
+    },
+    "EyrieHatesWA_Algo__model_00001_0_-0.063_30720_.zip": {
+      "mu": 25.826242090698894,
+      "sigma": 0.9250681319826032
+    },
+    "EyrieHatesWA_Algo__model_00002_0_0.115_51200_.zip": {
+      "mu": 24.71391959192801,
+      "sigma": 0.9977055876519295
+    },
+    "EyrieHelpsMC_Algo_base.zip": {
+      "mu": 24.533784765869584,
+      "sigma": 1.019913630001637
+    },
+    "EyrieHelpsMC_Algo__model_00001_0_-0.24_30720_.zip": {
+      "mu": 24.48217718896231,
+      "sigma": 1.038305683236734
+    },
+    "EyrieHelpsMC_Algo__model_00002_0_-0.215_71680_.zip": {
+      "mu": 24.437123827077293,
+      "sigma": 1.036014797180829
+    },
+    "EyrieHelpsMC_Algo__model_00003_0_0.042_102400_.zip": {
+      "mu": 24.47940429431984,
+      "sigma": 1.0095658186118097
+    },
+    "EyrieMain_Algo_base.zip": {
+      "mu": 23.916576095053333,
+      "sigma": 1.056976264781536
+    },
+    "EyrieMain_Algo__model_00001_0_-0.623_30720_.zip": {
+      "mu": 24.275483795885858,
+      "sigma": 1.1514324856513136
+    },
+    "EyrieMain_Algo__model_00002_0_-0.527_71680_.zip": {
+      "mu": 24.70333253274812,
+      "sigma": 0.9861991494978778
+    },
+    "EyrieMain_Algo__model_00003_0_-0.464_81920_.zip": {
+      "mu": 24.53021122316794,
+      "sigma": 0.8859944695896115
+    },
+    "EyrieMain_Base_base.zip": {
+      "mu": 24.272919760109584,
+      "sigma": 1.0191629129931234
+    },
+    "EyrieMain_Base__model_00001_0_0.44_10240_.zip": {
+      "mu": 24.278776722533355,
+      "sigma": 1.2063039560264517
+    },
+    "EyrieMain_Base__model_00002_0_0.565_20480_.zip": {
+      "mu": 24.534644914347716,
+      "sigma": 1.0817334956604483
+    }
+  },
+  "Alliance": {
+    "Alliance_Rules": {
+      "mu": 27.006384838851773,
+      "sigma": 1.0116183183789518
+    },
+    "AllianceHatesMC_Algo_base.zip": {
+      "mu": 26.642667542079085,
+      "sigma": 0.9162123339771961
+    },
+    "AllianceHatesMC_Algo__model_00001_0_0.678_20480_.zip": {
+      "mu": 31.483675736607942,
+      "sigma": 1.5275378674866409
+    },
+    "AllianceHatesMC_Algo__model_00002_0_0.877_30720_.zip": {
+      "mu": 28.632551717078275,
+      "sigma": 1.0337992878462883
+    },
+    "AllianceHelpsEY_Algo_base.zip": {
+      "mu": 24.444133062220793,
+      "sigma": 0.9394950534432664
+    },
+    "AllianceHelpsEY_Algo__model_00001_0_-0.694_20480_.zip": {
+      "mu": 23.717582954368275,
+      "sigma": 1.0900132560145002
+    },
+    "AllianceHelpsEY_Algo__model_00002_0_-0.557_30720_.zip": {
+      "mu": 23.251080868291044,
+      "sigma": 0.9968534388303825
+    },
+    "AllianceHelpsEY_Algo__model_00003_0_-0.497_40960_.zip": {
+      "mu": 23.980353648228757,
+      "sigma": 0.9219894904647209
+    },
+    "AllianceHelpsEY_Algo__model_00004_0_-0.386_61440_.zip": {
+      "mu": 24.213173612385823,
+      "sigma": 0.8764447182440868
+    },
+    "AllianceMain_Algo_base.zip": {
+      "mu": 26.998090727422255,
+      "sigma": 1.0902339073272345
+    },
+    "AllianceMain_Algo__model_00001_0_0.582_20480_.zip": {
+      "mu": 28.227352573258596,
+      "sigma": 1.1277451175306437
+    },
+    "AllianceMain_Algo__model_00002_0_0.714_30720_.zip": {
+      "mu": 29.01910486267316,
+      "sigma": 1.057447004765603
+    },
+    "AllianceMain_Base_base.zip": {
+      "mu": 25.05654859798183,
+      "sigma": 1.0247026588839314
+    },
+    "AllianceMain_Base__model_00001_0_0.644_10240_.zip": {
+      "mu": 28.510593851769602,
+      "sigma": 1.2008614049613353
+    }
+  },
+  "Vagabond": {
+    "Vagabond_Rules": {
+      "mu": 24.33043735988437,
+      "sigma": 0.8668951821621377
+    },
+    "VagabondHelpsMC_Algo_base.zip": {
+      "mu": 24.577552639184486,
+      "sigma": 0.7631080162082104
+    },
+    "VagabondHelpsMC_Algo__model_00001_0_-0.278_30720_.zip": {
+      "mu": 25.078200755706188,
+      "sigma": 0.9378868043104921
+    },
+    "VagabondHelpsMC_Algo__model_00002_0_-0.198_71680_.zip": {
+      "mu": 24.7202888322377,
+      "sigma": 0.9153186327220423
+    },
+    "VagabondHelpsMC_Algo__model_00003_0_-0.198_112640_.zip": {
+      "mu": 24.96531676590352,
+      "sigma": 0.8200093728101524
+    },
+    "VagabondMain_Algo_base.zip": {
+      "mu": 24.72925158102802,
+      "sigma": 0.9148035156529133
+    },
+    "VagabondMain_Algo__model_00001_0_-0.515_30720_.zip": {
+      "mu": 24.83824870285747,
+      "sigma": 0.8243707178192787
+    },
+    "VagabondMain_Algo__model_00002_0_-0.495_51200_.zip": {
+      "mu": 25.048885560780942,
+      "sigma": 0.9143378396100974
+    },
+    "VagabondMain_Algo__model_00003_0_-0.368_61440_.zip": {
+      "mu": 24.86027074169156,
+      "sigma": 0.8562694518313898
+    },
+    "VagabondMain_Base_base.zip": {
+      "mu": 24.498438463583458,
+      "sigma": 0.9226051863040602
+    },
+    "VagabondMain_Base__model_00001_0_-0.363_10240_.zip": {
+      "mu": 23.708686442289036,
+      "sigma": 0.8571687424226221
+    },
+    "VagabondMain_Base__model_00002_0_-0.289_20480_.zip": {
+      "mu": 25.0823797167306,
+      "sigma": 1.0293243151872469
+    }
+  }
+}

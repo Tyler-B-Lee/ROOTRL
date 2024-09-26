@@ -21,27 +21,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def write_results(players, game, games, episode_length):
-    
-    out = {'game': game
-    , 'games': games
-    , 'episode_length': episode_length
-    , 'p1': players[0].name
-    , 'p2': players[1].name
-    , 'p1_points': players[0].points
-    , 'p2_points': np.sum([x.points for x in players[1:]])
-    }
-
-    if not os.path.exists(config.RESULTSPATH):
-        with open(config.RESULTSPATH,'a') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=out.keys())
-            writer.writeheader()
-
-    with open(config.RESULTSPATH,'a') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=out.keys())
-        writer.writerow(out)
-
-
 def load_model(model_type:str, model_name:str, env_obj=None):
 
     filename = os.path.join(config.MODELDIR, model_type, model_name)

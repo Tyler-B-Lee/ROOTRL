@@ -27,6 +27,8 @@ def main(args):
   from stable_baselines3.common.callbacks import EvalCallback
   from stable_baselines3.common.utils import set_random_seed
 
+  import torch
+
   # from utils.callbacks import SelfPlayCallback
   from register import get_environment
   from utils.files import reset_logs, reset_models
@@ -79,12 +81,14 @@ def main(args):
 
   time.sleep(5) # allow time for the base model to be saved out when the environment is created
 
+  device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
   if args.reset or not os.path.exists(os.path.join(model_dir, 'best_model.zip')):
     logger.info('\nLoading the base PPO agent to train...')
-    model = PPO.load(os.path.join(model_dir, 'base.zip'), env, **params)
+    model = PPO.load(os.path.join(model_dir, 'base.zip'), env, device=device, **params)
   else:
     logger.info('\nLoading the best_model.zip PPO agent to continue training...')
-    model = PPO.load(os.path.join(model_dir, 'best_model.zip'), env, **params)
+    model = PPO.load(os.path.join(model_dir, 'best_model.zip'), env, device=device, **params)
 
   #Callbacks
   logger.info('\nSetting up the selfplay evaluation environment opponents...')

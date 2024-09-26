@@ -22,7 +22,7 @@ def main(args):
 
   from stable_baselines3.common.utils import set_random_seed
 
-  from utils.files import load_model, write_results
+  from utils.files import load_model
   from register import get_environment
   from utils.agents import Agent
 
@@ -112,9 +112,6 @@ def main(args):
     env.render()
 
     logger.info(f"Played {game + 1} games: {total_rewards}")
-
-    if args.write_results:
-      write_results(players, game, args.games, env.turns_taken)
 
     for p in players:
       p.points = 0
