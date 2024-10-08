@@ -1,8 +1,7 @@
 import os
-# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
-
 import argparse
 import time
+from datetime import datetime
 
 def main(args):
   import logging
@@ -11,9 +10,11 @@ def main(args):
     log_level = logging.DEBUG
   else:
     log_level = logging.INFO
+  
+  logfile_name = 'logs/log.txt' if not args.kaggle else '/kaggle/working/logs/log.txt'
 
   logging.basicConfig(
-      filename='logs/log.txt',
+      filename=logfile_name,
       format="%(asctime)s|%(levelname)s|%(name)s|%(message)s",
       filemode='w',
       level=log_level
@@ -26,6 +27,7 @@ def main(args):
   from stable_baselines3 import PPO
   from stable_baselines3.common.callbacks import EvalCallback
   from stable_baselines3.common.utils import set_random_seed
+  from stable_baselines3.common.env_util import make_vec_env
 
   import torch
 
@@ -38,11 +40,14 @@ def main(args):
   import config
   logger.info("\tFinished importing!")
 
+  zoo_location = config.MODELDIR if not args.kaggle else ('/kaggle/input/rootrl-files/' + config.MODELDIR)
+
   # begin now
-  model_dir = os.path.join(config.MODELDIR, (args.model_type + "_" + args.env_name) )
+  model_dir = os.path.join(zoo_location, (args.model_type + "_" + args.env_name) )
+  out_dir = os.path.join(config.MODELDIR, (args.model_type + "_" + args.env_name) )
 
   try:
-    os.makedirs(model_dir)
+    os.makedirs(out_dir)
   except:
     pass
   reset_logs(model_dir)
@@ -51,19 +56,29 @@ def main(args):
 
   set_random_seed(args.seed)
 
-  logger.info('\t > Setting up the selfplay training environment opponents...')
+  logger.info('\t > Setting up the environment...')
   base_env = get_environment(args.env_name)
+
+  # determine which players the env needs to calculate observations for,
+  # putting the training player's id first
+  if args.env_name == 'Arena':
+    model_players = [0, 1, 2, 3]
+  else:
+    model_players = []
   if "Marquise" in args.model_type:
-    model_players = [0]
+    model_players.insert(0, 0)
   elif "Eyrie" in args.model_type:
-    model_players = [1]
+    model_players.insert(0, 1)
   elif "Alliance" in args.model_type:
-    model_players = [2]
+    model_players.insert(0, 2)
   elif "Vagabond" in args.model_type:
-    model_players = [3]
+    model_players.insert(0, 3)
   else:
     raise Exception(f"No valid faction found in '{args.model_type}'")
-  env = training_model_manager_wrapper(base_env)(rules_type = args.env_name, model_type = (args.model_type + "_" + args.env_name), model_players = model_players, opponent_type = args.opponent_type, verbose = args.verbose)
+  
+  # make a vectorized environment with args.n_envs copies of the environment
+  env_kwargs = {'rules_type': args.env_name, 'model_type': (args.model_type + "_" + args.env_name), 'model_players': model_players, 'opponent_type': args.opponent_type, 'verbose': args.verbose, 'kaggle': args.kaggle}
+  training_env = make_vec_env(training_model_manager_wrapper(base_env), n_envs=args.n_envs, env_kwargs=env_kwargs, seed=args.seed)
 
   params = {'gamma':args.gamma
     , 'timesteps_per_actorbatch':args.timesteps_per_actorbatch
@@ -76,57 +91,63 @@ def main(args):
       , 'adam_epsilon':args.adam_epsilon
       , 'schedule':'linear'
       , 'verbose':1
-      , 'tensorboard_log':config.LOGDIR
+      , 'tensorboard_log': (config.LOGDIR if not args.kaggle else '/kaggle/working/logs')
   }
 
   time.sleep(5) # allow time for the base model to be saved out when the environment is created
 
   device = 'cuda' if torch.cuda.is_available() else 'cpu'
+  print(f"> Main - Loading on device: {device}")
+  if device == 'cuda':
+    print(f"\tCurrent CUDA device: {torch.cuda.current_device()}")
+    print(f"\tDevice name: {torch.cuda.get_device_name()}")
 
-  if args.reset or not os.path.exists(os.path.join(model_dir, 'best_model.zip')):
+  if args.reset or not os.path.exists(os.path.join(model_dir, 'best_model.pt')):
     logger.info('\nLoading the base PPO agent to train...')
-    model = PPO.load(os.path.join(model_dir, 'base.zip'), env, device=device, **params)
+    model = PPO.load(os.path.join(model_dir, 'base.pt'), training_env, device=device, **params)
   else:
-    logger.info('\nLoading the best_model.zip PPO agent to continue training...')
-    model = PPO.load(os.path.join(model_dir, 'best_model.zip'), env, device=device, **params)
+    logger.info('\nLoading the best_model.pt PPO agent to continue training...')
+    model = PPO.load(os.path.join(model_dir, 'best_model.pt'), training_env, device=device, **params)
 
   #Callbacks
-  logger.info('\nSetting up the selfplay evaluation environment opponents...')
+  logger.info('\nSetting up the evaluation environment against the best model...')
+  eval_environment = make_vec_env(training_model_manager_wrapper(base_env), n_envs=1, env_kwargs=env_kwargs, seed=args.seed)
   callback_args = {
-    'eval_env': training_model_manager_wrapper(base_env)(rules_type = args.env_name, model_type = (args.model_type + "_" + args.env_name), model_players = model_players, opponent_type = args.opponent_type, verbose = args.verbose),
+    'eval_env': eval_environment,
     'best_model_save_path' : config.TMPMODELDIR,
-    'log_path' : config.LOGDIR,
+    'log_path' : config.LOGDIR if not args.kaggle else '/kaggle/working/logs',
     'eval_freq' : args.eval_freq,
     'n_eval_episodes' : args.n_eval_episodes,
     'deterministic' : False,
     'render' : True,
-    'verbose' : 0
+    'verbose' : 0,
   }
 
-  if args.rules:
-    logger.info('\nSetting up the evaluation environment against the rules-based agent...')
-    # Evaluate against a 'rules' agent as well
-    eval_actual_callback = EvalCallback(
-      eval_env = training_model_manager_wrapper(base_env)(rules_type = args.env_name, model_type = (args.model_type + "_" + args.env_name), model_players = model_players, opponent_type = 'rules', verbose = args.verbose),
-      eval_freq=1,
-      n_eval_episodes=args.n_eval_episodes,
-      deterministic = args.best,
-      render = True,
-      verbose = 0
-    )
-    callback_args['callback_on_new_best'] = eval_actual_callback
+  # if args.rules:
+  #   logger.info('\nSetting up the evaluation environment against the rules-based agent...')
+  #   # Evaluate against a 'rules' agent as well
+  #   eval_actual_callback = EvalCallback(
+  #     eval_env = training_model_manager_wrapper(base_env)(rules_type = args.env_name, model_type = (args.model_type + "_" + args.env_name), model_players = model_players, opponent_type = 'rules', verbose = args.verbose),
+  #     eval_freq=1,
+  #     n_eval_episodes=args.n_eval_episodes,
+  #     deterministic = args.best,
+  #     render = True,
+  #     verbose = 0
+  #   )
+  #   callback_args['callback_on_new_best'] = eval_actual_callback
     
   # Evaluate the agent, saving new best versions
-  eval_callback = CheckpointSavingCallback(args.opponent_type, args.threshold, (args.model_type + "_" + args.env_name), **callback_args)
+  eval_callback = CheckpointSavingCallback(args.opponent_type, args.threshold, (args.model_type + "_" + args.env_name), args.kaggle, **callback_args)
 
   logger.info('\nSetup complete - commencing learning...\n')
 
-  model.learn(total_timesteps=int(1e9), callback=[eval_callback], reset_num_timesteps = False, tb_log_name="tb")
+  logger_name = f"{args.model_type}_{args.env_name}_{args.opponent_type}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+  model.learn(total_timesteps=int(1e9), callback=[eval_callback], reset_num_timesteps = False, tb_log_name=logger_name)
 
-  env.close()
-  del env
+  training_env.close()
+  del training_env
 
-# py train.py -o rules -e Algo -mt MarquiseHatesWA
+# python train.py -o rules -e Arena -mt EyrieMain -s 24 -g 0.993 -tpa 2048 -oe 6 -os 0.0002
 
 def cli() -> None:
   """Handles argument extraction from CLI and passing to main().
@@ -151,7 +172,7 @@ def cli() -> None:
   parser.add_argument("--best", "-b", action = 'store_true', default = False
               , help="Uses best moves when evaluating agent against rules-based agent")
   parser.add_argument("--env_name", "-e", type = str, default = 'tictactoe'
-              , help="Which gym environment to train in: Base or Algo")
+              , help="Which gym environment to train in: Base / Algo / Arena")
   parser.add_argument("--model_type", "-mt", type = str, default = 'tictactoe'
               , help="Which model you want to be training: 'FactionGoal' like 'MarquiseMain'")
   parser.add_argument("--seed", "-s",  type = int, default = 17
@@ -171,6 +192,8 @@ def cli() -> None:
             , help="The clip paramater in PPO")
   parser.add_argument("--entcoeff", "-ent",  type = float, default = 0.1
             , help="The entropy coefficient in PPO")
+  parser.add_argument("--n_envs", "-n",  type = int, default = 1
+            , help="The number of environments to run in parallel")
 
   parser.add_argument("--optim_epochs", "-oe",  type = int, default = 4
             , help="The number of epoch to train the PPO agent per batch")
@@ -183,6 +206,8 @@ def cli() -> None:
             , help="The value of lambda in PPO")
   parser.add_argument("--adam_epsilon", "-a",  type = float, default = 1e-05
             , help="The value of epsilon in the Adam optimiser")
+  parser.add_argument("--kaggle", "-k",  action = 'store_true', default = False
+                      , help="Run the script in Kaggle notebook mode")
 
   # Extract args
   args = parser.parse_args()

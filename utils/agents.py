@@ -67,8 +67,8 @@ class Agent():
         else:
             with torch.no_grad():
                 obs_input = torch.tensor(np.array([env.observation]))
-                action_probs = self.model.policy.action_probability(obs_input)[0].numpy()
-                value = self.model.policy.predict_values(obs_input)[0].item()
+                action_probs = self.model.policy.action_probability(obs_input)[0].cpu().numpy()
+                value = self.model.policy.predict_values(obs_input)[0].cpu().item()
                 wr = (value + 1) * 50
                 logger.debug(f'Value: {value:.2f} (~{wr:.2f}% Predicted Win Chance)')
 

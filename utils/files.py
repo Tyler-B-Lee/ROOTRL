@@ -1,9 +1,8 @@
 import os
 import sys
-import csv
 import time
 import numpy as np
-
+import torch
 
 from shutil import rmtree, copyfile
 from stable_baselines3 import PPO
@@ -21,50 +20,79 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def load_model(model_type:str, model_name:str, env_obj=None):
+def load_model(model_type:str, model_name:str, zoo_dir:str, env_obj=None):
+    """
+    Load a PPO model from the given model directory, with the given model name.
+    If the model does not exist, create a new model with the given name and save it.
 
-    filename = os.path.join(config.MODELDIR, model_type, model_name)
+    Returns the loaded PPO model object.
+
+    :param model_type: The type of model environment to load the model for.
+    :param model_name: The name of the model file to load.
+    :param env_obj: The environment object to load the model for.
+
+    :return: The loaded PPO model object.
+    """
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    print(f"> Loading on device: {device}")
+
+    filename = os.path.join(zoo_dir, model_type, model_name)
     if os.path.exists(filename):
-        logger.info(f'Loading model: {model_name} for environment {model_type}, object {env_obj}')
+        print(f'Loading model: {model_name} for environment {model_type}, object {env_obj}')
         cont = True
         while cont:
             try:
-                ppo_model = PPO.load(filename, env=env_obj)
+                ppo_model = PPO.load(filename, env=env_obj, device=device)
                 cont = False
             except Exception as e:
                 time.sleep(5)
                 print(e)
 
     # no base model found
-    elif model_name == 'base.zip':
+    elif model_name == 'base.pt':
         logger.info(f"\tNo 'base' model found for environment {model_type}")
-        if any(s in model_type for s in ['Main_Algo','Hates','Helps']):
+        if any(s in model_type for s in ['Hates','Helps','Main_Arena']):
+            # We take the previous best model in the main_algo environment
+            # as the base model for the new environment
+            if 'Main_Arena' in model_type:
+                if 'Marquise' in model_type:
+                    prev_env_name = "MarquiseMain_Algo"
+                elif 'Eyrie' in model_type:
+                    prev_env_name = "EyrieMain_Algo"
+                elif 'Alliance' in model_type:
+                    prev_env_name = "AllianceMain_Algo"
+                elif 'Vagabond' in model_type:
+                    prev_env_name = "VagabondMain_Algo"
+                else:
+                    raise Exception(f"Unknown Environment name: '{model_type}'")
+            
             # The base model for the given environment will actually be
             # the previous best model in the base environment
-            if 'Marquise' in model_type:
-                prev_env_name = "MarquiseMain_Base"
-            elif 'Eyrie' in model_type:
-                prev_env_name = "EyrieMain_Base"
-            elif 'Alliance' in model_type:
-                prev_env_name = "AllianceMain_Base"
-            elif 'Vagabond' in model_type:
-                prev_env_name = "VagabondMain_Base"
             else:
-                raise Exception(f"Unknown Environment name: '{model_type}'")
+                if 'Marquise' in model_type:
+                    prev_env_name = "MarquiseMain_Base"
+                elif 'Eyrie' in model_type:
+                    prev_env_name = "EyrieMain_Base"
+                elif 'Alliance' in model_type:
+                    prev_env_name = "AllianceMain_Base"
+                elif 'Vagabond' in model_type:
+                    prev_env_name = "VagabondMain_Base"
+                else:
+                    raise Exception(f"Unknown Environment name: '{model_type}'")
             
             logger.info(f"\tAttempting to copy 'best_model' from environment {prev_env_name}...")
-            best_file_to_start_from = os.path.join(config.MODELDIR, prev_env_name, "best_model.zip")
+            best_file_to_start_from = os.path.join(zoo_dir, prev_env_name, "best_model.pt")
             copyfile(best_file_to_start_from, filename)
             logger.info(f"\tNew 'base' model created for environment {model_type}")
-            ppo_model = PPO.load(filename, env=env_obj)
+            ppo_model = PPO.load(filename, env=env_obj, device=device)
         
         else:
             cont = True
             while cont:
                 try:
-                    ppo_model = PPO(get_network_arch(model_type), env=env_obj)
-                    logger.info(f'Saving new base.zip PPO model...')
-                    ppo_model.save(os.path.join(config.MODELDIR, model_type, 'base.zip'))
+                    ppo_model = PPO(get_network_arch(model_type), env=env_obj, device=device)
+                    logger.info(f'Saving new base.pt PPO model...')
+                    ppo_model.save(os.path.join(zoo_dir, model_type, 'base.pt'))
 
                     cont = False
                 except IOError as e:
@@ -78,37 +106,8 @@ def load_model(model_type:str, model_name:str, env_obj=None):
     
     return ppo_model
 
-
-def load_all_models(env):
-    """
-    Load all of the opponent models that could be used for opponents in the given model manager environment.
-
-    Returns a list of 4 items: For each player faction id's index (0-3), the item is 'None' if
-    the environment is already training that faction or the rules opponents are being used. 
-    Otherwise, the opponent models' slot will have a PPO object for that faction. 
-    
-    The type of opponents that need to be loaded could be based on the environment passed in.
-    """
-    models = [{} for _ in range(4)]
-
-    # first ensure that the factions we want to load models of
-    # for this environment atleast have a "base" model
-    base_filename = os.path.join(config.MODELDIR, env.model_type, "base.zip")
-    if not os.path.exists(base_filename):
-        load_model(env.model_type, "base.zip", env)
-
-    return models
-    
-    modellist = [f for f in os.listdir(os.path.join(config.MODELDIR, env.name)) if f.startswith("_model")]
-    modellist.sort()
-    models = [load_model(env, 'base.zip')]
-    for model_name in modellist:
-        models.append(load_model(env, name = model_name))
-    return models
-
-
-def get_best_model_name(model_type):
-    modellist = [f for f in os.listdir(os.path.join(config.MODELDIR, model_type)) if f.startswith("_model")]
+def get_best_model_name(model_type, zoo_dir):
+    modellist = [f for f in os.listdir(os.path.join(zoo_dir, model_type)) if f.startswith("_model")]
     
     if len(modellist)==0:
         filename = None

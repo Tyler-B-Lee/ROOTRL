@@ -19,11 +19,11 @@ import logging
 logger = logging.getLogger(__name__)
 
 class CheckpointSavingCallback(EvalCallback):
-  def __init__(self, opponent_type, threshold, model_type, *args, **kwargs):
+  def __init__(self, opponent_type, threshold, model_type, kaggle, *args, **kwargs):
     super(CheckpointSavingCallback, self).__init__(*args, **kwargs)
     self.opponent_type = opponent_type
     self.model_dir = os.path.join(config.MODELDIR, model_type)
-    self.generation, self.base_timesteps, pbmr, bmr = get_model_stats(get_best_model_name(model_type))
+    self.generation, self.base_timesteps, pbmr, bmr = get_model_stats(get_best_model_name(model_type, (config.MODELDIR if not kaggle else '/kaggle/input/rootrl-files/' + config.MODELDIR)))
 
     #reset best_mean_reward because this is what we use to extract the rewards from the latest evaluation by each agent
     self.best_mean_reward = -np.inf
@@ -63,10 +63,11 @@ class CheckpointSavingCallback(EvalCallback):
         else:
           av_rules_based_reward_str = str(0)
         
+        os.makedirs(self.model_dir, exist_ok=True)
         source_file = os.path.join(config.TMPMODELDIR, f"best_model.zip") # this is constantly being written to - not actually the best model
-        target_file = os.path.join(self.model_dir,  f"_model_{generation_str}_{av_rules_based_reward_str}_{av_rewards_str}_{str(self.base_timesteps + self.num_timesteps)}_.zip")
+        target_file = os.path.join(self.model_dir,  f"_model_{generation_str}_{av_rules_based_reward_str}_{av_rewards_str}_{str(self.base_timesteps + self.num_timesteps)}_.pt")
         copyfile(source_file, target_file)
-        target_file = os.path.join(self.model_dir,  f"best_model.zip")
+        target_file = os.path.join(self.model_dir,  f"best_model.pt")
         copyfile(source_file, target_file)
 
         # if playing against a rules based agent, update the global best reward to the improved metric

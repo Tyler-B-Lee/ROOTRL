@@ -181,6 +181,8 @@ def main(args):
     logger.setLevel(logging.INFO)
     logger.info("Logging level set at INFO or lower!")
 
+  kaggle_prefix = '/kaggle/input/rootrl-files/' if args.kaggle else ''
+
   logger.info("Beginning Imports...")
   import json
   from stable_baselines3.common.utils import set_random_seed
@@ -190,8 +192,8 @@ def main(args):
   set_random_seed(args.seed)
 
   # load saved model ratings if they exist
-  if os.path.exists('ratings.json'):
-    with open('ratings.json', 'r') as f:
+  if os.path.exists(kaggle_prefix + 'ratings.json'):
+    with open(kaggle_prefix + 'ratings.json', 'r') as f:
       ratings = json.load(f)
       logger.info("Loaded ratings from file")
   else:
@@ -207,14 +209,14 @@ def main(args):
     agents[faction].append(rules_agent)
 
   # load the model agents next from each folder in the zoo
-  for folder_name in os.listdir(config.MODELDIR):
+  for folder_name in os.listdir(kaggle_prefix + config.MODELDIR):
     for faction_id, faction, aspace_size in zip([0,1,2,3], agents.keys(), config.ACTION_SPACE_SIZES):
       if faction in folder_name:
-        for model_name in os.listdir(os.path.join(config.MODELDIR, folder_name)):
+        for model_name in os.listdir(os.path.join(kaggle_prefix + config.MODELDIR, folder_name)):
           if 'best_model' in model_name:
             continue
 
-          model = load_model(folder_name, model_name, None)
+          model = load_model(folder_name, model_name, kaggle_prefix + config.MODELDIR, None)
           rating_to_load = ratings[faction].get(f'{folder_name}_{model_name}', None)
 
           model_agent = TournamentAgent(f'{folder_name}_{model_name}', faction_id, aspace_size, model, rating_to_load)
@@ -257,12 +259,12 @@ def cli() -> None:
             , help="Show observation on debug logging")
   parser.add_argument("--manual", "-m",  action = 'store_true', default = False
             , help="Manual update of the game state on step")
-  parser.add_argument("--model_types", "-mt", type = str, default = 'MarquiseMain'
-            , help="Which agent models to load for each faction? 'None' for no model")
   parser.add_argument("--env_rules", "-e",  type = str, default = 'Algo'
             , help="Which Rules type for this env?")
   parser.add_argument("--seed", "-s",  type = int, default = 17
             , help="Random seed")
+  parser.add_argument("--kaggle", "-k",  action = 'store_true', default = False
+            , help="Running in Kaggle environment?")
 
   # Extract args
   args = parser.parse_args()

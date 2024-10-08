@@ -36,6 +36,9 @@ class RootEnv(gym.Env):
         elif rules_type == 'Algo':
             self.rules_move = self.algo_rules_move
             self.game = RootGame(CHOSEN_MAP, STANDARD_DECK_COMP, 500, 1500)
+        elif rules_type == 'Arena':
+            self.rules_move = self.algo_rules_move
+            self.game = RootGame(CHOSEN_MAP, STANDARD_DECK_COMP, 0, 1500)
         else:
             raise Exception(f"Unknown rules_type '{rules_type}'")
 

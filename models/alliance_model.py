@@ -133,11 +133,13 @@ class CustomPolicyHead(nn.Module):
 
 
 class FeatureMaskExtractor(BaseFeaturesExtractor):
-    def __init__(self, observation_space: Space, features_dim: int):
+    def __init__(self, observation_space: Space, features_dim: int, device: torch.device):
         super().__init__(observation_space, features_dim)
-        self.extractor = CustomResnetExtractor(input_dim=OBS_LENGTH)
+        self.extractor = CustomResnetExtractor(input_dim=OBS_LENGTH).to(device)
+        self.device = device
     
     def forward(self, x):
+        x = x.to(self.device)
         obs, legal_actions = split_input(x, ACTIONS)
         features = self.extractor(obs)
         return features, legal_actions
@@ -164,11 +166,13 @@ class CustomMLPExtractor(nn.Module):
         # Save output dimensions, used to create the distributions
         self.latent_dim_pi = last_layer_dim_pi
         self.latent_dim_vf = last_layer_dim_vf
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        print(f"> Loading MLP architecture on device: {self.device}")
 
         # Policy network
-        self.policy_net = CustomPolicyHead(input_dim=RESNET_FEATURE_SIZE)
+        self.policy_net = CustomPolicyHead(input_dim=RESNET_FEATURE_SIZE).to(self.device)
         # Value network
-        self.value_net = CustomValueHead(input_dim=RESNET_FEATURE_SIZE)
+        self.value_net = CustomValueHead(input_dim=RESNET_FEATURE_SIZE).to(self.device)
 
     def forward(self, features):
         """
@@ -178,29 +182,33 @@ class CustomMLPExtractor(nn.Module):
         return self.forward_actor(features), self.forward_critic(features)
 
     def forward_actor(self, features, legal_actions):
+        features = features.to(self.device)
+        legal_actions = legal_actions.to(self.device)
         return self.policy_net(features, legal_actions)
 
     def forward_critic(self, features):
+        features = features.to(self.device)
         return self.value_net(features)
 
 
 class CustomPolicy(ActorCriticPolicy):
     def __init__(self, observation_space, action_space, lr_schedule, *args, **kwargs):
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         super(CustomPolicy, self).__init__(
             observation_space,
             action_space,
             lr_schedule,
             *args,
             features_extractor_class=FeatureMaskExtractor,
-            features_extractor_kwargs=dict(features_dim=RESNET_FEATURE_SIZE),
+            features_extractor_kwargs=dict(features_dim=RESNET_FEATURE_SIZE, device=device),
             **kwargs,
         )
-        # self.device = get_device()
 
     def _build_mlp_extractor(self):
         self.mlp_extractor = CustomMLPExtractor()
 
     def forward(self, obs, deterministic=False):
+        obs = obs.to(self.device)
         features, legal_actions = self.features_extractor(obs)
         policy_logits = self.mlp_extractor.forward_actor(features, legal_actions)
         values = self.mlp_extractor.forward_critic(features)
@@ -216,6 +224,7 @@ class CustomPolicy(ActorCriticPolicy):
         return actions, values, log_prob
     
     def _predict(self, obs, deterministic=False):
+        obs = obs.to(self.device)
         features, legal_actions = self.features_extractor(obs)
         policy_logits = self.mlp_extractor.forward_actor(features, legal_actions)
         dist = CategoricalDistribution(ACTIONS)
@@ -229,6 +238,7 @@ class CustomPolicy(ActorCriticPolicy):
         return actions
     
     def evaluate_actions(self, obs, actions):
+        obs = obs.to(self.device)
         features, legal_actions = self.features_extractor(obs)
         policy_logits = self.mlp_extractor.forward_actor(features, legal_actions)
         values = self.mlp_extractor.forward_critic(features)
@@ -246,12 +256,14 @@ class CustomPolicy(ActorCriticPolicy):
         :param obs: Observation
         :return: the estimated values.
         """
+        obs = obs.to(self.device)
         features, legal_actions = self.features_extractor(obs)
         latent_vf = self.mlp_extractor.forward_critic(features)
         return latent_vf
     
     def action_probability(self, obs: PyTorchObs):
         "Return the action probabilities for each action according to the current policy given the observations."
+        obs = obs.to(self.device)
         features, legal_actions = self.features_extractor(obs)
         policy_logits = self.mlp_extractor.forward_actor(features, legal_actions)
         return logits_to_probs(policy_logits)
